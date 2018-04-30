@@ -3,6 +3,13 @@ languageCode = "en-us"
 title = "Alpha Church"
 theme = "../.."
 
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = ""
+
+customCSS = [""," "]
+
+#This theme can generate a multi-level theme.
+#Use the weight= to specify the order of menu items, and the parent= to create a submenu item.
 [menu]
   [[menu.main]]
     name = "Home"
@@ -26,9 +33,12 @@ theme = "../.."
     url = "/leaders"
     weight = 2
 
+# Paramaters for the whole site
 [params]
   title = "Alpha Church"
   subtitle = "Another Church Theme"
+  author = "Daniel Saunders"
 
+  #Paramaters for the home/landing page
   [params.landing.banner]
     image = "/img/banner.jpg"
