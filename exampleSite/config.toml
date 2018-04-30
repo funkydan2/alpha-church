@@ -11,6 +11,7 @@ theme = "../.."
 
   [[menu.main]]
     name = "About"
+    url = "/about"
     weight = 2
 
   [[menu.main]]
