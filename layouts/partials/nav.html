@@ -7,15 +7,14 @@
           {{ $currentPage := . }}
           {{ range .Site.Menus.main }}
             {{ if .HasChildren }}
-                <li> <!-- class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}"> -->
+                <li>
                     <a href="#" class="icon fa-angle-down">
-                        {{ .Pre }}
-                        <span>{{ .Name }}</span>
+                        {{ .Name }}
                     </a>
                 </li>
-                <ul> <!-- class="sub-menu">-->
+                <ul>
                     {{ range .Children }}
-                        <li> <!--class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">-->
+                        <li>
                             <a href="{{ .URL }}">{{ .Name }}</a>
                         </li>
                     {{ end }}
@@ -23,12 +22,12 @@
             {{ else }}
                 <li>
                     <a href="{{ .URL }}">
-                        {{ .Pre }}
-                        <span>{{ .Name }}</span>
+                        {{ .Pre }} {{ .Name }}
                     </a>
                 </li>
             {{ end }}
         {{ end }}
+        <!--
           <li>
             <a href="#" class="icon fa-angle-down">Layouts</a>
             <ul>
@@ -46,6 +45,7 @@
             </ul>
           </li>
           <li><a href="#" class="button">Sign Up</a></li>
+        -->
         </ul>
       </nav>
     </header>

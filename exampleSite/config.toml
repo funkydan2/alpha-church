@@ -11,13 +11,19 @@ theme = "../.."
 
   [[menu.main]]
     name = "About"
-    url = "/about"
     weight = 2
+
+  [[menu.main]]
+    name = "About Us"
+    parent = "About"
+    url = "/about"
+    weight = 1
 
   [[menu.main]]
     name = "Leaders"
     parent = "About"
     url = "/leaders"
+    weight = 2
 
 [params]
   title = "Alpha Church"
