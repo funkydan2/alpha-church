@@ -99,7 +99,7 @@ customCSS = ["", ""]
       enable = true
 
       [[params.landing.feature_images.tile]]
-        image = ""
+        image = "/img/freely-10057.jpg"
         title = "Childrens' Ministry"
         text = "A Church for the family."
         url = "/kids"

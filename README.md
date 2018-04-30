@@ -16,6 +16,7 @@ Feedback, bug reports, and comments are not only welcome, but strongly encourage
   - [Banner Image](https://freelyphotos.com/jesus/)
   - [Feature Image](https://freelyphotos.com/cross-love-2/)
   - [Old Bible](https://freelyphotos.com/old-bible-3/)
+  - [Running Child](https://freelyphotos.com/running/)
 
 ### Icons:
 

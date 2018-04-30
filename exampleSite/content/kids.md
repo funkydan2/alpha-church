@@ -2,7 +2,7 @@
 title: "Kids"
 subtitle: "Ministry with Children"
 date: 2018-05-01T07:39:12+10:00
-feature_image: ""
+feature_image: "/img/freely-10057.jpg"
 tags: ["",""]
 draft: true
 ---
