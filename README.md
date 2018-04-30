@@ -19,7 +19,7 @@ Feedback, bug reports, and comments are not only welcome, but strongly encourage
 
 ###	Other:
 * [jQuery](http://jquery.com)
-* html5shiv.js (@afarkas @jdalton @jon_neal @rem)
+* [html5shiv.js](https://github.com/aFarkas/html5shiv) (@afarkas @jdalton @jon_neal @rem)
 *	[CSS3 Pie](http://css3pie.com)
 *	[background-size polyfill](http://github.com/louisremi)
 *	[Respond.js](http://j.mp/respondjs)
