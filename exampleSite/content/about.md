@@ -3,6 +3,7 @@ title: "About"
 subtitle: "About Alpha-Church"
 date: 2018-04-30T10:05:49+10:00
 feature_image: "/img/freely-20445.jpg"
+menu: "main"
 draft: true
 ---
 

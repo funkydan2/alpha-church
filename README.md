@@ -12,7 +12,7 @@ Feedback, bug reports, and comments are not only welcome, but strongly encourage
 ## Credits:
 
 ### Demo Images:
-*	FreelyPhotos
+*	[FreelyPhotos](https://freelyphotos.com)
 
 ###	Icons:
 *	[Font Awesome](http://fortawesome.github.com/Font-Awesome)
