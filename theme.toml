@@ -2,17 +2,17 @@
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
 name = "Alpha Church"
-license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
-description = ""
+license = "CC0"
+licenselink = "https://github.com/funkydan2/alpha-church/blob/master/LICENSE.md"
+description = "A port of html5up Alpha theme. Ported to hugo and customised for church use."
 homepage = "http://example.com/"
-tags = []
-features = []
+tags = [church, podcat]
+features = ["drop down menu", "banner", "feature images"]
 min_version = "0.38"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Daniel Saunders"
+  homepage = "https://github.com/funkydan2"
 
 # If porting an existing theme
 [original]
