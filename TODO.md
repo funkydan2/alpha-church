@@ -8,4 +8,4 @@
 - [x] Include Google Analytics
 - [ ] Podcast page/content type
   - [ ] Podcast RSS
--
+- [ ] Find out how to pass through conditions in HTML comments (safeHTML doesn't work)
