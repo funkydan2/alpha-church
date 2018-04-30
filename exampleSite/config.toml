@@ -6,7 +6,7 @@ theme = "../.."
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
 
-customCSS = [""," "]
+customCSS = ["", ""]
 
 #This theme can generate a multi-level theme.
 #Use the weight= to specify the order of menu items, and the parent= to create a submenu item.

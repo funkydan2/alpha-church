@@ -2,10 +2,10 @@
 <!-- This partial provides both the <head> section and navigation menu -->
 <html>
 	<head>
-		<title>{{ .Site.Params.Meta.title }}</title>
+		<title>{{ .Site.Params.title }}</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+		{{ with .Site.Params.subtitle }}<meta name="description" content="{{ . }}">{{ end }}
 		{{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
 		{{ .Hugo.Generator }}
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
