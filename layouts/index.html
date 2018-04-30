@@ -11,13 +11,14 @@
 			<!-- Main -->
 				<section id="main" class="container">
 
-					{{ if .Site.Params.Landing.Feature.title }}
+					{{ if .Site.Params.Landing.Services.title }}
 					<section class="box special">
 						<header class="major">
-							<h2>{{ .Site.Params.Landing.Feature.title }}</h2>
-							<p>{{ .Site.Params.Landing.Feature.text | markdownify }}</p>
+							<h2>{{ .Site.Params.Landing.Services.title }}</h2>
+							<p>{{ .Site.Params.Landing.Services.text | markdownify }}</p>
 						</header>
-						<span class="image featured"><img src="{{ .Site.Params.Landing.Feature.image }}" alt="" /></span>
+						<!--<span class="image featured"><img src="{{ .Site.Params.Landing.Feature.image }}" alt="" /></span>-->
+						<!--This is where I need to put in Google Map magic-->
 					</section>
 					{{ end }}
 
