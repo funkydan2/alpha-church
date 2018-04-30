@@ -33,6 +33,11 @@ customCSS = ["", ""]
     url = "/leaders"
     weight = 2
 
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact"
+    weight = 3
+
 # Paramaters for the whole site
 [params]
   title = "Alpha Church"
@@ -42,3 +47,17 @@ customCSS = ["", ""]
   #Paramaters for the home/landing page
   [params.landing.banner]
     image = "/img/banner.jpg"
+
+    [[params.landing.banner.button]]
+      url = "/contact"
+      text = "Get in touch"
+      type = "special"
+
+    [[params.landing.banner.button]]
+      url = "/about"
+      text = "Find out more"
+
+  [params.landing.feature]
+    title = "A great church near you."
+    text = "Grow in love. Go in love."
+    image = ""

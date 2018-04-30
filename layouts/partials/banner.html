@@ -2,7 +2,8 @@
   <h2>{{ .Site.Params.title }}</h2>
   <p>{{ .Site.Params.subtitle }}</p>
   <ul class="actions">
-    <li><a href="#" class="button special">Sign Up</a></li>
-    <li><a href="#" class="button">Learn More</a></li>
+    {{ range .Site.Params.Landing.Banner.button }}
+      <li><a href="{{ .url }}" class="button {{ .type }}">{{ .text }}</a></li>
+    {{ end }}
   </ul>
 </section>

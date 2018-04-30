@@ -11,16 +11,15 @@
 			<!-- Main -->
 				<section id="main" class="container">
 
+					{{ if .Site.Params.Landing.Feature.title }}
 					<section class="box special">
 						<header class="major">
-							<h2>Introducing the ultimate mobile app
-							<br />
-							for doing stuff with your phone</h2>
-							<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br />
-							adipiscing nunc adipiscing. Condimentum turpis massa.</p>
+							<h2>{{ .Site.Params.Landing.Feature.title }}</h2>
+							<p>{{ .Site.Params.Landing.Feature.text}}</p>
 						</header>
-						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
+						<span class="image featured"><img src="{{ .Site.Params.Landing.Feature.image }}" alt="" /></span>
 					</section>
+					{{ end }}
 
 					<section class="box special features">
 						<div class="features-row">
