@@ -45,19 +45,51 @@ customCSS = ["", ""]
   author = "Daniel Saunders"
 
   #Paramaters for the home/landing page
-  [params.landing.banner]
-    image = "/img/banner.jpg"
+  [params.landing]
 
-    [[params.landing.banner.button]]
-      url = "/contact"
-      text = "Get in touch"
-      type = "special"
+    [params.landing.banner]
+      image = "/img/banner.jpg"
 
-    [[params.landing.banner.button]]
-      url = "/about"
-      text = "Find out more"
+      [[params.landing.banner.button]]
+        url = "/contact"
+        text = "Get in touch"
+        type = "special"
 
-  [params.landing.feature]
-    title = "A great church near you."
-    text = "Grow in love. Go in love."
-    image = "/img/freely-50111.jpg"
+        [[params.landing.banner.button]]
+        url = "/about"
+        text = "Find out more"
+
+    #Details for the box below the banner
+    [params.landing.feature]
+      title = "A great church near you."
+      text = "Jesus is the [Alpha and the Omega](https://ref.ly/Rev1.8). Alpha-Church is the *first* hugo theme built for churches."
+      image = "/img/freely-50111.jpg"
+
+    [params.landing.feature_icons]
+      #These feature icons look best if there's an even number of them.
+      enable = true
+
+      #Accent is a colour defined in the CSS file. Choose between 1 and 5
+      [[params.landing.feature_icons.square]]
+        icon = "fas fa-hands-helping"
+        accent = "1"
+        title = "I'm New"
+        text = "New to our church, [click here](/about) to find out more."
+
+      [[params.landing.feature_icons.square]]
+        icon = "fas fa-users"
+        accent = "2"
+        title = "Meet Jesus"
+        text = "We'd love you to meet Jesus."
+
+      [[params.landing.feature_icons.square]]
+        icon = "fas fa-comments"
+        accent = "5"
+        title = "Talk to us"
+        text = "We love to listen."
+
+      [[params.landing.feature_icons.square]]
+        icon = "fas fa-coffee"
+        accent = "3"
+        title = "Drink Coffee?"
+        text = "So do we!"
