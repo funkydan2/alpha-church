@@ -5,7 +5,9 @@
 				<section id="main" class="container">
 					<header>
 						<h2>{{ .Params.title }}</h2>
-						<p>{{ .Params.subtitle }}</p>
+						{{ if .Params.subtitle }}
+							<p>{{ .Params.subtitle }}</p>
+						{{ end }}
 					</header>
 					<div class="box">
 						{{ if .Params.feature_image }}

@@ -3,11 +3,11 @@ languageCode = "en-us"
 title = "Alpha Church"
 theme = "../.."
 
-[params]
+[menu]
 
-  [params.meta]
-    title = "Alpha Church"
-    subtitle = "Another Church Theme"
+[params]
+  title = "Alpha Church"
+  subtitle = "Another Church Theme"
 
   [params.landing.banner]
     image = "/img/banner.jpg"
