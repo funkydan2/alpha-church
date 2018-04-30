@@ -1,6 +1,5 @@
 # Alpha-Church by Daniel Saunders
-This theme is based on [Alpha by HTML5 UP](http://html5up.net) [@ajlkn](http://twitter.com/ajlkn)
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+This theme is based on [Alpha by HTML5 UP](http://html5up.net) [@ajlkn](http://twitter.com/ajlkn). Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
 A clean, super minimal responsive template geared towards churches. This theme includes a landing page, blog posts, sermon podcast, and some other data driven pages (e.g. 'about'). Sass sources are also included.
 
@@ -13,9 +12,9 @@ Feedback, bug reports, and comments are not only welcome, but strongly encourage
 
 ### Demo Images:
 *	[FreelyPhotos](https://freelyphotos.com)
-  - [Banner Image](https://freelyphotos.com/jesus/)
-  - [Feature Image](https://freelyphotos.com/cross-love-2/)
-  - [Old Bible](https://freelyphotos.com/old-bible-3/)
+  * [Banner Image](https://freelyphotos.com/jesus/)
+  * [Feature Image](https://freelyphotos.com/cross-love-2/)
+  * [Old Bible](https://freelyphotos.com/old-bible-3/)
 
 ###	Icons:
 *	[Font Awesome](http://fortawesome.github.com/Font-Awesome)
