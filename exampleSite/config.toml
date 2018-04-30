@@ -4,6 +4,20 @@ title = "Alpha Church"
 theme = "../.."
 
 [menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 2
+
+  [[menu.main]]
+    name = "Leaders"
+    parent = "About"
+    url = "/leaders"
 
 [params]
   title = "Alpha Church"
