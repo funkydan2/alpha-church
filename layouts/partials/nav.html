@@ -3,6 +3,7 @@
     <header id="header" {{ if .IsHome }} class="alt" {{ end }} >
       <h1><a href="/">{{ .Site.Params.title }}</a></h1>
 
+      {{ "<!-- Nav -->" | safeHTML }}
       <nav id="nav">
         <ul>
           {{ $currentPage := . }}

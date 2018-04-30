@@ -8,7 +8,7 @@
 {{ partial "nav" . }}
 {{ partial "banner" . }}
 
-			<!-- Main -->
+			{{ "<!-- Main -->" | safeHTML }}
 				<section id="main" class="container">
 
 					{{ if .Site.Params.Landing.Services.title }}
@@ -70,7 +70,7 @@
 
 				</section>
 
-			<!-- CTA -->
+			{{ "<!-- CTA -->" | safeHTML }}
 				<section id="cta">
 
 					<h2>Sign up for beta access</h2>
