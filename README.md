@@ -13,6 +13,8 @@ Feedback, bug reports, and comments are not only welcome, but strongly encourage
 
 ### Demo Images:
 *	[FreelyPhotos](https://freelyphotos.com)
+  - [Banner Image](https://freelyphotos.com/jesus/)
+  - [Feature Image](https://freelyphotos.com/cross-love-2/)
 
 ###	Icons:
 *	[Font Awesome](http://fortawesome.github.com/Font-Awesome)
