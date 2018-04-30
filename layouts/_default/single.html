@@ -1,0 +1,18 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>{{ .Params.title }}</h2>
+						<p>{{ .Params.subtitle }}</p>
+					</header>
+					<div class="box">
+						{{ if .Params.feature_image }}
+							<span class="image featured"><img src="{{ .Params.feature_image }}" alt="" /></span>
+						{{ end }}
+						{{ .Content }}
+						</div>
+					</div>
+				</section>
+{{ partial "footer" . }}

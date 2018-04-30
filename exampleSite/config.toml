@@ -1,0 +1,13 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Alpha Church"
+theme = "../.."
+
+[params]
+
+  [params.meta]
+    title = "Alpha Church"
+    subtitle = "Another Church Theme"
+
+  [params.landing.banner]
+    image = "/img/banner.jpg"
