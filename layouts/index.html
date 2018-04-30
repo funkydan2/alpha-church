@@ -22,17 +22,17 @@
 					{{ end }}
 
 					{{ if .Site.Params.Landing.Feature_icons.enable }}
-						{{ $squares := .Site.Params.Landing.Feature_icons.square }}
-						{{ $len := (len $squares) }}
+						{{ $tiles := .Site.Params.Landing.Feature_icons.tile }}
+						{{ $len := (len $tiles) }}
 						<section class="box special features">
 							<div class="features-row">
-								{{ range $index, $key := .Site.Params.Landing.Feature_icons.square}}
+								{{ range $index, $key := $tiles}}
 									<section>
 										<span class="icon major {{ $key.icon }} accent{{- $key.accent -}}"></span>
 										<h3>{{ $key.title }}</h3>
 										<p>{{ $key.text | markdownify }}</p>
 									</section>
-									{{ if (mod $index 2) and (lt (add $index 1) $len) }}
+									{{ if and (mod $index 2) (lt (add $index 1) $len) }}
 											</div>
 											<div class="features-row">
 									{{ end }}
@@ -41,32 +41,31 @@
 						</section>
 					{{ end }}
 
-					<div class="row">
-						<div class="6u 12u(narrower)">
+					{{ if .Site.Params.Landing.Feature_images.enable }}
+						{{ $tiles := .Site.Params.Landing.Feature_images.tile }}
+						{{ $len := (len $tiles) }}
+						<div class="row">
+							{{ range $index, $key := $tiles }}
+								<div class="6u 12u(narrower)">
 
-							<section class="box special">
-								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
-								<h3>Sed lorem adipiscing</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-								<ul class="actions">
-									<li><a href="#" class="button alt">Learn More</a></li>
-								</ul>
-							</section>
-
-						</div>
-						<div class="6u 12u(narrower)">
-
-							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-								<h3>Accumsan integer</h3>
-								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
-								<ul class="actions">
-									<li><a href="#" class="button alt">Learn More</a></li>
-								</ul>
-							</section>
-
-						</div>
+									<section class="box special">
+										<span class="image featured"><img src="{{ $key.image }}" alt="" /></span>
+										<h3>{{ $key.title }}</h3>
+										<p>{{ $key.text | markdownify }}</p>
+										{{ if $key.button_text }}
+											<ul class="actions">
+												<li><a href="{{ $key.url }}" class="button alt">{{ $key.button_text }}</a></li>
+											</ul>
+											{{ end }}
+										</section>
+									</div>
+									{{ if and (mod $index 2) (lt (add $index 1) $len) }}
+										</div>
+										<div class="row">
+									{{ end }}
+							{{ end }}
 					</div>
+					{{ end }}
 
 				</section>
 

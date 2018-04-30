@@ -70,26 +70,44 @@ customCSS = ["", ""]
       enable = true
 
       #Accent is a colour defined in the CSS file. Choose between 1 and 5
-      [[params.landing.feature_icons.square]]
+      [[params.landing.feature_icons.tile]]
         icon = "fas fa-hands-helping"
         accent = "1"
         title = "I'm New"
         text = "New to our church, [click here](/about) to find out more."
 
-      [[params.landing.feature_icons.square]]
+      [[params.landing.feature_icons.tile]]
         icon = "fas fa-users"
         accent = "2"
         title = "Meet Jesus"
         text = "We'd love you to meet Jesus."
 
-      [[params.landing.feature_icons.square]]
+      [[params.landing.feature_icons.tile]]
         icon = "fas fa-comments"
         accent = "5"
         title = "Talk to us"
         text = "We love to listen."
 
-      [[params.landing.feature_icons.square]]
+      [[params.landing.feature_icons.tile]]
         icon = "fas fa-coffee"
         accent = "3"
         title = "Drink Coffee?"
         text = "So do we!"
+
+    [params.landing.feature_images]
+      #These feature images look best if there's an even number of them.
+      enable = true
+
+      [[params.landing.feature_images.tile]]
+        image = ""
+        title = "Childrens' Ministry"
+        text = "A Church for the family."
+        url = "/kids"
+        button_text = "Learn more"
+
+      [[params.landing.feature_images.tile]]
+        image = ""
+        title = "Drink Coffee?"
+        text = "So do we!"
+        url = "#"
+        button_text="Learn more"
