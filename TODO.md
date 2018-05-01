@@ -1,6 +1,9 @@
 # Things to do
 - [x] Breakup pages into partials
-- [x]  Make index.html configurable via .toml
+- [ ]  Make index.html configurable via .toml
+  - [x] Social/feed icons config
+  - [x] Copyright notice
+  - [x] Acknowledgements
 - [ ] Add a google maps shortcode type thing!
   - [ ] [This theme](https://github.com/devcows/hugo-universal-theme) has maps! Check out its contact page
   - [ ] Consider putting a map on both the landing page, and, like the [Universal theme](https://github.com/devcows/hugo-universal-theme), on any page that has *id=map* in its frontmatter.
