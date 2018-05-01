@@ -10,4 +10,4 @@
   - [ ] Podcast RSS
 - [x] Find out how to pass through conditions in HTML comments. Ans: use ` to escape the string rather than "
 - [ ] Make the screen/overlay of the background image darker or give it a pattern
-- [ ] Markdownify the Site title (so you could have Alpha *Church*)
+- [x] ~~Markdownify the Site title (so you could have Alpha *Church*)~~ This didn't work easily.
