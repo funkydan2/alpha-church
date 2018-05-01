@@ -1,0 +1,15 @@
+{{ if .Site.Params.latitude }}
+  {{ if .Site.Params.longitude }}
+      {{ "<!-- Google Map -->" | safeHTML }}
+      <span style="display: none; visibility: hidden">
+        <input id="gmap-lat" value="{{ .Site.Params.latitude }}" />
+        <input id="gmap-lng" value="{{ .Site.Params.longitude }}" />
+        {{ if isset .Site.Params "direction" }}
+          <input id="gmap-dir" value="{{ .Site.Params.direction }}" />
+        {{ else }}
+          <input id="gmap-dir" value="{{ .Site.Params.latitude }},{{ .Site.Params.longitude }}" />
+        {{ end }}
+      </span>
+      <span id="map" class="box special"></span>
+  {{ end }}
+{{ end }}

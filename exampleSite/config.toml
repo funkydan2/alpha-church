@@ -44,6 +44,12 @@ customCSS = ["", ""]
   subtitle = "Another Church Theme"
   author = "Daniel Saunders"
 
+  # For Google maps
+  latitude = "48.8529682"
+  longitude = "2.3477081"
+  direction = "" #Cathédrale Notre-Dame de Paris
+  google_maps_api_key = ""
+
   #Paramaters for the home/landing page
   [params.landing]
 
