@@ -36,12 +36,11 @@
 {{ `<!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->` | safeHTML}}
 <script src="/js/main.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-{{ if .Site.Params.googleMapsApiKey }}
-<script src="https://maps.googleapis.com/maps/api/js?key={{.Site.Params.google_maps_api_key}}&v=3.exp"></script>
+{{ with .Site.Params.Map.google_maps_api_key }}
+<script src="https://maps.googleapis.com/maps/api/js?key={{.}}&v=3.exp"></script>
 {{ else }}
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 {{ end }}
-<script src="{{ .Site.BaseURL }}js/hpneo.gmaps.js"></script>
 <script src="{{ .Site.BaseURL }}js/gmaps.init.js"></script>
 </body>
 </html>
