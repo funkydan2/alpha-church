@@ -1283,6 +1283,7 @@
 				@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
 				color: _palette(fg-light);
 				opacity: 0.35;
+				border-bottom: none;
 
 				&:hover {
 					opacity: 0.75;
