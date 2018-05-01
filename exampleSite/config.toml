@@ -73,26 +73,26 @@ customCSS = ["", ""]
       [[params.landing.feature_icons.tile]]
         icon = "fas fa-hands-helping"
         accent = "1"
-        title = "I'm New"
-        text = "New to our church, [click here](/about) to find out more."
+        title = "Serve"
+        text = "Growing disciples who serve our community."
 
       [[params.landing.feature_icons.tile]]
         icon = "fas fa-users"
         accent = "2"
-        title = "Meet Jesus"
-        text = "We'd love you to meet Jesus."
+        title = "Meet"
+        text = "Meeting together to hear God's Word."
 
       [[params.landing.feature_icons.tile]]
         icon = "fas fa-comments"
         accent = "5"
-        title = "Talk to us"
-        text = "We love to listen."
+        title = "Speak"
+        text = "Speaking encouragement to one-another."
 
       [[params.landing.feature_icons.tile]]
-        icon = "fas fa-coffee"
+        icon = "fas fa-heartbeat"
         accent = "3"
-        title = "Drink Coffee?"
-        text = "So do we!"
+        title = "Loved"
+        text = "Knowing God's love in Christ"
 
     [params.landing.feature_images]
       #These feature images look best if there's an even number of them.
@@ -101,13 +101,13 @@ customCSS = ["", ""]
       [[params.landing.feature_images.tile]]
         image = "/img/freely-10057.jpg"
         title = "Childrens' Ministry"
-        text = "A Church for the family."
+        text = "A church for the family."
         url = "/kids"
         button_text = "Learn more"
 
       [[params.landing.feature_images.tile]]
-        image = ""
-        title = "Drink Coffee?"
-        text = "So do we!"
+        image = "/img/freely-26905.jpg"
+        title = "Midweek Ministries"
+        text = "Want to study God's Word?"
         url = "#"
-        button_text="Learn more"
+        button_text="Join a group today!"
