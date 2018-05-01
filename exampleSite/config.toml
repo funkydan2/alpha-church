@@ -113,9 +113,9 @@ customCSS = ["", ""]
         button_text="Join a group today!"
 
       [params.landing.footer]
-        copyright = "CC0"
-        twitter = "tgc"
-        facebook = ""
-        instagram = ""
+        copyright = "[CC0 (public domain)](http://creativecommons.org/publicdomain/zero/1.0/)"
+        twitter = "spurgeon"
+        facebook = "TGCaustralia"
+        instagram = "youversion"
         googleplus = ""
-        podcast = ""
+        podcast = "http://feeds.speaklife.org.uk/TheEvangelistsPodcast"
