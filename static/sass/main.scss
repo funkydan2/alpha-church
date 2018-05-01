@@ -1281,6 +1281,7 @@
 		.icons {
 			a {
 				@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
+				color: _palette(fg-light);
 				opacity: 0.35;
 
 				&:hover {

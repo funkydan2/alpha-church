@@ -2926,6 +2926,7 @@ body.landing #main {
   -webkit-transition: opacity 0.2s ease-in-out;
   -ms-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
+  color: #999;
   opacity: 0.35;
 }
 #footer .icons a:hover {
