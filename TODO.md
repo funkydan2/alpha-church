@@ -1,11 +1,13 @@
 # Things to do
 - [x] Breakup pages into partials
-- [x
-] Make index.html configurable via .toml
+- [x]  Make index.html configurable via .toml
 - [ ] Add a google maps shortcode type thing!
-- [x] User configurable multi-level menu.
-  - https://gohugo.io/templates/menu-templates/
+  - [ ] [This theme](https://github.com/devcows/hugo-universal-theme) has maps! Check out it's contact page
+  - [ ] Consider putting a map on both the landing page, and, like the [Universal theme](https://github.com/devcows/hugo-universal-theme), on any page that has *id=map* on it.
+- [x] User configurable multi-level menu. (https://gohugo.io/templates/menu-templates/)
 - [x] Include Google Analytics
 - [ ] Podcast page/content type
   - [ ] Podcast RSS
-- [ ] Find out how to pass through conditions in HTML comments (safeHTML doesn't work)
+- [x] Find out how to pass through conditions in HTML comments. Ans: use ` to escape the string rather than "
+- [ ] Make the screen/overlay of the background image darker or give it a pattern
+- [ ] Markdownify the Site title (so you could have Alpha *Church*)

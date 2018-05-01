@@ -8,9 +8,8 @@
 		{{ with .Site.Params.subtitle }}<meta name="description" content="{{ . }}">{{ end }}
 		{{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
 		{{ .Hugo.Generator }}
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		{{` <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->` | safeHTML }}
 		<link rel="stylesheet" href="/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		{{- range .Site.Params.Assets.customCSS -}}
     	<link rel='stylesheet' href='{{ . | absURL }}'>
   	{{- end -}}
