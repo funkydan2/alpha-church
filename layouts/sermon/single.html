@@ -26,7 +26,7 @@
 							{{ range $index, $key:= .Params.tags }}
 							{{ if $index }}, {{ end }}
 								{{ if gt (len $key) 0 }}
-							  	<a href="/tags/{{$key | urlize }}/">#{{ $key }}</a>
+							  	<a href="{{ .Site.baseURL }}/tags/{{$key | urlize }}/">#{{ $key }}</a>
 								{{ end }} {{/* if gt len */}}
 							{{ end }} {{/* range */}}
 						</p>
