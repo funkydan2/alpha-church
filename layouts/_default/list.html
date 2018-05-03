@@ -1,0 +1,31 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+
+			{{ "<!-- Main -->" | safeHTML }}
+				<section id="main" class="container">
+					<header>
+						<h2>{{ .Type | pluralize | title }}</h2>
+					</header>
+
+            {{ range (.Paginate (.Data.Pages.GroupByDate "2006")).PageGroups  }}
+              {{ range .Pages }}
+                <div class="box special">
+                  <a href="{{ .Permalink }}">{{ if .Draft }}DRAFT: {{end}}{{ .Title | markdownify }}</a>
+                  <time class="date-meta">({{ .Date.Format "Jan 2, 2006" }})</time>
+                  <br>
+                  {{ .Summary | plainify | safeHTML }}
+                  {{ if .Truncated }}
+                    <a class="button is-link" href="{{ .Permalink }}" style="height:28px">
+                        Read more
+                        <span class="icon is-small">
+                          <i class="fa fa-angle-double-right"></i>
+                        </span>
+                    </a>
+                  {{ end }}
+                </div>
+              {{ end }}
+						{{ end }}
+
+          {{ template "_internal/pagination.html" . }}
+				</section>
+{{ partial "footer" . }}
