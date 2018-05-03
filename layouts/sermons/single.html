@@ -1,0 +1,26 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>{{ .Params.title }}</h2>
+						{{ if .Params.subtitle }}
+							<p>{{ .Params.subtitle }}</p>
+						{{ end }}
+					</header>
+					<div class="box">
+						{{ if .Params.feature_image }}
+							<span class="image featured"><img src="{{ .Params.feature_image }}" alt=""></span>
+						{{ end }}
+            {{ with .Params.audio }}
+              <audio src="{{ . }}" preload="auto" controls>
+                Your browser doesn't support embedded audio.
+              </audio>
+              <a href="{{ . }}"><i class="fas fa-download"></i>Download</a>
+            {{ end }} {{/* if .audio */}}
+						{{ .Content }}
+						</div>
+					</div>
+				</section>
+{{ partial "footer" . }}
