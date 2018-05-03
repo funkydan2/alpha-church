@@ -5,8 +5,8 @@
 				<section id="main" class="container">
 					<header>
 						<h2>{{ .Params.title }}</h2>
-						{{ if .Params.subtitle }}
-							<p>{{ .Params.subtitle }}</p>
+						{{ with .Params.passage }}
+							<p>{{ . }}</p>
 						{{ end }}
 					</header>
 					<div class="box">
@@ -14,12 +14,22 @@
 							<span class="image featured"><img src="{{ .Params.feature_image }}" alt=""></span>
 						{{ end }}
             {{ with .Params.audio }}
-              <audio src="{{ . }}" preload="auto" controls>
+							{{ $audio_name_arr := split . "." }}
+							{{ $audio_type := index $audio_name_arr 1 }}
+              <audio src="{{ . }}" preload="auto" type="{{ $audio_type }}" controls>
                 Your browser doesn't support embedded audio.
               </audio>
-              <a href="{{ . }}"><i class="fas fa-download"></i>Download</a>
+							<p><a href="{{ . }}"><i class="fas fa-download"></i>Download</a></p>
             {{ end }} {{/* if .audio */}}
 						{{ .Content }}
+						<p>Topics:
+							{{ range $index, $key:= .Params.tags }}
+							{{ if $index }}, {{ end }}
+								{{ if gt (len $key) 0 }}
+							  	<a href="/tags/{{$key | urlize }}/">#{{ $key }}</a>
+								{{ end }} {{/* if gt len */}}
+							{{ end }} {{/* range */}}
+						</p>
 						</div>
 					</div>
 				</section>

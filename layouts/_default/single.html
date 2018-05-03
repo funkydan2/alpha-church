@@ -5,13 +5,13 @@
 				<section id="main" class="container">
 					<header>
 						<h2>{{ .Params.title }}</h2>
-						{{ if .Params.subtitle }}
-							<p>{{ .Params.subtitle }}</p>
+						{{ with .Params.subtitle }}
+							<p>{{ . }}</p>
 						{{ end }}
 					</header>
 					<div class="box">
-						{{ if .Params.feature_image }}
-							<span class="image featured"><img src="{{ .Params.feature_image }}" alt=""></span>
+						{{ with .Params.feature_image }}
+							<span class="image featured"><img src="{{ . }}" alt=""></span>
 						{{ end }}
 						{{ .Content }}
 						</div>
