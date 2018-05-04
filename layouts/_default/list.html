@@ -7,10 +7,8 @@
 						<h2>{{ .Type | pluralize | title }}</h2>
 					</header>
 
-            {{ range (.Paginate (.Data.Pages.GroupByDate "2006")).PageGroups  }}
-							<div class="box special">
-								<h3>{{ .Key }}</h3>
-              {{ range .Pages }}
+							<div class="box">
+              {{ range .Paginator.Pages }}
 									<div class="row no-collapse 50% uniform">
 										<div class="6u">
 	                  	<a href="{{ .Permalink }}">{{ if .Draft }}DRAFT: {{end}}{{ .Title | markdownify }}</a>
@@ -21,7 +19,7 @@
 		                    <a class="button small alt" href="{{ .Permalink }}" >
 		                        Read more<i class="fas fa-angle-double-right"></i>
 		                    </a>
-		                  {{ end }}
+		                  {{ end }} {{/* if */}}
 										</div>
 									{{ with .Params.feature_image }}
 									  <div class="6u">
@@ -29,10 +27,8 @@
                 		</div>
               		{{ end }} {{/* with */}}
 								</div>
-
 						{{ end }} {{/* range */}}
-						</div>
-					{{ end }}
+					</div>
           {{ template "_internal/pagination.html" . }}
 				</section>
 {{ partial "footer" . }}
