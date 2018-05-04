@@ -10,7 +10,7 @@
           {{ range .Site.Menus.main }}
             {{ if .HasChildren }}
                 <li>
-                    <a href="{{ .URL }}" class="icon fa-angle-down">
+                    <a href="{{ .URL }}"><i class="fas fa-angle-down"></i>
                         {{ .Name }}
                     </a>
                     <ul>
