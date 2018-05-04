@@ -11,16 +11,17 @@
 - [x] User configurable multi-level menu. (https://gohugo.io/templates/menu-templates/)
 - [x] Include Google Analytics
 - [ ] Podcast page/content type
-  - [ ] Single Page
+  - [x] Single Page
   - [ ] List Page
-    - [ ] Left align text
-    - [ ] Right align 'feature image'
+    - [x] Left align text
+    - [x] Right align 'feature image'
+    - [x] Should the text be full width if there's no image?
+    - [ ] Fix the CSS so <ul class="pagination"> looks good! (Probably link it to class="copyright")
   - [ ] Podcast RSS
-- [x] Find out how to pass through conditions in HTML comments. Ans: use ` to escape the string rather than "
+- [x] Find out how to pass through conditions in HTML comments. Ans: use `` to escape the string rather than "
 - [ ] Make the screen/overlay of the background image darker or give it a pattern
 - [x] ~~Markdownify the Site title (so you could have Alpha *Church*)~~ This didn't work easily.
 
 ## Version 2
 
 * [ ] Break up home page (index.html) into widgets
-

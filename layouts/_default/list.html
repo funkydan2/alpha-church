@@ -9,6 +9,7 @@
 
 							<div class="box">
               {{ range .Paginator.Pages }}
+								{{ if .Params.feature_image }}
 									<div class="row no-collapse 50% uniform">
 										<div class="6u">
 	                  	<a href="{{ .Permalink }}">{{ if .Draft }}DRAFT: {{end}}{{ .Title | markdownify }}</a>
@@ -21,14 +22,26 @@
 		                    </a>
 		                  {{ end }} {{/* if */}}
 										</div>
-									{{ with .Params.feature_image }}
 									  <div class="6u">
-											<span class="image fit"><img src="{{ . }}"></span>
+											<span class="image fit"><img src="{{ .Params.feature_image }}"></span>
                 		</div>
-              		{{ end }} {{/* with */}}
 								</div>
+								{{ else }}
+								<div>
+									<a href="{{ .Permalink }}">{{ if .Draft }}DRAFT: {{end}}{{ .Title | markdownify }}</a>
+									<time class="date-meta">({{ .Date.Format "Jan 2, 2006" }})</time>
+									<br>
+									{{ .Summary | plainify | safeHTML }}
+									{{ if .Truncated }}
+										<a class="button small alt" href="{{ .Permalink }}" >
+												Read more<i class="fas fa-angle-double-right"></i>
+										</a>
+									{{ end }} {{/* if */}}
+								</div>
+								{{ end }}{{/* if */}}
+								<hr />
 						{{ end }} {{/* range */}}
+						{{ template "_internal/pagination.html" . }}
 					</div>
-          {{ template "_internal/pagination.html" . }}
 				</section>
 {{ partial "footer" . }}
