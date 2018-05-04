@@ -34,9 +34,26 @@ customCSS = ["", ""]
     weight = 2
 
   [[menu.main]]
+    name = "Resources"
+    url = "#"
+    weight = 3
+
+  [[menu.main]]
+    name = "Sermons"
+    url = "/sermon"
+    parent = "Resources"
+    weight = 1
+
+  [[menu.main]]
+    name = "Blog"
+    url = "/post"
+    parent = "Resources"
+    weight = 2
+
+  [[menu.main]]
     name = "Contact"
     url = "/contact"
-    weight = 3
+    weight = 4
 
 # Paramaters for the whole site
 [params]
