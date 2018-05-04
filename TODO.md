@@ -1,5 +1,5 @@
 # Things to do
-- [x] Breakup pages into partials
+- [x] Break pages into partials
 - [ ] Make index.html configurable via .toml
   - [x] Social/feed icons config
   - [x] Copyright notice
@@ -11,6 +11,10 @@
 - [x] User configurable multi-level menu. (https://gohugo.io/templates/menu-templates/)
 - [x] Include Google Analytics
 - [ ] Podcast page/content type
+  - [ ] Single Page
+  - [ ] List Page
+    - [ ] Left align text
+    - [ ] Right align 'feature image'
   - [ ] Podcast RSS
 - [x] Find out how to pass through conditions in HTML comments. Ans: use ` to escape the string rather than "
 - [ ] Make the screen/overlay of the background image darker or give it a pattern
@@ -18,5 +22,5 @@
 
 ## Version 2
 
-* [ ] Break up the home page into widgets
+* [ ] Break up home page (index.html) into widgets
 
