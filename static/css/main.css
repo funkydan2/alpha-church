@@ -2458,7 +2458,7 @@ audio {
   border: 0;
   height: 3em;
   line-height: 3em;
-  padding: 0 2em;
+  vertical-align: middle;
   text-decoration: none;
   white-space: nowrap;
 }

@@ -16,13 +16,14 @@
             {{ with .Params.audio }}
 							{{ $audio_name_arr := split . "." }}
 							{{ $audio_type := index $audio_name_arr 1 }}
-              <audio src="{{ . }}" preload="auto" type="{{ $audio_type }}" controls class="fit">
-                Your browser doesn't support embedded audio.
-              </audio>
+              	<audio controls>
+									<source src="{{ . }}" preload="auto" type="{{ $audio_type }}">
+                	Your browser doesn't support embedded audio.
+              	</audio>
             {{ end }} {{/* if .audio */}}
 						{{ .Content }}
 						{{ with .Params.audio }}
-							<p><a href="{{ . }}" class="button special small"><i class="icon fas fa-download"></i>Download</a></p>
+							<p><a href="{{ . }}" class="button special small" download><i class="icon fas fa-download"></i>Download</a></p>
 						{{ end }} {{/* with */}}
 						<p>Topics:
 							{{ range $index, $key:= .Params.tags }}
