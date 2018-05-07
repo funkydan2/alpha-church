@@ -1,7 +1,9 @@
 # Things to do
 - [x] Add a google maps shortcode type thing!
   * [x] [This theme](https://github.com/devcows/hugo-universal-theme) has maps! Check out its contact page
-  * [ ] Consider putting a map on both the landing page, and, like the [Universal theme](https://github.com/devcows/hugo-universal-theme), on any page that has *id=map* in its frontmatter.
+  * [ ] Create a shortcode that displays a google map {{ googlemap }}
+    * [ ] By default, centred on the location set in `config.toml`,
+    * [ ] Though maybe if an optional location is passed...it could display that??
   * [ ] Create a CSS Box for the map to live in that's taller than 'box special'
 - [ ] Podcast page/content type
   * [x] Single Page
@@ -9,7 +11,7 @@
       * [ ] ~~Make it the same height as the download button~~
       * [ ] ~~Put both on the same line~~
       * [ ] Is it worth looking at [audio.js](https://kolber.github.io/audiojs/) or [Plyr](https://plyr.io/)?
-  * [ ] List Page
+  * [x] List Page
     * [x] Left align text
     * [x] Right align 'feature image'
     * [x] Should the text be full width if there's no image?
