@@ -65,9 +65,9 @@ customCSS = ["", ""]
 
   [params.map]
     # For Google maps
-    latitude = "48.85267"
-    longitude = "2.3471036"
-    zoom = "20"
+    latitude = "48.8530"
+    longitude = "2.3498"
+    zoom = "18"
 
   #Paramaters for the home/landing page
   [params.landing]
@@ -87,7 +87,7 @@ customCSS = ["", ""]
     #Details for the box below the banner
     [params.landing.services]
       title = "Church on Sunday"
-      text = "We meet at 5 am and 2 pm at 6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris, France."
+      text = "We meet at 5 am and 2 pm at [6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris](https://www.openstreetmap.org/way/201611261)."
       map_location = "Cathédrale Notre-Dame de Paris"
 
     [params.landing.feature_icons]
