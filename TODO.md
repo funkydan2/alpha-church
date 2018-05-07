@@ -5,9 +5,10 @@
   * [ ] Create a CSS Box for the map to live in that's taller than 'box special'
 - [ ] Podcast page/content type
   * [x] Single Page
-    * [ ] CSS for the Audio player.
-      * [ ] Make it the same height as the download button
-      * [ ] Put both on the same line
+    * [x] CSS for the Audio player.
+      * [ ] ~~Make it the same height as the download button~~
+      * [ ] ~~Put both on the same line~~
+      * [ ] Is it worth looking at [audio.js](https://kolber.github.io/audiojs/) or [Plyr](https://plyr.io/)?
   * [ ] List Page
     * [x] Left align text
     * [x] Right align 'feature image'
