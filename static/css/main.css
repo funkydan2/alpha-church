@@ -2443,6 +2443,26 @@ input[type="button"]:disabled,
   opacity: 0.25;
 }
 
+/* Audio */
+audio {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  display: inline-block;
+  border-radius: 6px;
+  border: 0;
+  height: 3em;
+  line-height: 3em;
+  padding: 0 2em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
 /* Header */
 #page-wrapper {
   padding-top: 3em;
