@@ -8,7 +8,9 @@
 					</header>
 
 							<div class="box">
-              {{ range .Paginator.Pages }}
+							{{ $pages := .Paginator.Pages }}
+							{{ $len := (len $pages) }}
+              {{ range $index, $key := $pages }}
 								{{ if .Params.feature_image }}
 									<div class="row no-collapse 50% uniform">
 										<div class="6u">
@@ -39,7 +41,9 @@
 									{{ end }} {{/* if */}}
 								</div>
 								{{ end }}{{/* if */}}
-								<hr />
+								{{ if lt (add $index 1) $len }}
+									<hr />
+								{{ end }}{{/* if */}}
 						{{ end }} {{/* range */}}
 						{{ template "_internal/pagination.html" . }}
 					</div>

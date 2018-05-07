@@ -13,6 +13,7 @@
     * [x] Right align 'feature image'
     * [x] Should the text be full width if there's no image?
     * [x] Fix the CSS so <ul class="pagination"> looks good!
+    * [x] Remove horizontal rule for last entry.
   * [ ] Podcast RSS
 - [ ] Make the screen/overlay of the background image darker or give it a pattern
 - [ ] [Submit to Theme list](https://github.com/gohugoio/hugoThemes/blob/master/README.md)
