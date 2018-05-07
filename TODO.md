@@ -3,7 +3,7 @@
   - [ ] Why not [Open Street Maps](https://leafletjs.com/examples/quick-start/)?
   * [x] [This theme](https://github.com/devcows/hugo-universal-theme) has maps! Check out its contact page
   * [ ] Create a shortcode that displays a google map {{ googlemap }}
-    * [ ] By default, centred on the location set in `config.toml`,
+    * [x] By default, centred on the location set in `config.toml`,
     * [ ] Though maybe if an optional location is passed...it could display that??
   * [ ] Fix CSS for the map so that it's height is set to 4:3
 - [ ] Podcast page/content type
