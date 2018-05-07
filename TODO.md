@@ -1,6 +1,6 @@
 # Things to do
 - [x] Add a google maps shortcode type thing!
-  - [ ] Why not [Open Street Maps](https://leafletjs.com/examples/quick-start/)?
+  - [x] Why not [Open Street Maps](https://leafletjs.com/examples/quick-start/)?
   * [x] [This theme](https://github.com/devcows/hugo-universal-theme) has maps! Check out its contact page
   * [ ] Create a shortcode that displays a google map {{ googlemap }}
     * [x] By default, centred on the location set in `config.toml`,

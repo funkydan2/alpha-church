@@ -68,8 +68,6 @@ customCSS = ["", ""]
     latitude = "48.85267"
     longitude = "2.3471036"
     zoom = "20"
-    direction = "" #Cathédrale Notre-Dame de Paris
-    google_maps_api_key = "AIzaSyC-fM6ImQsM1CLxNzcMBQRlK1XXnJdSqHI"
 
   #Paramaters for the home/landing page
   [params.landing]
