@@ -16,7 +16,7 @@
     - [x] Left align text
     - [x] Right align 'feature image'
     - [x] Should the text be full width if there's no image?
-    - [ ] Fix the CSS so <ul class="pagination"> looks good! (Probably link it to class="copyright")
+    - [x] Fix the CSS so <ul class="pagination"> looks good!
   - [ ] Podcast RSS
 - [x] Find out how to pass through conditions in HTML comments. Ans: use `` to escape the string rather than "
 - [ ] Make the screen/overlay of the background image darker or give it a pattern
