@@ -2,7 +2,7 @@
 - [x] Add a google maps shortcode type thing!
     - [x] Why not [Open Street Maps](https://leafletjs.com/examples/quick-start/)?
     - [x] [This theme](https://github.com/devcows/hugo-universal-theme) has maps! Check out its contact page
-    - [ ] Create a shortcode that displays a google map {{ openstreetmap }}
+    - [ ] Create a shortcode that displays a google map `{{ openstreetmap }}`
       * [x] By default, centred on the location set in `config.toml`,
       - [ ] Though maybe if an optional location is passed...it could display that??
     - [ ] Fix CSS for the map so that it's height is set to 4:3
@@ -16,12 +16,12 @@
         - [ ] ~~Make it the same height as the download button~~
         - [ ] ~~Put both on the same line~~
     - [x] List Page
-      * [x] Left align text
+      - [x] Left align text
       - [x] Right align 'feature image'
       - [x] Should the text be full width if there's no image?
-      - [x] Fix the CSS so <ul class="pagination"> looks good!
+      - [x] Fix the CSS so `<ul class="pagination">` looks good!
       - [x] Remove horizontal rule for last entry.
-  - [ ] Podcast RSS
+  - [ ] Podcast RSS ([see here?](https://discourse.gohugo.io/t/need-to-create-a-podcast-friendly-rss-feed/1727/12))
 - [ ] Make the screen/overlay of the background image darker or give it a pattern
 - [ ] [Submit to Theme list](https://github.com/gohugoio/hugoThemes/blob/master/README.md)
 
@@ -37,5 +37,5 @@
 - [x] ~~Markdownify the Site title (so you could have Alpha *Church*)~~ This didn't work easily.
 
 ## Version 2
-* [ ] Break up home page (index.html) into widgets
-* [ ] Look at [audio.js](https://kolber.github.io/audiojs/) or [Plyr](https://plyr.io/) for sermon podcast player.
+- [ ] Break up home page (index.html) into widgets
+- [ ] Look at [audio.js](https://kolber.github.io/audiojs/) or [Plyr](https://plyr.io/) for sermon podcast player.
