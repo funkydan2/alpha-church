@@ -13,8 +13,8 @@
 - [ ] Podcast page/content type
     - [x] Single Page
       - [x] CSS for the Audio player.
-  - [ ] ~~Make it the same height as the download button~~
-  - [ ] ~~Put both on the same line~~
+        - [ ] ~~Make it the same height as the download button~~
+        - [ ] ~~Put both on the same line~~
     - [x] List Page
       * [x] Left align text
       - [x] Right align 'feature image'
