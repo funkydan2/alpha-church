@@ -1,15 +1,24 @@
 # Things to do
 - [x] Add a google maps shortcode type thing!
-    - [x] Why not [Open Street Maps](https://leafletjs.com/examples/quick-start/)?
-    - [x] [This theme](https://github.com/devcows/hugo-universal-theme) has maps! Check out its contact page
-    - [ ] Create a shortcode that displays a google map `{{ openstreetmap }}`
-      * [x] By default, centred on the location set in `config.toml`,
-      - [ ] Though maybe if an optional location is passed...it could display that??
-    - [ ] Fix CSS for the map so that it's height is set to 4:3
-  - [ ] More 'social' links
-      - [ ] Youtube
-      - [ ] Vimeo
-      - [ ] ?? What else are churches using?
+  - [x] Why not [Open Street Maps](https://leafletjs.com/examples/quick-start/)?
+  - [x] [This theme](https://github.com/devcows/hugo-universal-theme) has maps! Check out its contact page
+  - [x] Create a shortcode that displays a google map `{{ osmap }}`
+    * [x] By default, centred on the location set in `config.toml`,
+  - [ ] Fix CSS for the map so that it's height is set to 4:3
+- [ ] Move version control of libraries (css and javascript) to /data/dependencies.toml ( [see this example](https://github.com/gcushen/hugo-academic/blob/master/data/sri.toml))
+  - [ ] Remove local dependencies and use their https://cdnjs.com Version
+    - [ ] jQuery
+    - [ ] jQuery.dropotron
+    - [ ] scrollgress
+    - [ ] Skel
+    - [ ] leafletjs
+    - [ ] fontawesome
+    - [ ] (Make sure I implement SHA checking!)
+- [ ] More 'social' links
+  - [ ] Youtube
+  - [ ] Vimeo
+  - [ ] ?? What else are churches using?
+  - [ ] Don't specify type - let users put in their list and range through it!
 - [ ] Podcast page/content type
     - [x] Single Page
       - [x] CSS for the Audio player.
@@ -39,3 +48,4 @@
 ## Version 2
 - [ ] Break up home page (index.html) into widgets
 - [ ] Look at [audio.js](https://kolber.github.io/audiojs/) or [Plyr](https://plyr.io/) for sermon podcast player.
+- [ ] Allow the map shortcode to display other locations by passing lat/long parameters
