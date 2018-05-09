@@ -11,7 +11,8 @@
     - [ ] jQuery.dropotron
     - [ ] scrollgress
     - [ ] Skel
-    - [ ] leafletjs
+    - [ ] util
+    - [ ] leafletjs (js and css)
     - [ ] fontawesome
     - [ ] (Make sure I implement SHA checking!)
 - [ ] More 'social' links
