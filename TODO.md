@@ -5,17 +5,6 @@
   - [x] Create a shortcode that displays a google map `{{ osmap }}`
     * [x] By default, centred on the location set in `config.toml`,
   - [ ] Fix CSS for the map so that it's height is set to 4:3
-- [ ] Move version control of libraries (css and javascript) to /data/dependencies.toml ( [see this example](https://github.com/gcushen/hugo-academic/blob/master/data/sri.toml))
-  - [x] Remove local dependencies and use their https://cdnjs.com Version
-    - [x] jQuery
-    - [x] jQuery.dropotron
-    - [x] scrollgress
-    - [x] Skel
-    - [x] leafletjs (js and css)
-    - [x] fontawesome
-    - [x] (Make sure I implement SHA checking!)
-- [x] More 'social' links
-  - [x] Don't specify type - let users put in their list and range through it!
 - [ ] Podcast page/content type
     - [x] Single Page
       - [x] CSS for the Audio player.
@@ -41,6 +30,17 @@
 - [x] User configurable multi-level menu. (https://gohugo.io/templates/menu-templates/)
 - [x] Find out how to pass through conditions in HTML comments. (Ans: escape the string with backticks, not inverted commas)
 - [x] ~~Markdownify the Site title (so you could have Alpha *Church*)~~ This didn't work easily.
+- [x] Move version control of libraries (css and javascript) to /data/dependencies.toml ( [see this example](https://github.com/gcushen/hugo-academic/blob/master/data/sri.toml))
+  - [x] Remove local dependencies and use their https://cdnjs.com Version
+    - [x] jQuery
+    - [x] jQuery.dropotron
+    - [x] scrollgress
+    - [x] Skel
+    - [x] leafletjs (js and css)
+    - [x] fontawesome
+    - [x] (Make sure I implement SHA checking!)
+- [x] More 'social' links
+  - [x] Don't specify type - let users put in their list and range through it!
 
 ## Version 2
 - [ ] Break up home page (index.html) into widgets
