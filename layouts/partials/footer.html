@@ -19,21 +19,20 @@
 
 </div>
 
-{{ "<!-- Scripts -->" | safeHTML }}
-<script src="{{ .Site.BaseURL }}js/jquery.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/jquery.dropotron.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/jquery.scrollgress.min.js"></script>
-<script src="{{ .Site.BaseURL }}js/skel.min.js"></script>
+{{ $js := .Site.Data.libs.js }}
+
+{{ "<!-- Remote Scripts -->" | safeHTML }}
+{{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/%s/jquery.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.jQuery.version $js.jQuery.integrity | safeHTML }}
+{{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery.dropotron/%s/jquery.dropotron.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.dropotron.version $js.dropotron.integrity | safeHTML }}
+{{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/scrollgress/%s/scrollgress.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.scrollgress.version $js.scrollgress.integrity | safeHTML }}
+{{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/skel/%s/skel.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.skel.version $js.skil.integrity | safeHTML }}
+{{ printf "<script defer src=\"//use.fontawesome.com/releases/v%s/js/all.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.fontawesome.version $js.fontawesome.integrity | safeHTML }}
+{{ printf "<script src=\"//unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
+
+{{ "<!-- Local Scripts -->" | safeHTML }}
 <script src="{{ .Site.BaseURL }}js/util.js"></script>
 {{ `<!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->` | safeHTML}}
-<script src="/js/main.js"></script>
-<!-- FontAwesome -->
-<script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
-<!-- OpenStreetMaps -->
-<!-- Make sure you put this AFTER Leaflet's CSS -->
-<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
-  integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
-  crossorigin=""></script>
+<script src="{{ .Site.BaseURL }}js/main.js"></script>
 <script src="{{ .Site.BaseURL }}js/osmaps.init.js"></script>
 </body>
 </html>

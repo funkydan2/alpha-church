@@ -6,15 +6,14 @@
     * [x] By default, centred on the location set in `config.toml`,
   - [ ] Fix CSS for the map so that it's height is set to 4:3
 - [ ] Move version control of libraries (css and javascript) to /data/dependencies.toml ( [see this example](https://github.com/gcushen/hugo-academic/blob/master/data/sri.toml))
-  - [ ] Remove local dependencies and use their https://cdnjs.com Version
-    - [ ] jQuery
-    - [ ] jQuery.dropotron
-    - [ ] scrollgress
-    - [ ] Skel
-    - [ ] util
-    - [ ] leafletjs (js and css)
-    - [ ] fontawesome
-    - [ ] (Make sure I implement SHA checking!)
+  - [x] Remove local dependencies and use their https://cdnjs.com Version
+    - [x] jQuery
+    - [x] jQuery.dropotron
+    - [x] scrollgress
+    - [x] Skel
+    - [x] leafletjs (js and css)
+    - [x] fontawesome
+    - [x] (Make sure I implement SHA checking!)
 - [x] More 'social' links
   - [x] Don't specify type - let users put in their list and range through it!
 - [ ] Podcast page/content type
