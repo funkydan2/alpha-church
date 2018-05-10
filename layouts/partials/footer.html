@@ -1,22 +1,14 @@
 {{ "<!-- Footer -->" | safeHTML}}
   <footer id="footer">
     <ul class="icons">
-      {{ with .Site.Params.Landing.Footer.twitter }}
-      <li><a href="https://twitter.com/{{ . }}"><i class="icon fab fa-twitter"><span class="label">Twitter</span></i></a></li>
-      {{ end }}
-      {{ with .Site.Params.Landing.Footer.facebook }}
-      <li><a href="https://facebook.com/{{ . }}"><i class="icon fab fa-facebook"><span class="label">Facebook</span></i></a></li>
-      {{ end }}
-      {{ with .Site.Params.Landing.Footer.instagram }}
-      <li><a href="https://instagram.com/{{ . }}"><i class="icon fab fa-instagram"><span class="label">Instagram</span></i></a></li>
-      {{ end }}
-      {{ with .Site.Params.Landing.Footer.googleplus }}
-      <li><a href="https://plus.google.com/{{ . }}"><i class="icon fab fa-google-plus"><span class="label">Google+</span></i></a></li>
-      {{ end }}
+      {{ range .Site.Params.links }}
+      {{ $pack := or .icon_pack "fa" }}
+        <li>
+          <a href="{{ .link | safeURL }}" target="_blank" ><i class="icon {{ $pack }} {{ .icon }}"><span class="label">{{ .service }}</span></i></a>
+        </li>
+      {{ end }} {{/* rang */}}
+      {{ "<!-- RSS Link entered automatically -->" | safeHTML }}
       <li><a href="{{ .Site.RSSLink }}"><i class="icon fas fa-rss"><span class="label">RSS</span></a></i></li>
-      {{ with .Site.Params.Landing.Footer.podcast }}
-      <li><a href="{{ . }}"><i class="icon fas fa-podcast"><span class="label">Podcast</span></i></a></li>
-      {{ end }}
     </ul>
     <ul class="copyright">
       <li>{{ .Site.Params.Landing.Footer.copyright | markdownify }}</li>

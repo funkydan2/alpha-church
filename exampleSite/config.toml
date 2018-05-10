@@ -139,8 +139,21 @@ customCSS = ["", ""]
 
       [params.landing.footer]
         copyright = "[CC0 (public domain)](http://creativecommons.org/publicdomain/zero/1.0/)"
-        twitter = "spurgeon"
-        facebook = "TGCaustralia"
-        instagram = "youversion"
-        googleplus = ""
-        podcast = "http://feeds.speaklife.org.uk/TheEvangelistsPodcast"
+
+        [[params.links]]
+          service = "Twitter"
+          icon = "fa-twitter"
+          icon_pack = "fab"
+          link = "//twitter.com/spurgeon"
+
+        [[params.links]]
+          service = "Facebook"
+          icon = "fa-facebook"
+          icon_pack = "fab"
+          link = "//facebook.com/TGCaustralia"
+
+        [[params.links]]
+          service = "Podcast"
+          icon = "fa-podcast"
+          icon_pack = "fas"
+          "link" = "http://feeds.speaklife.org.uk/TheEvangelistsPodcast"
