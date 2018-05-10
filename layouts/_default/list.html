@@ -1,5 +1,4 @@
-{{ partial "header" . }}
-{{ partial "nav" . }}
+{{ define "main" }}
 
 			{{ "<!-- Main -->" | safeHTML }}
 				<section id="main" class="container">
@@ -48,4 +47,4 @@
 						{{ template "_internal/pagination.html" . }}
 					</div>
 				</section>
-{{ partial "footer" . }}
+{{ end }}

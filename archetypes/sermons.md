@@ -6,7 +6,7 @@ audio: ""
 audio_duration: ""
 preacher: ""
 feature_image: ""
-categories: ""
+series: ""
 tags: ["",""]
 draft: true
 ---

@@ -1,5 +1,4 @@
-{{ partial "header" . }}
-{{ partial "nav" . }}
+{{ define "main" }}
 
 			{{ "<!-- Main -->" | safeHTML }}
 				<section id="main" class="container">
@@ -14,7 +13,15 @@
 							<span class="image featured"><img src="{{ . }}" alt=""></span>
 						{{ end }}
 						{{ .Content }}
+						<p>Tags:
+							{{ range $index, $key:= .Params.tags }}
+							{{ if $index }}, {{ end }}
+								{{ if gt (len $key) 0 }}
+							  	<a href="/tags/{{$key | urlize }}/">#{{ $key }}</a>
+								{{ end }} {{/* if gt len */}}
+							{{ end }} {{/* range */}}
+						</p>
 						</div>
 					</div>
 				</section>
-{{ partial "footer" . }}
+{{ end }}
