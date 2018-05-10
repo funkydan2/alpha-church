@@ -15,11 +15,8 @@
     - [ ] leafletjs (js and css)
     - [ ] fontawesome
     - [ ] (Make sure I implement SHA checking!)
-- [ ] More 'social' links
-  - [ ] Youtube
-  - [ ] Vimeo
-  - [ ] ?? What else are churches using?
-  - [ ] Don't specify type - let users put in their list and range through it!
+- [x] More 'social' links
+  - [x] Don't specify type - let users put in their list and range through it!
 - [ ] Podcast page/content type
     - [x] Single Page
       - [x] CSS for the Audio player.
