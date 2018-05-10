@@ -25,6 +25,11 @@
 						{{ with .Params.audio }}
 							<p><a href="{{ . }}" class="button special small" download><i class="icon fas fa-download"></i>Download</a></p>
 						{{ end }} {{/* with */}}
+						{{ with .Params.preacher }}
+						<p>
+							Preacher: <a href="/preachers/{{ . | urlize }}/">{{ . }}</a>
+						</p>
+						{{ end }}{{/* with .Params.preacher */}}
 						<p>Topics:
 							{{ range $index, $key:= .Params.tags }}
 							{{ if $index }}, {{ end }}

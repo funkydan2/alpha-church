@@ -6,9 +6,12 @@ theme = "../.."
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
 
-paginate = 3
+paginate = 3 #This is for testing
 
 customCSS = ["", ""]
+
+[taxonomies]
+  preacher = "preachers"
 
 #This theme can generate a multi-level theme.
 #Use the weight= to specify the order of menu items, and the parent= to create a submenu item.
