@@ -1966,6 +1966,10 @@ input[type="radio"] + label:before {
   text-align: center;
 }
 
+.box.map {
+  padding: 15% 15% 3em;
+}
+
 .box .image.featured {
   border-radius: 0;
   display: block;
@@ -2852,7 +2856,7 @@ body.landing #page-wrapper {
   padding-left: 1em;
 }
 
-#main body.landing #main {
+body.landing #main {
   margin-top: -14em;
 }
 

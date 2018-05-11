@@ -519,6 +519,10 @@ $box-padding: 3em;
     text-align: center;
   }
 
+  &.map {
+    padding: 15% 15% $box-padding;
+  }
+
   .image {
     &.featured {
       border-radius: 0;
@@ -966,20 +970,20 @@ input[type="button"],
 
 /* Audio */
 audio {
-	@include vendor("appearance", "none");
-	@include vendor(
-		"transition",
-		(
-			"background-color #{_duration(transition)} ease-in-out",
-			"color #{_duration(transition)} ease-in-out"
-		)
-	);
-	display: inline-block;
-	border-radius: _size(border-radius);
-	border: 0;
+  @include vendor("appearance", "none");
+  @include vendor(
+    "transition",
+    (
+      "background-color #{_duration(transition)} ease-in-out",
+      "color #{_duration(transition)} ease-in-out"
+    )
+  );
+  display: inline-block;
+  border-radius: _size(border-radius);
+  border: 0;
   height: _size(element-height);
   line-height: _size(element-height);
-	vertical-align: middle;
+  vertical-align: middle;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -1323,11 +1327,11 @@ body.landing {
   }
 
   .pagination {
-		text-align: center;
-		a {
-			text-decoration: none;
-			border-bottom: none;
-		}
+    text-align: center;
+    a {
+      text-decoration: none;
+      border-bottom: none;
+    }
     li {
       display: inline-block;
       list-style: none;
@@ -1335,11 +1339,10 @@ body.landing {
       padding-left: 1em;
     }
   }
-
-  body.landing {
-    #main {
-      margin-top: -14em;
-    }
+}
+body.landing {
+  #main {
+    margin-top: -14em;
   }
 }
 
@@ -1359,7 +1362,7 @@ body.landing {
       color: _palette(fg-light);
       opacity: 0.35;
       border-bottom: none;
-			text-decoration: none;
+      text-decoration: none;
 
       &:hover {
         opacity: 0.75;
