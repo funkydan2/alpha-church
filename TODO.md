@@ -4,7 +4,7 @@
   - [x] [This theme](https://github.com/devcows/hugo-universal-theme) has maps! Check out its contact page
   - [x] Create a shortcode that displays a google map `{{ osmap }}`
     * [x] By default, centred on the location set in `config.toml`,
-  - [ ] Fix CSS for the map so that it's height is set to 4:3
+  - [x] Fix CSS for the map so that it's height is set to 4:3
 - [ ] Podcast page/content type
     - [x] Single Page
       - [x] Preacher's name [taxonomy](https://gohugo.io/content-management/taxonomies#what-is-a-taxonomy)

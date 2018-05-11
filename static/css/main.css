@@ -1966,10 +1966,6 @@ input[type="radio"] + label:before {
   text-align: center;
 }
 
-.box.map {
-  padding: 15% 15% 3em;
-}
-
 .box .image.featured {
   border-radius: 0;
   display: block;
@@ -2465,6 +2461,11 @@ audio {
   vertical-align: middle;
   text-decoration: none;
   white-space: nowrap;
+}
+
+/* Map*/
+#map {
+  padding: 12em 3em;
 }
 
 /* Header */

@@ -519,10 +519,6 @@ $box-padding: 3em;
     text-align: center;
   }
 
-  &.map {
-    padding: 15% 15% $box-padding;
-  }
-
   .image {
     &.featured {
       border-radius: 0;
@@ -987,6 +983,11 @@ audio {
   text-decoration: none;
   white-space: nowrap;
 }
+
+/* Map*/
+#map {
+    padding: ($box-padding * 4) $box-padding;
+  }
 
 /* Header */
 
