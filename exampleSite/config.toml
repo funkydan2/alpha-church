@@ -13,7 +13,6 @@ googleAnalytics = ""
 
 [taxonomies]
   tag = "tags"
-  category = "categories"
   preacher = "preachers"
   series = "series"
 
