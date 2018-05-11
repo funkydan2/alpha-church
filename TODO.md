@@ -8,6 +8,7 @@
 - [ ] Podcast page/content type
     - [x] Single Page
       - [ ] Preacher's name [taxonomy](https://gohugo.io/content-management/taxonomies#what-is-a-taxonomy)
+        - [ ] Need a 'list page' to work.
       - [x] CSS for the Audio player.
         - [ ] ~~Make it the same height as the download button~~
         - [ ] ~~Put both on the same line~~

@@ -4,9 +4,9 @@ passage: ""
 date: {{ .Date }}
 audio: ""
 audio_duration: ""
-preacher: ""
+preachers: [""]
 feature_image: ""
-series: ""
+series: [""]
 tags: ["",""]
 draft: true
 ---

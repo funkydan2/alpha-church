@@ -3,7 +3,6 @@ languageCode = "en-us"
 title = "Alpha Church"
 theme = "../.."
 
-canonifyurls = true
 enableEmoji = true
 paginate = 3 #This is for testing
 customCSS = ["", ""]
