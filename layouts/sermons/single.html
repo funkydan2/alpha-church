@@ -25,22 +25,26 @@
 						{{ with .Params.audio }}
 							<p><a href="{{ . }}" class="button special small" download><i class="icon fas fa-download"></i>Download</a></p>
 						{{ end }} {{/* with */}}
-						<p> Preacher:
-						{{ range $index, $key := .Params.preachers }}
-							{{ if $index }}, {{ end }}
-							{{ if gt (len $key) 0 }}
-								<a href="/preachers/{{ $key | urlize }}/">{{ $key }}</a>
-							{{ end }} {{/* if */}}
-						{{ end }} {{/* range */}}
-						</p>
-						<p>Topics:
-							{{ range $index, $key:= .Params.tags }}
+						{{ if .Params.preachers }}
+							<p> Preacher:
+								{{ range $index, $key := .Params.preachers }}
 								{{ if $index }}, {{ end }}
 								{{ if gt (len $key) 0 }}
-						  		<a href="/tags/{{$key | urlize }}/">#{{ $key }}</a>
-								{{ end }} {{/* if gt len */}}
-							{{ end }} {{/* range */}}
-						</p>
+									<a href="/preachers/{{ $key | urlize }}/">{{ $key }}</a>
+									{{ end }} {{/* if */}}
+									{{ end }} {{/* range */}}
+								</p>
+						{{ end }} {{/* end if preachers */}}
+						{{ if .Params.tags }}
+							<p>Topics:
+								{{ range $index, $key:= .Params.tags }}
+									{{ if $index }}, {{ end }}
+									{{ if gt (len $key) 0 }}
+						  			<a href="/tags/{{$key | urlize }}/">#{{ $key }}</a>
+										{{ end }} {{/* if gt len */}}
+									{{ end }} {{/* range */}}
+							</p>
+						{{ end }} {{/* end if tags */}}
 						</div>
 					</div>
 				</section>

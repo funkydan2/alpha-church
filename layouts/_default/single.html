@@ -13,14 +13,16 @@
 							<span class="image featured"><img src="{{ . }}" alt=""></span>
 						{{ end }}
 						{{ .Content }}
-						<p>Tags:
-							{{ range $index, $key:= .Params.tags }}
-							{{ if $index }}, {{ end }}
-								{{ if gt (len $key) 0 }}
-							  	<a href="/tags/{{$key | urlize }}/">#{{ $key }}</a>
-								{{ end }} {{/* if gt len */}}
-							{{ end }} {{/* range */}}
+						{{ if .Params.tags }}
+							<p>Tags:
+								{{ range $index, $key:= .Params.tags }}
+									{{ if $index }}, {{ end }}
+									{{ if gt (len $key) 0 }}
+							  		<a href="/tags/{{$key | urlize }}/">#{{ $key }}</a>
+									{{ end }} {{/* if gt len */}}
+								{{ end }} {{/* range */}}
 						</p>
+						{{ end }} {{/* if tags */}}
 						</div>
 					</div>
 				</section>
