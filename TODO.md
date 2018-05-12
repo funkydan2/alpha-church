@@ -1,7 +1,11 @@
 # Alpha-Church TODO
-- [ ] Podcast RSS ([see here?](https://discourse.gohugo.io/t/need-to-create-a-podcast-friendly-rss-feed/1727/12))
-- [ ] ~~Make the screen/overlay of the background image darker or give it a pattern~~
+- [ ] Fill out README.md
 - [ ] [Submit to Theme list](https://github.com/gohugoio/hugoThemes/blob/master/README.md)
+
+## Version 2
+- [ ] Break up home page (index.html) into widgets
+- [ ] Look at [audio.js](https://kolber.github.io/audiojs/) or [Plyr](https://plyr.io/) for sermon podcast player.
+- [ ] Allow the map shortcode to display other locations by passing lat/long parameters
 
 ### Done?
 - [x] Break pages into partials
@@ -50,8 +54,5 @@
       - [x] Should the text be full width if there's no image?
       - [x] Fix the CSS so `<ul class="pagination">` looks good!
       - [x] Remove horizontal rule for last entry.
-
-## Version 2
-- [ ] Break up home page (index.html) into widgets
-- [ ] Look at [audio.js](https://kolber.github.io/audiojs/) or [Plyr](https://plyr.io/) for sermon podcast player.
-- [ ] Allow the map shortcode to display other locations by passing lat/long parameters
+- [x] Podcast RSS ([see here?](https://discourse.gohugo.io/t/need-to-create-a-podcast-friendly-rss-feed/1727/12))
+- [ ] ~~Make the screen/overlay of the background image darker or give it a pattern~~
