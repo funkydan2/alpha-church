@@ -1,11 +1,4 @@
 # Alpha-Church TODO
-- [ ] Contact form
-  - [ ] Settings in `config.toml`
-    - [ ] Options for netlify
-    - [ ] Options for formspree
-  - [ ] Create Partial
-  - [ ] Create Shortcode
-  - [ ] Make the 'Call to Action' on landing page a Contact Form
 - [ ] Podcast page/content type
     - [x] Single Page
       - [x] Preacher's name [taxonomy](https://gohugo.io/content-management/taxonomies#what-is-a-taxonomy)
@@ -50,6 +43,13 @@
       - [x] Create a shortcode that displays a google map `{{ osmap }}`
         * [x] By default, centred on the location set in `config.toml`,
       - [x] Fix CSS for the map so that it's height is set to 4:3
+      - [x] Contact form
+        - [x] Settings in `config.toml`
+          - [x] Options for netlify
+          - [x] Options for formspree
+        - [x] Create Partial
+        - [x] Create Shortcode
+        - [x] Make the 'Call to Action' on landing page a Contact Form
 
 ## Version 2
 - [ ] Break up home page (index.html) into widgets

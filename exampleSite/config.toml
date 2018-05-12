@@ -68,6 +68,14 @@ googleAnalytics = ""
   title = "Alpha Church"
   subtitle = "Another Church Theme"
   author = "Daniel Saunders"
+  #Email address is needed for Podcast
+  email = ""
+
+  [params.podcast]
+    summary = "Alpha-Church sermons, talks, messages—podcasted."
+    image = ""
+    category = "Religion &amp; Spirituality"
+    sub_category = "Christianity"
 
   [params.map]
     # For Open Street Map widgets
