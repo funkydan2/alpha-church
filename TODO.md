@@ -1,10 +1,11 @@
-# Things to do
-- [x] Add a google maps shortcode type thing!
-  - [x] Why not [Open Street Maps](https://leafletjs.com/examples/quick-start/)?
-  - [x] [This theme](https://github.com/devcows/hugo-universal-theme) has maps! Check out its contact page
-  - [x] Create a shortcode that displays a google map `{{ osmap }}`
-    * [x] By default, centred on the location set in `config.toml`,
-  - [x] Fix CSS for the map so that it's height is set to 4:3
+# Alpha-Church TODO
+- [ ] Contact form
+  - [ ] Settings in `config.toml`
+    - [ ] Options for netlify
+    - [ ] Options for formspree
+  - [ ] Create Partial
+  - [ ] Create Shortcode
+  - [ ] Make the 'Call to Action' on landing page a Contact Form
 - [ ] Podcast page/content type
     - [x] Single Page
       - [x] Preacher's name [taxonomy](https://gohugo.io/content-management/taxonomies#what-is-a-taxonomy)
@@ -43,6 +44,12 @@
     - [x] (Make sure I implement SHA checking!)
 - [x] More 'social' links
   - [x] Don't specify type - let users put in their list and range through it!
+- [x] Add a google maps shortcode type thing!
+      - [x] Why not [Open Street Maps](https://leafletjs.com/examples/quick-start/)?
+      - [x] [This theme](https://github.com/devcows/hugo-universal-theme) has maps! Check out its contact page
+      - [x] Create a shortcode that displays a google map `{{ osmap }}`
+        * [x] By default, centred on the location set in `config.toml`,
+      - [x] Fix CSS for the map so that it's height is set to 4:3
 
 ## Version 2
 - [ ] Break up home page (index.html) into widgets
