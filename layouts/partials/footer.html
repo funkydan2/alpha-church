@@ -6,7 +6,7 @@
         <li>
           <a href="{{ .link | safeURL }}" target="_blank" ><i class="icon {{ $pack }} {{ .icon }}"><span class="label">{{ .service }}</span></i></a>
         </li>
-      {{ end }} {{/* rang */}}
+      {{ end }} {{/* range */}}
       {{ "<!-- RSS Link entered automatically -->" | safeHTML }}
       <li><a href="{{ .Site.RSSLink }}"><i class="icon fas fa-rss"><span class="label">RSS</span></a></i></li>
     </ul>

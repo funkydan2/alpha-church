@@ -1,8 +1,20 @@
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+<rss version="2.0"
+   xmlns:content="http://purl.org/rss/1.0/modules/content/"
+   xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:atom="http://www.w3.org/2005/Atom"
+   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+   xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+   xmlns:media="http://search.yahoo.com/mrss/"
+   xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
+  >
   <channel>
     <title>{{ .Site.Params.title }}</title>
-    <link>{{ .Permalink }}</link>
+    <link>{{ .Site.BaseURL }}</link>
+    <atom:link href="{{ .Site.BaseURL}}/sermons/podcast.xml" rel="self" type="application/rss+xml" />
     <language>{{ .Site.Params.languageCode }}</language>
+    <lastBuildDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</lastBuildDate>
     <copyright>{{ .Site.Params.Footer.copyright | markdownify }}</copyright>
     <itunes:subtitle>{{ .Site.Params.subtitle }}</itunes:subtitle>
     <itunes:author>{{ .Site.Params.author }}</itunes:author>
@@ -16,11 +28,17 @@
     <itunes:category text="{{ .Site.Params.Podcast.category}}">
       <itunes:category text="{{ .Site.Params.Podcast.sub_category }}" />
     </itunes:category>
-    {{ range first 50 where .Data.Pages "Type" "sermon" }}
+    <itunes:block>no</itunes:block>
+    <itunes:explicit>no</itunes:explicit>
+    {{ .Hugo.Generator }}
+    {{ range (where .Data.Pages "Type" "sermon") }}
     <item>
       <title>{{ title .Params.Title }}</title>
       <itunes:author>{{ .Params.Preachers }}</itunes:author>
-      <itunes:summary><![CDATA[{{ .Content }}]></itunes:summary>
+      <itunes:summary><![CDATA[{{ .Summary | plainify }}]></itunes:summary>
+      <description><![CDATA[{{ .Summary | plainify }}]></description>
+      <googleplay:description><![CDATA[{{ .Summary | plainify }}]></googleplay:description>
+      <content:encoded><![CDATA[{{ .Summary | plainify}}]></content:encoded>
       <enclosure url="{{ .Params.audio }}" length="{{ .Params.audio_size }}" type="audio/mpeg" />
       <guid>{{ .Params.audio }}</guid>
       <link>{{ .Permalink }}</link>
