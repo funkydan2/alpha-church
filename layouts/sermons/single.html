@@ -17,7 +17,7 @@
 							{{ $audio_name_arr := split . "." }}
 							{{ $audio_type := index $audio_name_arr 1 }}
               	<audio controls>
-									<source src="{{ . }}" preload="auto" type="{{ $audio_type }}">
+									<source src="{{ . }}" preload="auto" type="audio/{{ $audio_type }}">
                 	Your browser doesn't support embedded audio.
               	</audio>
             {{ end }} {{/* if .audio */}}

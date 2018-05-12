@@ -68,11 +68,12 @@ googleAnalytics = ""
   title = "Alpha Church"
   subtitle = "Another Church Theme"
   author = "Daniel Saunders"
-  #Email address is needed for Podcast
-  email = ""
 
   [params.podcast]
+    title = "Listen to Alpha Church"
+    subtitle = ""
     summary = "Alpha-Church sermons, talks, messages—podcasted."
+    email = "test@example.com"
     image = ""
     category = "Religion &amp; Spirituality"
     sub_category = "Christianity"
@@ -186,4 +187,10 @@ googleAnalytics = ""
       service = "Podcast"
       icon = "fa-podcast"
       icon_pack = "fas"
-      link = "/sermons/sermons.rss.xml"
+      link = "/sermons/index.xml"
+
+    [[params.links]]
+      service = "Full RSS Feed"
+      icon = "fa-rss"
+      icon_pack = "fas"
+      link = "/index.xml"

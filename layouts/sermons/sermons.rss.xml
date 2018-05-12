@@ -10,13 +10,13 @@
    xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
   >
   <channel>
-    <title>{{ .Site.Params.title }}</title>
+    <title>{{ .Site.Params.Podcast.title }}</title>
     <link>{{ .Site.BaseURL }}</link>
     <atom:link href="{{ .Site.BaseURL}}/sermons/podcast.xml" rel="self" type="application/rss+xml" />
     <language>{{ .Site.Params.languageCode }}</language>
     <lastBuildDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</lastBuildDate>
-    <copyright>{{ .Site.Params.Footer.copyright | markdownify }}</copyright>
-    <itunes:subtitle>{{ .Site.Params.subtitle }}</itunes:subtitle>
+    <copyright>{{ .Site.Params.Footer.copyright | plainify }}</copyright>
+    <itunes:subtitle>{{ .Site.Params.Podcast.subtitle }}</itunes:subtitle>
     <itunes:author>{{ .Site.Params.author }}</itunes:author>
     <itunes:summary>{{ .Site.Params.Podcast.summary}}</itunes:summary>
     <description>{{ .Site.Params.Podcast.summary}}</description>
@@ -31,15 +31,24 @@
     <itunes:block>no</itunes:block>
     <itunes:explicit>no</itunes:explicit>
     {{ .Hugo.Generator }}
-    {{ range (where .Data.Pages "Type" "sermon") }}
+    {{ range .Pages }}
     <item>
-      <title>{{ title .Params.Title }}</title>
-      <itunes:author>{{ .Params.Preachers }}</itunes:author>
-      <itunes:summary><![CDATA[{{ .Summary | plainify }}]></itunes:summary>
-      <description><![CDATA[{{ .Summary | plainify }}]></description>
-      <googleplay:description><![CDATA[{{ .Summary | plainify }}]></googleplay:description>
-      <content:encoded><![CDATA[{{ .Summary | plainify}}]></content:encoded>
-      <enclosure url="{{ .Params.audio }}" length="{{ .Params.audio_size }}" type="audio/mpeg" />
+      <title>{{ title .Params.title }}</title>
+      <itunes:author>
+        {{- if .Params.preachers -}}
+					{{- range $index, $key := .Params.preachers -}}
+						{{- if $index -}}, {{- end -}}
+						{{- if gt (len $key) 0 -}}{{- $key -}}{{- end -}}
+					{{- end -}}
+				{{- end -}}
+      </itunes:author>
+      <itunes:summary>{{ chomp "<![CDATA[\n" }}{{ .Summary | plainify }}{{ chomp "]]>\n" }}</itunes:summary>
+      <description>{{ chomp "<![CDATA[\n" }}{{ .Summary | plainify }}{{ chomp "]]>\n" }}</description>
+      <googleplay:description>{{ chomp "<![CDATA[\n"}}{{ .Summary | plainify }}{{ chomp "]]>\n" }}</googleplay:description>
+      <content:encoded>{{ chomp "<![CDATA[\n" }}{{ .Summary | plainify }}{{ chomp "]]>\n" }}</content:encoded>
+      {{ $audio_name_arr := split .Params.audio "." }}
+      {{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
+      <enclosure url="{{ .Params.audio }}" length="{{ .Params.audio_size }}" type="audio/{{ $audio_type }}" />
       <guid>{{ .Params.audio }}</guid>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>
