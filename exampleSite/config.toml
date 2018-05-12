@@ -70,10 +70,22 @@ googleAnalytics = ""
   author = "Daniel Saunders"
 
   [params.map]
-    # For Google maps
+    # For Open Street Map widgets
     latitude = "48.8530"
     longitude = "2.3498"
     zoom = "18"
+
+  [params.contact]
+    #Use this section to automate contact form.
+    #Set service to either "netlify" or "formspree"
+    #For formspree, please setup an account at https://formspree.io/
+    #For netlify, please read https://www.netlify.com/docs/form-handling/
+    #
+    #If you use netlify, you'll need to set the confirm_page value (or elase users will see a generic netlify response)
+    #If you use formspree, you'll need to set your formspree email address.
+    service = "netlify"
+    confirm_page = "/contact_thanks"
+    # formspree_email=""
 
   #Paramaters for the home/landing page
   [params.landing]
@@ -142,6 +154,10 @@ googleAnalytics = ""
         text = "Want to study God's Word?"
         url = "#"
         button_text="Join a group today!"
+
+    [params.landing.CTA]
+      heading = "Get in touch!"
+      message = "We'd love to hear from you."
 
     [params.footer]
       copyright = "[CC0 (public domain)](http://creativecommons.org/publicdomain/zero/1.0/)"

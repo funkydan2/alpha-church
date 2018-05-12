@@ -1,0 +1,51 @@
+{{ if eq .Site.Params.Contact.service "netlify" }}
+	<form name="contact" method="POST" action="{{ .Site.Params.Contact.confirm_page }}" netlify>
+		<div class="row uniform 50%">
+			<div class="6u 12u(mobilep)">
+	    	<input type="text" name="name" placeholder="Your name">
+	  	</div>
+			<div class="6u 12u(mobilep)">
+	    	<input type="email" name="email" placeholder = "Email address">
+	  	</div>
+		</div>
+		<div class="row uniform 50%">
+			<div class="12u">
+				<textarea name="message" placeholder="Enter your message" rows="6"></textarea>
+			</div>
+		</div>
+		<div class="row uniform">
+			<div class="12u">
+				<ul class="actions align-center">
+	  			<li>
+						<input type="submit" value="Send" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</form>
+{{ else if eq .Site.Params.Contact.service "formspree" }}
+	<div class="box">
+		<form method="POST" action="https://formspree.io/{{ .Site.Params.formspree_email }}">
+			<div class="row uniform 50%">
+				<div class="6u 12u(mobilep)">
+					<input type="text" name="name" id="name" value="" placeholder="Name" />
+				</div>
+				<div class="6u 12u(mobilep)">
+					<input type="email" name="_replyto" id="email" value="" placeholder="Email" />
+				</div>
+			</div>
+			<div class="row uniform 50%">
+				<div class="12u">
+					<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+				</div>
+			</div>
+			<div class="row uniform">
+				<div class="12u">
+					<ul class="actions align-center">
+						<li><input type="submit" value="Send Message" /></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+	</div>
+{{ end }}
