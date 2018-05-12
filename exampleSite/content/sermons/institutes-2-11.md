@@ -7,6 +7,6 @@ audio_duration: ""
 feature_image: ""
 preachers: ["John Calvin"]
 tags: ["theology","redemption", "historical"]
-draft: true
+draft: false
 ---
 Public Domain recording from [librivox](https://librivox.org/institutes-of-the-christian-religion-book-two-by-john-calvin/)

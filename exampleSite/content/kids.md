@@ -4,7 +4,7 @@ subtitle: "Ministry with Children"
 date: 2018-05-01T07:39:12+10:00
 feature_image: "/img/freely-10057.jpg"
 tags: ["two_column","ministry"]
-draft: true
+draft: false
 ---
   This is an example of multiple columns.
 

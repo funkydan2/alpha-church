@@ -8,6 +8,6 @@ preachers: ["Martin Luther"]
 feature_image: ""
 categories: ""
 tags: ["Bible","Scripture"]
-draft: true
+draft: false
 ---
 Recording by Gillian Hedrie from [Librivox](https://librivox.org/selections-from-the-table-talk-of-martin-luther-by-martin-luther/)

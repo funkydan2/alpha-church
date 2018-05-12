@@ -1,19 +1,6 @@
 # Alpha-Church TODO
-- [ ] Podcast page/content type
-    - [x] Single Page
-      - [x] Preacher's name [taxonomy](https://gohugo.io/content-management/taxonomies#what-is-a-taxonomy)
-        - [x] Need a 'list page' to work.
-      - [x] CSS for the Audio player.
-        - [ ] ~~Make it the same height as the download button~~
-        - [ ] ~~Put both on the same line~~
-    - [x] List Page
-      - [x] Left align text
-      - [x] Right align 'feature image'
-      - [x] Should the text be full width if there's no image?
-      - [x] Fix the CSS so `<ul class="pagination">` looks good!
-      - [x] Remove horizontal rule for last entry.
-  - [ ] Podcast RSS ([see here?](https://discourse.gohugo.io/t/need-to-create-a-podcast-friendly-rss-feed/1727/12))
-- [ ] Make the screen/overlay of the background image darker or give it a pattern
+- [ ] Podcast RSS ([see here?](https://discourse.gohugo.io/t/need-to-create-a-podcast-friendly-rss-feed/1727/12))
+- [ ] ~~Make the screen/overlay of the background image darker or give it a pattern~~
 - [ ] [Submit to Theme list](https://github.com/gohugoio/hugoThemes/blob/master/README.md)
 
 ### Done?
@@ -50,6 +37,19 @@
         - [x] Create Partial
         - [x] Create Shortcode
         - [x] Make the 'Call to Action' on landing page a Contact Form
+- [x] Sermon page/content type
+    - [x] Single Page
+      - [x] Preacher's name [taxonomy](https://gohugo.io/content-management/taxonomies#what-is-a-taxonomy)
+        - [x] Need a 'list page' to work.
+      - [x] CSS for the Audio player.
+        - [ ] ~~Make it the same height as the download button~~
+        - [ ] ~~Put both on the same line~~
+    - [x] List Page
+      - [x] Left align text
+      - [x] Right align 'feature image'
+      - [x] Should the text be full width if there's no image?
+      - [x] Fix the CSS so `<ul class="pagination">` looks good!
+      - [x] Remove horizontal rule for last entry.
 
 ## Version 2
 - [ ] Break up home page (index.html) into widgets
