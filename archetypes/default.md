@@ -3,6 +3,6 @@ title: "{{ replace .Name "-" " " | title }}"
 subtitle: ""
 date: {{ .Date }}
 feature_image: ""
-tags: ["",""]
+tags: []
 draft: true
 ---
