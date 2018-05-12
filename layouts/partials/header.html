@@ -7,6 +7,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		{{ with .Site.Params.subtitle }}<meta name="description" content="{{ . }}">{{ end }}
 		{{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
+		{{ with .OutputFormats.Get "rss" -}}
+    	{{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
+		{{ end -}}
 		{{ .Hugo.Generator }}
 		{{` <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->` | safeHTML }}
 		<link rel="stylesheet" href="/css/main.css" />
