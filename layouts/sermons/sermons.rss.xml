@@ -42,10 +42,10 @@
 					{{- end -}}
 				{{- end -}}
       </itunes:author>
-      <itunes:summary>{{ chomp "<![CDATA[\n" }}{{ .Summary | plainify }}{{ chomp "]]>\n" }}</itunes:summary>
-      <description>{{ chomp "<![CDATA[\n" }}{{ .Summary | plainify }}{{ chomp "]]>\n" }}</description>
-      <googleplay:description>{{ chomp "<![CDATA[\n"}}{{ .Summary | plainify }}{{ chomp "]]>\n" }}</googleplay:description>
-      <content:encoded>{{ chomp "<![CDATA[\n" }}{{ .Summary | plainify }}{{ chomp "]]>\n" }}</content:encoded>
+      <itunes:summary>{{ .Summary | plainify }}</itunes:summary>
+      <description>{{ .Summary | plainify }}</description>
+      <googleplay:description>{{ .Summary | plainify }}</googleplay:description>
+      <content:encoded>{{ .Summary | plainify }}</content:encoded>
       {{ $audio_name_arr := split .Params.audio "." }}
       {{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
       <enclosure url="{{ .Params.audio }}" length="{{ .Params.audio_size }}" type="audio/{{ $audio_type }}" />
