@@ -11,7 +11,7 @@ Demo images courtesy of [freelyphotos](https://freelyphotos.com), totally free h
 [Feedback, bug reports, and comments](https://github.com/funkydan2/alpha-church/issues) are not only welcome but encouraged :)
 
 ## Settings
-If you need some help setting up your website, there are some instructions available [here](https://github.com/funkydan2/alpha-church/blob/master/SETUP.md)
+If you need some help setting up your website, instructions are available [here](https://github.com/funkydan2/alpha-church/blob/master/SETUP.md). Hugo also has a friendly and informative [forum](https://discourse.gohugo.io) where you'll find answers to many common questions.
 
 ## Credits:
 - Design based on [Alpha by HTML5 UP](http://html5up.net/alpha) [@ajlkn](http://twitter.com/ajlkn)
