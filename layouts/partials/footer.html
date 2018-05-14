@@ -26,7 +26,9 @@
 {{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/skel/%s/skel.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.skel.version $js.skil.integrity | safeHTML }}
 {{ printf "<script defer src=\"//use.fontawesome.com/releases/v%s/js/all.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.fontawesome.version $js.fontawesome.integrity | safeHTML }}
 {{ printf "<script src=\"//unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
-
+{{ if .Site.GoogleAnalytics }}
+{{ template "_internal/google_analytics_async.html" . }}
+{{ end }}
 {{ "<!-- Local Scripts -->" | safeHTML }}
 <script src="{{ .Site.BaseURL }}js/util.js"></script>
 {{ `<!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->` | safeHTML}}
