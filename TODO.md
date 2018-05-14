@@ -1,5 +1,5 @@
 # Alpha-Church TODO
-- [ ] Fill out README.md
+- [x] Fill out README.md
 - [ ] [Submit to Theme list](https://github.com/gohugoio/hugoThemes/blob/master/README.md)
 
 ## Version 2
