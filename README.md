@@ -8,7 +8,7 @@ A clean, super minimal responsive template geared towards churches though it cou
 
 Demo images courtesy of [freelyphotos](https://freelyphotos.com), totally free high-quality stock photography available under the fantastic [CC0 (public domain)](http://creativecommons.org/publicdomain/zero/1.0/) license.
 
-Feedback, bug reports, and comments are not only welcome but  encouraged :)
+[Feedback, bug reports, and comments](https://github.com/funkydan2/alpha-church/issues) are not only welcome but encouraged :)
 
 ## Get the theme
 
