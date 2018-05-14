@@ -51,7 +51,7 @@
 								<div class="6u 12u(narrower)">
 
 									<section class="box special">
-										<span class="image featured"><img src="{{ $key.image }}" alt="" /></span>
+										<span class="image featured"><img src="{{ $key.image | absURL}}" alt="" /></span>
 										<h3>{{ $key.title }}</h3>
 										<p>{{ $key.text | markdownify }}</p>
 										{{ if $key.button_text }}

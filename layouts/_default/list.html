@@ -24,7 +24,7 @@
 		                  {{ end }} {{/* if */}}
 										</div>
 									  <div class="6u">
-											<span class="image fit"><img src="{{ .Params.feature_image }}"></span>
+											<span class="image fit"><img src="{{ .Params.feature_image | absURL }}"></span>
                 		</div>
 								</div>
 								{{ else }}

@@ -10,7 +10,7 @@
 					</header>
 					<div class="box">
 						{{ with .Params.feature_image }}
-							<span class="image featured"><img src="{{ . }}" alt=""></span>
+							<span class="image featured"><img src="{{ . | absURL }}" alt=""></span>
 						{{ end }}
 						{{ .Content }}
 						{{ if .Params.tags }}
