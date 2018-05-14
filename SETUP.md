@@ -12,7 +12,7 @@ $ git submodule add https://github.com/funkydan2/alpha-church.git
 
 You should see a folder called `alpha-church` inside the `themes` directory that we created a few moments ago. For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
 
-## Setup
+## Configuration
 
 In the next step navigate to the `exampleSite` folder at `themes/hugo-travelify-theme/exampleSite/` and copy `config.toml` from the exampleSite folder into the root folder of your Hugo site. (Please refer to http://gohugo.io/overview/quickstart/ for installing a Hugo theme.)
 
