@@ -6,7 +6,7 @@ A clean, super minimal responsive template geared towards churches though it cou
 
 ![Screenshot](images/screenshot.png)
 
-Demo images courtesy of [freelyphotos](https://freelyphotos.com), totally free high-quality Christian stock photography available under the fantastic [CC0 (public domain)](http://creativecommons.org/publicdomain/zero/1.0/) license.
+Demo images courtesy of [freelyphotos](https://freelyphotos.com), totally free high-quality stock photography available under the fantastic [CC0 (public domain)](http://creativecommons.org/publicdomain/zero/1.0/) license.
 
 Feedback, bug reports, and comments are not only welcome but  encouraged :)
 
@@ -15,6 +15,7 @@ Feedback, bug reports, and comments are not only welcome but  encouraged :)
 If you have `git` installed, you can do the following at the command-line-interface within the Hugo directory:
 
 ```
+$ mkdir themes
 $ cd themes
 $ git submodule add https://github.com/funkydan2/alpha-church.git
 ```
