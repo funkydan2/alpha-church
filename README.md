@@ -69,7 +69,23 @@ For sub-menus, you can use the following format:
 In this example, *About* is in the main menu, but *About Us* is in the *About* sub-menu. In *Alpha Church* the sub-menu is a drop-down menu.
 
 ### 4. Podcasting
+In `config.toml` there are  settings which are used to generate the podcast RSS feed.
 
+```
+[params.podcast]
+  title = "Listen to Alpha Church"
+  subtitle = ""
+  summary = "Alpha-Church sermons, talks, messages—podcasted."
+  email = "test@example.com"
+  image = "Link to 1400*1400 (or larger) file"
+  category = "Religion & Spirituality"
+  sub_category = "Christianity"
+```
+All of these need to be set (except subtitle) or else the feed will not be valid.
+
+As you're developing your site, you'll need to check the podcast feed is valid by entering the feed's URL into [a podcast feed validator](https://castfeedvalidator.com).
+
+The podcast feed is found at `/sermons/index.xml`.
 
 ### 5. Landing (Home) page
 
@@ -99,7 +115,7 @@ Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your b
 ### Demo Images:
 
 - [FreelyPhotos](https://freelyphotos.com):
-  - [Banner Image](https://freelyphotos.com/jesus/)
+  - [Banner Image (Church Building)](https://freelyphotos.com/church-building-2/)
   - [Old Bible](https://freelyphotos.com/old-bible-3/)
   - [Running Child](https://freelyphotos.com/running/)
   - [Group of People](https://freelyphotos.com/group-of-people/)
