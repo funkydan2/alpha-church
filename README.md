@@ -103,6 +103,7 @@ Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your b
   - [Old Bible](https://freelyphotos.com/old-bible-3/)
   - [Running Child](https://freelyphotos.com/running/)
   - [Group of People](https://freelyphotos.com/group-of-people/)
+  - [Microphone (podcast cover)](https://freelyphotos.com/microphone/)
 
 ### Icons:
 

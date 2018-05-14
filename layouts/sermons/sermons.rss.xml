@@ -7,30 +7,29 @@
    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
    xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
    xmlns:media="http://search.yahoo.com/mrss/"
-   xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
-  >
+   xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0">
   <channel>
     <title>{{ .Site.Params.Podcast.title }}</title>
     <link>{{ .Site.BaseURL }}</link>
     <atom:link href="{{ .Site.BaseURL}}/sermons/podcast.xml" rel="self" type="application/rss+xml" />
-    <language>{{ .Site.Params.languageCode }}</language>
+    <language>{{ .Site.LanguageCode }}</language>
     <lastBuildDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</lastBuildDate>
     <copyright>{{ .Site.Params.Footer.copyright | plainify }}</copyright>
     <itunes:subtitle>{{ .Site.Params.Podcast.subtitle }}</itunes:subtitle>
     <itunes:author>{{ .Site.Params.author }}</itunes:author>
-    <itunes:summary>{{ .Site.Params.Podcast.summary}}</itunes:summary>
-    <description>{{ .Site.Params.Podcast.summary}}</description>
+    <itunes:summary>{{ .Site.Params.Podcast.summary | plainify }}</itunes:summary>
+    <description>{{ .Site.Params.Podcast.summary |plainify }}</description>
     <itunes:owner>
       <itunes:name>{{ .Site.Params.author }}</itunes:name>
-      <itunes:email>{{ .Site.Params.email}}</itunes:email>
+      <itunes:email>{{ .Site.Params.Podcast.email }}</itunes:email>
     </itunes:owner>
-    <itunes:image href="{{ .Site.Params.Podcast.image }}" />
-    <itunes:category text="{{ .Site.Params.Podcast.category}}">
+    <itunes:image href="{{.Site.BaseURL}}{{ .Site.Params.Podcast.image }}" />
+    <itunes:category text="{{ .Site.Params.Podcast.category }}">
       <itunes:category text="{{ .Site.Params.Podcast.sub_category }}" />
     </itunes:category>
     <itunes:block>no</itunes:block>
     <itunes:explicit>no</itunes:explicit>
-    {{ .Hugo.Generator }}
+    <generator>Hugo -- gohugo.io</generator>
     {{ range .Pages }}
     <item>
       <title>{{ title .Params.title }}</title>
