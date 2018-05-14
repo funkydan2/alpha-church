@@ -42,8 +42,8 @@
 				{{- end -}}
       </itunes:author>
       <itunes:summary>{{ .Summary | plainify }}</itunes:summary>
-      <description>{{ .Summary | plainify }}</description>
-      <googleplay:description>{{ .Summary | plainify }}</googleplay:description>
+      {{ printf "<description><![CDATA[%s]]></description>" .Content | safeHTML }}
+      {{ printf `<googleplay:description><![CDATA[%s]]></googleplay:description>` .Content | safeHTML }}
       <content:encoded>{{ .Summary | plainify }}</content:encoded>
       {{ $audio_name_arr := split .Params.audio "." }}
       {{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
