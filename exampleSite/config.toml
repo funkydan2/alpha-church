@@ -4,7 +4,6 @@ title = "Alpha Church"
 theme = "../.."
 
 enableEmoji = true
-paginate = 3 #This is for testing
 customCSS = ["", ""]
 
 # Enter your tracking code to enable Google Analytics
