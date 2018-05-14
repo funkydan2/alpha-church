@@ -2,7 +2,9 @@
 
 This theme is based on [Alpha by HTML5 UP](http://html5up.net) [@ajlkn](http://twitter.com/ajlkn). Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
-A clean, super minimal responsive template geared towards churches. This theme includes a landing page, open street maps, blog posts, sermon podcast, and some other data driven pages (e.g. 'about'). Sass sources are also included.
+A clean, super minimal responsive template geared towards churches though it could be adapted for other community groups. This theme includes a landing page, open street maps, blog posts and a sermon podcast.
+
+![Screenshot](images/screenshot.png)
 
 Demo images courtesy of [freelyphotos](https://freelyphotos.com), totally free high quality Christian stock photography available under the amazing [CC0 (public domain)](http://creativecommons.org/publicdomain/zero/1.0/) license.
 
