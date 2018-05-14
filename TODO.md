@@ -1,7 +1,4 @@
 # Alpha-Church TODO
-- [ ] Podcast RSS ([see here?](https://discourse.gohugo.io/t/need-to-create-a-podcast-friendly-rss-feed/1727/12))
-  - [ ] Check the feed https://validator.w3.org/
-  - [ ] Compare with [church's feed](https://validator.w3.org/feed/check.cgi?url=http%3A%2F%2Ffeeds.feedburner.com%2FGympiePresbyterianChurch)
 - [ ] Fill out README.md
 - [ ] [Submit to Theme list](https://github.com/gohugoio/hugoThemes/blob/master/README.md)
 
@@ -57,4 +54,7 @@
       - [x] Should the text be full width if there's no image?
       - [x] Fix the CSS so `<ul class="pagination">` looks good!
       - [x] Remove horizontal rule for last entry.
+- [x] Podcast RSS ([see here?](https://discourse.gohugo.io/t/need-to-create-a-podcast-friendly-rss-feed/1727/12))
+  - [x] Check the feed https://validator.w3.org/
+  - [x] Compare with [church's feed](https://validator.w3.org/feed/check.cgi?url=http%3A%2F%2Ffeeds.feedburner.com%2FGympiePresbyterianChurch)
 - [ ] ~~Make the screen/overlay of the background image darker or give it a pattern~~
