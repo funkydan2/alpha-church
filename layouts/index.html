@@ -30,7 +30,7 @@
 							<div class="features-row">
 								{{ range $index, $key := $tiles}}
 									<section>
-										<span class="icon major {{ $key.icon }} accent{{- $key.accent -}}"></span>
+										<span class="icon major {{ $key.icon_pack }} {{ $key.icon }} accent{{- $key.accent -}}"></span>
 										<h3>{{ $key.title }}</h3>
 										<p>{{ $key.text | markdownify }}</p>
 									</section>

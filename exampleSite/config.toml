@@ -123,25 +123,29 @@ googleAnalytics = ""
 
       #Accent is a colour defined in the CSS file. Choose between 1 and 5
       [[params.landing.feature_icons.tile]]
-        icon = "fas fa-hands-helping"
+        icon = "fa-hands-helping"
+        icon_pack = "fas"
         accent = "1"
         title = "Serve"
         text = "Growing people who serve our community."
 
       [[params.landing.feature_icons.tile]]
-        icon = "fas fa-users"
+        icon = "fa-users"
+        icon_pack = "fas"
         accent = "2"
         title = "Meet"
         text = "Meeting together to hear."
 
       [[params.landing.feature_icons.tile]]
-        icon = "fas fa-comments"
+        icon = "fa-comments"
+        icon_pack = "fas"
         accent = "5"
         title = "Speak"
         text = "Speaking encouragement to one-another."
 
       [[params.landing.feature_icons.tile]]
-        icon = "fas fa-heartbeat"
+        icon = "fa-heartbeat"
+        icon_pack = "fas"
         accent = "3"
         title = "Loved"
         text = "Knowing Love. Being Loved."
@@ -175,13 +179,13 @@ googleAnalytics = ""
       service = "Twitter"
       icon = "fa-twitter"
       icon_pack = "fab"
-      link = "//twitter.com/spurgeon"
+      link = "//twitter.com/"
 
     [[params.links]]
       service = "Facebook"
       icon = "fa-facebook"
       icon_pack = "fab"
-      link = "//facebook.com/TGCaustralia"
+      link = "//facebook.com/"
 
     [[params.links]]
       service = "Podcast"
