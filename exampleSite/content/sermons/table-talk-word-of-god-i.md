@@ -7,8 +7,8 @@ audio_duration: 14:39
 audio_size: 14076118
 preachers: ["Martin Luther"]
 feature_image: ""
-categories: ""
-tags: ["Bible","Scripture"]
+series: ["Test"]
+tags: ["bible","scripture", "historical"]
 draft: false
 ---
 Recording by Gillian Hedrie from [Librivox](https://librivox.org/selections-from-the-table-talk-of-martin-luther-by-martin-luther/)

@@ -1,6 +1,6 @@
 # Alpha-Church TODO
-- [x] Fill out README.md
-- [ ] [Submit to Theme list](https://github.com/gohugoio/hugoThemes/blob/master/README.md)
+- [x] Link to series on single sermon page
+- [x] [Submit to Theme list](https://github.com/gohugoio/hugoThemes/blob/master/README.md)
 
 ## Version 2
 - [ ] Break up home page (index.html) into widgets
@@ -58,3 +58,4 @@
   - [x] Check the feed https://validator.w3.org/
   - [x] Compare with [church's feed](https://validator.w3.org/feed/check.cgi?url=http%3A%2F%2Ffeeds.feedburner.com%2FGympiePresbyterianChurch)
 - [ ] ~~Make the screen/overlay of the background image darker or give it a pattern~~
+- [x] Fill out README.md

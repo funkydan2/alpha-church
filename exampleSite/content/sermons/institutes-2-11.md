@@ -7,6 +7,7 @@ audio_duration: 22:23
 audio_size: 10748346
 feature_image: ""
 preachers: ["John Calvin"]
+series: ["Test"]
 tags: ["theology","redemption", "historical"]
 draft: false
 ---
