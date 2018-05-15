@@ -23,7 +23,7 @@
 {{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/%s/jquery.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.jQuery.version $js.jQuery.integrity | safeHTML }}
 {{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery.dropotron/%s/jquery.dropotron.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.dropotron.version $js.dropotron.integrity | safeHTML }}
 {{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/scrollgress/%s/scrollgress.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.scrollgress.version $js.scrollgress.integrity | safeHTML }}
-{{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/skel/%s/skel.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.skel.version $js.skil.integrity | safeHTML }}
+{{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/skel/%s/skel.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.skel.version $js.skel.integrity | safeHTML }}
 {{ printf "<script defer src=\"//use.fontawesome.com/releases/v%s/js/all.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.fontawesome.version $js.fontawesome.integrity | safeHTML }}
 {{ printf "<script src=\"//unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
 {{ if .Site.GoogleAnalytics }}
