@@ -25,7 +25,7 @@ googleAnalytics = ""
 
   [[menu.main]]
     name = "About"
-    url = "/about"
+    url = "about"
     weight = 2
 
   [[menu.main]]
@@ -99,7 +99,7 @@ googleAnalytics = ""
   [params.landing]
 
     [params.landing.banner]
-      image = "/img/banner.jpg"
+      image = "img/banner.jpg"
 
       [[params.landing.banner.button]]
         url = "/contact"
@@ -154,14 +154,14 @@ googleAnalytics = ""
       enable = true
 
       [[params.landing.feature_images.tile]]
-        image = "/img/freely-10057.jpg"
+        image = "img/freely-10057.jpg"
         title = "Childrens' Ministry"
         text = "A church for the family."
         url = "/kids"
         button_text = "Learn more"
 
       [[params.landing.feature_images.tile]]
-        image = "/img/freely-26905.jpg"
+        image = "img/freely-26905.jpg"
         title = "Midweek Ministries"
         text = "Want more during the week?"
         url = "#"
