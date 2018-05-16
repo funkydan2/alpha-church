@@ -15,10 +15,6 @@
   version = "1.4.3"
   integrity = "sha256-o7QFslEPuitprNVNQJrtEo/jXNfwgn1BTgVR2BJ5VOI="
 
-[js.scrollgress]
-  version = "2.0.0"
-  integrity = "sha256-aWtnZj8qN/1kaPjLLSQBWAej4hw6v8FNm+vdviFe3Nc="
-
 [js.skel]
   version = "3.0.1"
   integrity = "sha256-3e+NvOq+D/yeJy1qrWpYkEUr6SlOCL5mHpc2nZfX74E="
