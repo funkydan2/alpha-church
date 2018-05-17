@@ -1,6 +1,6 @@
 # Alpha-Church by Daniel Saunders
 
-This theme is based on [Alpha by HTML5 UP](http://html5up.net/alpha) [@ajlkn](http://twitter.com/ajlkn). Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+This theme is based on [Alpha by HTML5 UP](http://html5up.net/alpha) [@ajlkn](http://twitter.com/ajlkn). Free for personal and commercial use under the [CCA 3.0 license](https://github.com/funkydan2/alpha-church/blob/master/LICENSE.md).
 
 A clean, super minimal responsive template geared towards churches though it could be adapted for other community groups. This theme includes a landing page, open street maps, blog posts and a sermon podcast.
 
