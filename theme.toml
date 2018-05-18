@@ -4,7 +4,7 @@
 name = "Alpha Church"
 license = "CC0"
 licenselink = "https://github.com/funkydan2/alpha-church/blob/master/LICENSE.md"
-description = "A port of html5up Alpha theme. Ported to hugo and customised for church use."
+description = "A hugo port of html5up Alpha theme. Customised for church use."
 homepage = "https://github.com/funkydan2/alpha-church"
 tags = ["church", "podcast"]
 features = ["drop down menu", "banner", "feature images", "fontawesome", "podcast"]
