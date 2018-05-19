@@ -1750,9 +1750,6 @@ textarea:focus {
 .select-wrapper:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  font-style: normal;
-  font-weight: 900;
   text-transform: none !important;
 }
 
@@ -1816,9 +1813,6 @@ input[type="checkbox"] + label:before,
 input[type="radio"] + label:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  font-style: normal;
-  font-weight: 900;
   text-transform: none !important;
 }
 
@@ -2010,9 +2004,6 @@ input[type="radio"] + label:before {
 .icon:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-  font-style: normal;
-  font-weight: 900;
   text-transform: none !important;
 }
 
@@ -3128,15 +3119,14 @@ body.landing #main {
   #navButton .toggle:before {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free";
-    font-style: normal;
-    font-weight: 900;
     text-transform: none !important;
   }
   #navButton .toggle:before {
     background: rgba(192, 192, 192, 0.75);
     border-radius: 6px;
     color: #fff;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     content: "\f0c9";
     display: block;
     font-size: 16px;

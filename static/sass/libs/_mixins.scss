@@ -11,9 +11,10 @@
 
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 5 Free";
-    font-style: normal;
-		font-weight: 900;
+    //Not needed because they're defined in the imported FontAwesome.css
+    //font-family: "Font Awesome 5 Free";
+    //font-style: normal;
+		//font-weight: 900;
     text-transform: none !important;
   }
 }
