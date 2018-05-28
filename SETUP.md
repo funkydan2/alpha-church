@@ -165,6 +165,10 @@ At the very bottom of each page is a bunch of icons (from FontAwesome) which can
   link = "/index.xml"
 ```
 
+### 8. Bible Popups
+New in release 1.1.
+Configuration in [params]. Set `bible_popups = true` to include Bible reference popups from Faithlife.
+
 ## Nearly finished
 
 To preview your site, run Hugo's built-in local server.

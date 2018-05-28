@@ -9,7 +9,6 @@ customCSS = ["", ""]
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
 
-
 [taxonomies]
   tag = "tags"
   preacher = "preachers"
@@ -67,6 +66,8 @@ googleAnalytics = ""
   title = "Alpha Church"
   subtitle = "Another Church Theme"
   author = "Daniel Saunders"
+
+  bible_popups = true
 
   [params.podcast]
     title = "Listen to Alpha Church"

@@ -1,8 +1,9 @@
 # Alpha-Church TODO
 ## Soon
-- [ ] Bible Verse popups using [bib.ly](http://bib.ly).
-  - [ ] Setting in config.toml
-  - [ ] Javascript and CSS
+- [x] Bible Verse popups using [bib.ly](http://bib.ly) or [reftagger](https://reftagger.com).
+  - Went with reftagger because it worked straight away. Bib.ly was causing some CSS issues.
+  - [x] Setting in config.toml
+  - [x] Javascript
 
 ## Dreams
 - [ ] Break up home page (index.html) into widgets

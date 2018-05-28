@@ -24,12 +24,11 @@
 {{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery.dropotron/%s/jquery.dropotron.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.dropotron.version $js.dropotron.integrity | safeHTML }}
 {{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/skel/%s/skel.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.skel.version $js.skel.integrity | safeHTML }}
 {{ printf "<script src=\"//unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
-{{ if .Site.GoogleAnalytics }}
-{{ template "_internal/google_analytics_async.html" . }}
-{{ end }}
+{{ if .Site.GoogleAnalytics }}{{ template "_internal/google_analytics_async.html" . }}{{ end }}
 {{ "<!-- Local Scripts -->" | safeHTML }}
 <script src="{{ .Site.BaseURL }}js/util.js"></script>
 <script src="{{ .Site.BaseURL }}js/jquery.scrollgress.min.js"></script>
+{{ if .Site.Params.bible_popups }}<script src="{{ .Site.BaseURL }}js/reftagger.js"></script>{{ end }}
 
 {{ `<!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->` | safeHTML}}
 <script src="{{ .Site.BaseURL }}js/main.js"></script>
