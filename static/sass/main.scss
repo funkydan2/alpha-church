@@ -30,15 +30,28 @@
   (
     reset: "full",
     boxModel: "border",
-    grid: (gutters: 2em),
+    grid: (
+      gutters: 2em
+    ),
     conditionals: true,
     containers: 60em,
-    breakpoints:
-      (
-        narrow: (containers: 90%),
-        narrower: (containers: (90%, true)),
-        mobile: (containers: (100%, true))
+    breakpoints: (
+      narrow: (
+        containers: 90%
+      ),
+      narrower: (
+        containers: (
+          90%,
+          true
+        )
+      ),
+      mobile: (
+        containers: (
+          100%,
+          true
+        )
       )
+    )
   )
 );
 
@@ -984,10 +997,10 @@ audio {
   white-space: nowrap;
 }
 
-/* Map*/
+/* Map */
 #map {
-    padding: ($box-padding * 4) $box-padding;
-  }
+  padding: ($box-padding * 4) $box-padding;
+}
 
 /* Header */
 
@@ -1790,7 +1803,7 @@ body.landing {
   .box {
     margin: (_size(element-margin) * 0.5);
     overflow-x: hidden;
-    padding: $box-padding-vertical $box-padding-horizontal !important;
+    padding: $box-padding-vertical $box-padding-horizontal; /*!important;*/
 
     &.features {
       .features-row {

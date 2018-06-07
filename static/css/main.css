@@ -2454,7 +2454,7 @@ audio {
   white-space: nowrap;
 }
 
-/* Map*/
+/* Map */
 #map {
   padding: 12em 3em;
 }
@@ -3251,7 +3251,8 @@ body.landing #main {
   .box {
     margin: 1em;
     overflow-x: hidden;
-    padding: 2em 2em !important;
+    padding: 2em 2em;
+    /*!important;*/
   }
   .box.features .features-row {
     border-top: 0;
