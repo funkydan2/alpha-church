@@ -1659,7 +1659,7 @@ header p {
   font-style: italic;
 }
 
-header h1, header h2 + p {
+header h2 + p {
   font-size: 1.25em;
   margin-top: -1em;
   line-height: 1.5em;
@@ -2528,6 +2528,7 @@ body.landing #page-wrapper {
   height: inherit;
   left: 1.25em;
   line-height: inherit;
+  font-size: 1.5em;
   margin: 0;
   padding: 0;
   position: absolute;
