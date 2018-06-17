@@ -1659,7 +1659,7 @@ header p {
   font-style: italic;
 }
 
-header h1 + p, header h2 + p {
+header h1, header h2 + p {
   font-size: 1.25em;
   margin-top: -1em;
   line-height: 1.5em;
