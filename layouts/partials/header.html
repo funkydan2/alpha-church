@@ -12,9 +12,10 @@
 		{{ end -}}
 		{{ .Hugo.Generator }}
 		{{ $css := .Site.Data.libs.css }}
-		{{ printf "<link rel=\"stylesheet\" href=\"//use.fontawesome.com/releases/v%s/css/all.css\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $css.fontawesome.version $css.fontawesome.integrity | safeHTML }}
+		{{ printf "<link rel=\"stylesheet\" href=\"//use.fontawesome.com/releases/v%s/css/all.css\" integrity=\"%s\" crossorigin=\"anonymous\">" $css.fontawesome.version $css.fontawesome.integrity | safeHTML }}
+		{{ printf "<link rel=\"stylesheet\" href=\"//cdn.plyr.io/%s/plyr.css\" integrity=\"%s\" crossorigin=\"anonymous\">" $css.plyr.version $css.plyr.integrity | safeHTML }}
 		<!-- OpenStreetMaps -->
-		{{ printf "<link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@%s/dist/leaflet.css\" integrity=\"%s\" crossorigin=\"\"/>" $css.leaflet.version $css.leaflet.integrity | safeHTML }}
+		{{ printf "<link rel=\"stylesheet\" href=\"//unpkg.com/leaflet@%s/dist/leaflet.css\" integrity=\"%s\" crossorigin=\"\"/>" $css.leaflet.version $css.leaflet.integrity | safeHTML }}
 		{{` <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->` | safeHTML }}
 		<link rel="stylesheet" href="/css/main.css" />
 		{{- range .Site.Params.Assets.customCSS -}}

@@ -728,6 +728,7 @@ ul {
     cursor: default;
     list-style: none;
     padding-left: 0;
+    vertical-align: middle;
 
     li {
       display: inline-block;
@@ -981,26 +982,6 @@ input[type="button"],
     cursor: default;
     opacity: 0.25;
   }
-}
-
-/* Audio */
-audio {
-  @include vendor("appearance", "none");
-  @include vendor(
-    "transition",
-    (
-      "background-color #{_duration(transition)} ease-in-out",
-      "color #{_duration(transition)} ease-in-out"
-    )
-  );
-  display: inline-block;
-  border-radius: _size(border-radius);
-  border: 0;
-  height: _size(element-height);
-  line-height: _size(element-height);
-  vertical-align: middle;
-  text-decoration: none;
-  white-space: nowrap;
 }
 
 /* Map */
@@ -1943,6 +1924,7 @@ body.landing {
   ul {
     &.actions {
       margin: 0 0 _size(element-margin) 0;
+      vertical-align: middle;
 
       li {
         display: block;

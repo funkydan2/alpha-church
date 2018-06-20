@@ -23,7 +23,9 @@
 {{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/%s/jquery.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.jQuery.version $js.jQuery.integrity | safeHTML }}
 {{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery.dropotron/%s/jquery.dropotron.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.dropotron.version $js.dropotron.integrity | safeHTML }}
 {{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/skel/%s/skel.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.skel.version $js.skel.integrity | safeHTML }}
-{{ printf "<script src=\"//unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
+{{ printf "<script src=\"//unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
+{{ printf "<script src=\"//cdn.plyr.io/%s/plyr.polyfilled.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}
+<script>const player = new Plyr('#player');</script>
 {{ if .Site.GoogleAnalytics }}{{ template "_internal/google_analytics_async.html" . }}{{ end }}
 {{ "<!-- Local Scripts -->" | safeHTML }}
 <script src="{{ .Site.BaseURL }}js/util.js"></script>
