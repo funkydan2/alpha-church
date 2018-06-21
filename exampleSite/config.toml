@@ -108,7 +108,7 @@ googleAnalytics = ""
         type = "special"
 
         [[params.landing.banner.button]]
-        url = "/about"
+        url = "#feature-icons"
         text = "Find out more"
 
     #Details for the box below the banner

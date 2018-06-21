@@ -1,3 +1,6 @@
+# 1.3 (Friday, 22 June 2018)
+* Put anchor points (#services, #feature-icons, #feature-images, #call-to-action) within index.html layout.
+
 # 1.2 (21 June 2018)
 * Added plyr.io audio player
 * Changed sermon single to work with new plyr

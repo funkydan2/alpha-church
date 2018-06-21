@@ -14,7 +14,7 @@
 					{{ if .Site.Params.Landing.Services.title }}
 					<section class="box special">
 						<header class="major">
-							<h2>{{ .Site.Params.Landing.Services.title }}</h2>
+							<h2>{{ .Site.Params.Landing.Services.title }}</h2><a name="services"></a>
 							<p>{{ .Site.Params.Landing.Services.text | markdownify }}</p>
 						</header>
 						<!--<span class="image featured"><img src="{{ .Site.Params.Landing.Feature.image }}" alt="" /></span>-->
@@ -26,7 +26,7 @@
 					{{ if .Site.Params.Landing.Feature_icons.enable }}
 						{{ $tiles := .Site.Params.Landing.Feature_icons.tile }}
 						{{ $len := (len $tiles) }}
-						<section class="box special features">
+						<section class="box special features"><a name="feature-icons"></a>
 							<div class="features-row">
 								{{ range $index, $key := $tiles}}
 									<section>
@@ -46,7 +46,7 @@
 					{{ if .Site.Params.Landing.Feature_images.enable }}
 						{{ $tiles := .Site.Params.Landing.Feature_images.tile }}
 						{{ $len := (len $tiles) }}
-						<div class="row">
+						<div class="row"><a name="feature-images"></a>
 							{{ range $index, $key := $tiles }}
 								<div class="6u 12u(narrower)">
 
@@ -72,7 +72,7 @@
 				</section>
 
 			{{ "<!-- CTA -->" | safeHTML }}
-				<section id="cta">
+				<section id="cta"><a name="call-to-action"></a>
 
 					<h2>{{ .Site.Params.Landing.CTA.heading}}</h2>
 					<p>{{ .Site.Params.Landing.CTA.message}}</p>
