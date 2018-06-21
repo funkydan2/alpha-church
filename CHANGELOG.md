@@ -1,3 +1,6 @@
+# 1.5 (Friday, 22 June 2018)
+* Moved the 'feature image' for sermons into a left hand column. The reason for this is to have the audio controls show up 'before the fold'
+
 # 1.3 (Friday, 22 June 2018)
 * Put anchor points (#services, #feature-icons, #feature-images, #call-to-action) within index.html layout.
 

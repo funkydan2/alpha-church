@@ -6,7 +6,7 @@ audio: "http://www.archive.org/download/table_talk_martin_luther_1801_librivox/t
 audio_duration: 14:39
 audio_size: 14076118
 preachers: ["Martin Luther"]
-feature_image: ""
+feature_image: "/img/freely-20445.jpg"
 series: ["Test"]
 tags: ["bible","scripture", "historical"]
 draft: false

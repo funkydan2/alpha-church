@@ -10,55 +10,60 @@
 						{{ end }}
 					</header>
 					<div class="box">
-						{{ if .Params.feature_image }}
-							<span class="image featured"><img src="{{ .Params.feature_image | absURL }}" alt=""></span>
-						{{ end }}
-            {{ with .Params.audio }}
-							{{ $audio_name_arr := split . "." }}
-							{{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
-							<ul class="actions small">
+						<div class="row">
+							<div class="6u 12u(mobilep)">
+							{{ if .Params.feature_image }}
+								<span class="image fit"><img src="{{ .Params.feature_image | absURL }}" alt=""></span>
+							{{ end }}
+							</div>
+							<div class="6u 12u(mobilep)">
+							{{ with .Params.audio }}
+								{{ $audio_name_arr := split . "." }}
+								{{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
+								<ul class="actions small">
+									<li>
+									<audio id="player" controls>
+										<source src="{{ . }}" preload="auto" type="audio/{{ $audio_type }}">
+	                	Your browser doesn't support embedded audio.
+	              	</audio>
+								</li>
 								<li>
-								<audio id="player" controls>
-									<source src="{{ . }}" preload="auto" type="audio/{{ $audio_type }}">
-                	Your browser doesn't support embedded audio.
-              	</audio>
-							</li>
-							<li>
-								<a href="{{ . }}" class="button alt small" download><i class="icon fas fa-download"></i>Download</a>
-							</li>
-						</ul>
-            {{ end }} {{/* if .audio */}}
-						{{ .Content }}
-						{{ if .Params.preachers }}
-							<p> Preacher:
-								{{ range $index, $key := .Params.preachers }}
-								{{ if $index }}, {{ end }}
-								{{ if gt (len $key) 0 }}
-									<a href="/preachers/{{ $key | urlize }}/">{{ $key }}</a>
-									{{ end }} {{/* if */}}
-									{{ end }} {{/* range */}}
-								</p>
-						{{ end }} {{/* end if preachers */}}
-						{{ if .Params.series }}
-							<p> Series:
-								{{ range $index, $key := .Params.series }}
-								{{ if $index }}, {{ end }}
-								{{ if gt (len $key) 0 }}
-									<a href="/series/{{ $key | urlize }}/">{{ $key }}</a>
-									{{ end }} {{/* if */}}
-									{{ end }} {{/* range */}}
-								</p>
-						{{ end }} {{/* end if series */}}
-						{{ if .Params.tags }}
-							<p>Topics:
-								{{ range $index, $key:= .Params.tags }}
+									<a href="{{ . }}" class="button alt small" download><i class="icon fas fa-download"></i>Download</a>
+								</li>
+							</ul>
+	            {{ end }} {{/* if .audio */}}
+							{{ .Content }}
+							{{ if .Params.preachers }}
+								<p> Preacher:
+									{{ range $index, $key := .Params.preachers }}
 									{{ if $index }}, {{ end }}
 									{{ if gt (len $key) 0 }}
-						  			<a href="/tags/{{$key | urlize }}/">#{{ $key }}</a>
-										{{ end }} {{/* if gt len */}}
-									{{ end }} {{/* range */}}
-							</p>
-						{{ end }} {{/* end if tags */}}
+										<a href="/preachers/{{ $key | urlize }}/">{{ $key }}</a>
+										{{ end }} {{/* if */}}
+										{{ end }} {{/* range */}}
+									</p>
+							{{ end }} {{/* end if preachers */}}
+							{{ if .Params.series }}
+								<p> Series:
+									{{ range $index, $key := .Params.series }}
+									{{ if $index }}, {{ end }}
+									{{ if gt (len $key) 0 }}
+										<a href="/series/{{ $key | urlize }}/">{{ $key }}</a>
+										{{ end }} {{/* if */}}
+										{{ end }} {{/* range */}}
+									</p>
+							{{ end }} {{/* end if series */}}
+							{{ if .Params.tags }}
+								<p>Topics:
+									{{ range $index, $key:= .Params.tags }}
+										{{ if $index }}, {{ end }}
+										{{ if gt (len $key) 0 }}
+							  			<a href="/tags/{{$key | urlize }}/">#{{ $key }}</a>
+											{{ end }} {{/* if gt len */}}
+										{{ end }} {{/* range */}}
+								</p>
+							{{ end }} {{/* end if tags */}}
+							</div>
 						</div>
 					</div>
 				</section>
