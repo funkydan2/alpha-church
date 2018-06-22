@@ -1894,6 +1894,11 @@ input[type="radio"] + label:before {
   padding: 3em;
 }
 
+.box img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .box > :last-child {
   margin-bottom: 0;
 }
@@ -3042,6 +3047,10 @@ body.landing #main {
   .box {
     padding: 3em 2em;
   }
+  .box img {
+    max-width: 100%;
+    max-height: 100%;
+  }
   .box.features > section {
     padding: 3em 2em;
   }
@@ -3242,6 +3251,10 @@ body.landing #main {
     padding: 2em 2em;
     /*!important;*/
   }
+  .box img {
+    max-width: 100%;
+    max-height: 100%;
+  }
   .box.features .features-row {
     border-top: 0;
     padding: 0;
@@ -3362,6 +3375,10 @@ body.landing #main {
     box-shadow: none;
     margin: 1em 0 0 0;
     padding: 3em 1em !important;
+  }
+  .box img {
+    max-width: 100%;
+    max-height: 100%;
   }
   .box.features .features-row section {
     margin: 3em 0 0 0 !important;

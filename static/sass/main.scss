@@ -464,6 +464,11 @@ $box-padding: 3em;
   margin: 0 0 _size(element-margin) 0;
   padding: $box-padding;
 
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
   > :last-child {
     margin-bottom: 0;
   }
@@ -1581,6 +1586,11 @@ body.landing {
   .box {
     padding: $box-padding-vertical $box-padding-horizontal;
 
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
     &.features {
       > section {
         padding: $box-padding-vertical $box-padding-horizontal;
@@ -1793,6 +1803,11 @@ body.landing {
     overflow-x: hidden;
     padding: $box-padding-vertical $box-padding-horizontal; /*!important;*/
 
+    img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
     &.features {
       .features-row {
         border-top: 0;
@@ -1970,6 +1985,11 @@ body.landing {
     box-shadow: none;
     margin: (_size(element-margin) * 0.5) 0 0 0;
     padding: $box-padding-vertical $box-padding-horizontal !important;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
 
     &.features {
       .features-row {
