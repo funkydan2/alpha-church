@@ -1,3 +1,6 @@
+# 1.5.0.1 (Friday, 22 June 2018)
+* Changed CSS to keep images inside boxes.
+
 # 1.5 (Friday, 22 June 2018)
 * Moved the 'feature image' for sermons into a left hand column. The reason for this is to have the audio controls show up 'before the fold'
 
