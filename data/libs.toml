@@ -37,5 +37,5 @@
   integrity = "sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
 
 [css.plyr]
-  version = "3.3.17"
+  version = "3.3.20"
   integrity = "sha384-KruMFvzpnUrA5q6jObstrrR93lWyHGIfeAXmO4FVG7EYRa9+F35vNb8DbXdRylSH"
