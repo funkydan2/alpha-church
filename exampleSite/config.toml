@@ -74,6 +74,7 @@ googleAnalytics = ""
     subtitle = ""
     summary = "Alpha-Church sermons, talks, messages—podcasted."
     email = "test@example.com"
+    copyright = "Podcast: [CC0 (public domain)](//creativecommons.org/publicdomain/zero/1.0/)"
     image = "img/podcast-cover.jpg"
     category = "Religion & Spirituality"
     sub_category = "Christianity"
@@ -173,7 +174,10 @@ googleAnalytics = ""
       message = "We'd love to hear from you."
 
     [params.footer]
-      copyright = "[CC0 (public domain)](http://creativecommons.org/publicdomain/zero/1.0/)"
+      copyright = ["[CC0 (public domain)](//creativecommons.org/publicdomain/zero/1.0/)",
+                   "Design: [HTML5 UP](//html5up.net/alpha)",
+                   "[Hugo Port](//gohugo.io) by [Daniel Saunders](//github.com/funkydan2)"
+                  ]
 
     [[params.links]]
       service = "Twitter"
