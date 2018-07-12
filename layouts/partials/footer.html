@@ -27,13 +27,20 @@
 {{ printf "<script src=\"//cdn.plyr.io/%s/plyr.polyfilled.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}
 {{ if .Site.GoogleAnalytics }}{{ template "_internal/google_analytics_async.html" . }}{{ end }}
 {{ "<!-- Local Scripts -->" | safeHTML }}
-<script src="{{ .Site.BaseURL }}js/util.js"></script>
-<script src="{{ .Site.BaseURL }}js/jquery.scrollgress.min.js"></script>
-{{ if .Site.Params.bible_popups }}<script src="{{ .Site.BaseURL }}js/reftagger.js"></script>{{ end }}
+{{ $util := resources.Get "js/util.js" | minify | fingerprint }}
+{{ $scrollgress := resources.Get "js/jquery.scrollgress.min.js" | minify | fingerprint }}
+{{ $bible := resources.Get "js/reftagger.js" | minify | fingerprint }}
+{{ $ie := resources.Get "js/ie/respond.min.js" | minify | fingerprint }}
+{{ $main := resources.Get "js/main.js" | minify | fingerprint }}
+{{ $maps := resources.Get "/js/osmaps.init.js" | minify | fingerprint }}
+{{ $plyr := resources.Get "/js/plyr.init.js" | minify | fingerprint }}
+<script src="{{ $util.Permalink }}" integrity="{{ $util.Data.Integrity }}"></script>
+<script src="{{ $scrollgress.Permalink }}" integrity="{{ $scrollgress.Data.Integrity }}"></script>
+{{ if .Site.Params.bible_popups }}<script src="{{ $bible.Permalink }}" integrity="{{ $bible.Data.Integrity }}"></script>{{ end }}
 
-{{ `<!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->` | safeHTML}}
-<script src="{{ .Site.BaseURL }}js/main.js"></script>
-<script src="{{ .Site.BaseURL }}js/osmaps.init.js"></script>
-<script src="{{ .Site.BaseURL }}js/plyr.init.js"></script>
+{{ `<!--[if lte IE 8]><script src=" {{ $ie.Permalink }} "></script><![endif]-->` | safeHTML}}
+<script src="{{ $main.Permalink }}" integrity="{{ $main.Data.Integrity }}"></script>
+<script src="{{ $maps.Permalink }}" integrity="{{ $maps.Data.Integrity }}"></script>
+<script src="{{ $plyr.Permalink }}" integrity="{{ $plyr.Data.Integrity }}"></script>
 </body>
 </html>

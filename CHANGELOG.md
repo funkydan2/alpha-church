@@ -1,6 +1,9 @@
+# Thursday, 12 July 2018
+* Updated SCSS processing for hugo 0.43
+
 # Sunday, 24 June 2018
 * Made copyright an array of options
-* Seperate copyright notice for podcast 
+* Seperate copyright notice for podcast
 
 # Saturday, 23 June 2018
 * Updated [fontawesome to 5.1.0](https://blog.fontawesome.com/font-awesome-5-1-409-new-icons-more-4c1e407fae49?gi=22b3b04bdc95)
