@@ -37,7 +37,6 @@
 <script src="{{ $util.Permalink }}" integrity="{{ $util.Data.Integrity }}"></script>
 <script src="{{ $scrollgress.Permalink }}" integrity="{{ $scrollgress.Data.Integrity }}"></script>
 {{ if .Site.Params.bible_popups }}<script src="{{ $bible.Permalink }}" integrity="{{ $bible.Data.Integrity }}"></script>{{ end }}
-
 {{ `<!--[if lte IE 8]><script src=" {{ $ie.Permalink }} "></script><![endif]-->` | safeHTML}}
 <script src="{{ $main.Permalink }}" integrity="{{ $main.Data.Integrity }}"></script>
 <script src="{{ $maps.Permalink }}" integrity="{{ $maps.Data.Integrity }}"></script>
