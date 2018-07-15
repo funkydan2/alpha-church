@@ -1,7 +1,6 @@
 public/
 npm_modules/
 node_modules/
-resources/
 .npm
 bower_components
 trash
