@@ -18,8 +18,7 @@
 		{{- $ieStyles := resources.Get "scss/main.scss" | toCSS | minify -}}
 		{{- $ieJs := resources.Get "js/ie/html5shiv.js" | minify -}}
 		{{ printf "<!--[if lte IE 8]><script src=\"%s\"></script><link rel=\"stylesheet\" href=\"%s\" /><![endif]-->" $ieJs.Permalink $ieStyles.Permalink | safeHTML }}
-		{{- $cssOpts := (dict "targetPath" "css/style.css") -}}
-		{{- $style := resources.Get "scss/main.scss" | toCSS $cssOpts| minify | fingerprint -}}
+		{{- $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint -}}
 		<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" media="screen">
 		{{- range .Site.Params.Assets.customCSS -}}
     	<link rel='stylesheet' href='{{ . | absURL }}'>
