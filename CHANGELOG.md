@@ -1,3 +1,6 @@
+# Sunday, 15 July 2018
+* Discovered that crossorigin=\"anonymous\" is really important. Fixed.
+
 # Thursday, 12 July 2018
 * Updated SCSS processing for hugo 0.43
 
