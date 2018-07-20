@@ -59,6 +59,7 @@
             {{- if $index }}, {{ end -}}
             {{- if gt (len $key) 0 }}{{ $key }}{{ end -}}
           {{- end -}} {{/* range */}}
+        </itunes:keywords>
       {{- end -}} {{/* end if tags */}}
     </item>
     {{ end }}
