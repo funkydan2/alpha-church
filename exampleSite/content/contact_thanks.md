@@ -2,7 +2,7 @@
 title: "Thanks for Contacting Us"
 subtitle: ""
 date: 2018-05-12T13:38:38+10:00
-feature_image: ""
+images: []
 tags: ""
 draft: false
 ---

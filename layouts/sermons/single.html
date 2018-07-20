@@ -27,8 +27,8 @@
 						{{ end }} {{/* if .audio */}}
 						<div class="row">
 							<div class="6u 12u(mobilep)">
-							{{ if .Params.feature_image }}
-								<span class="image fit"><img src="{{ .Params.feature_image | absURL }}" alt=""></span>
+							{{ with .Params.images }}
+								<span class="image fit"><img src="{{ index . 0 | absURL }}" alt=""></span>
 							{{ end }}
 							</div>
 							<div class="6u 12u(mobilep)">
@@ -36,12 +36,12 @@
 							{{ if .Params.preachers }}
 								<p> Preacher:
 									{{ range $index, $key := .Params.preachers }}
-									{{ if $index }}, {{ end }}
-									{{ if gt (len $key) 0 }}
-										<a href="/preachers/{{ $key | urlize }}/">{{ $key }}</a>
+										{{ if $index }}, {{ end }}
+										{{ if gt (len $key) 0 }}
+											<a href="/preachers/{{ $key | urlize }}/">{{ $key }}</a>
 										{{ end }} {{/* if */}}
-										{{ end }} {{/* range */}}
-									</p>
+									{{ end }} {{/* range */}}
+								</p>
 							{{ end }} {{/* end if preachers */}}
 							{{ if .Params.series }}
 								<p> Series:

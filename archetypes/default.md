@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 subtitle: ""
 date: {{ .Date }}
-feature_image: ""
+images: [""]
 tags: []
 draft: true
 ---

@@ -6,7 +6,7 @@ audio: ""
 audio_duration: ""
 audio_size: 0
 preachers: []
-feature_image: ""
+images: [""]
 series: []
 tags: []
 draft: true
