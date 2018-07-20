@@ -11,7 +11,7 @@
   <channel>
     <title>{{ .Site.Params.Podcast.title }}</title>
     <link>{{ .Site.BaseURL }}</link>
-    <atom:link href="{{ .Site.BaseURL}}/sermons/podcast.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="{{ .Site.BaseURL}}sermons/index.xml" rel="self" type="application/rss+xml" />
     <language>{{ .Site.LanguageCode }}</language>
     <lastBuildDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</lastBuildDate>
     <copyright>{{ .Site.Params.Podcast.copyright | plainify }}</copyright>
@@ -53,14 +53,13 @@
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>
       <itunes:duration>{{ .Params.audio_duration}}</itunes:duration>
-      {{ if .Params.tags }}
+      {{- if .Params.tags -}}
         <itunes:keywords>
-          {{ range $index, $key:= .Params.tags }}
-            {{ if $index }}, {{ end }}
-            {{ if gt (len $key) 0 }}{{ $key }}{{ end }}
-            {{ end }} {{/* range */}}
-        </p>
-      {{ end }} {{/* end if tags */}}
+          {{- range $index, $key:= .Params.tags -}}
+            {{- if $index }}, {{ end -}}
+            {{- if gt (len $key) 0 }}{{ $key }}{{ end -}}
+          {{- end -}} {{/* range */}}
+      {{- end -}} {{/* end if tags */}}
     </item>
     {{ end }}
   </channel>
