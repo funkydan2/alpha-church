@@ -6,7 +6,7 @@ audio: "http://ia801403.us.archive.org/29/items/institutes_christian_religion2_1
 audio_duration: 22:23
 audio_size: 10748346
 images: []
-preachers: ["John Calvin"]
+preachers: "John Calvin"
 series: ["Test"]
 tags: ["theology","redemption", "historical"]
 draft: false

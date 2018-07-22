@@ -33,15 +33,8 @@
 							</div>
 							<div class="6u 12u(mobilep)">
 							{{ .Content }}
-							{{ if .Params.preachers }}
-								<p> Preacher:
-									{{ range $index, $key := .Params.preachers }}
-										{{ if $index }}, {{ end }}
-										{{ if gt (len $key) 0 }}
-											<a href="/preachers/{{ $key | urlize }}/">{{ $key }}</a>
-										{{ end }} {{/* if */}}
-									{{ end }} {{/* range */}}
-								</p>
+							{{ with .Params.preachers }}
+								<p> Preacher: <a href="/preachers/{{ . | urlize }}/">{{ . }}</a></p>
 							{{ end }} {{/* end if preachers */}}
 							{{ if .Params.series }}
 								<p> Series:

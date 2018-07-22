@@ -33,14 +33,7 @@
     {{ range .Pages }}
     <item>
       <title>{{ title .Params.title }}</title>
-      <itunes:author>
-        {{- if .Params.preachers -}}
-					{{- range $index, $key := .Params.preachers -}}
-						{{- if $index -}}, {{- end -}}
-						{{- if gt (len $key) 0 -}}{{- $key -}}{{- end -}}
-					{{- end -}}
-				{{- end -}}
-      </itunes:author>
+      <itunes:author>{{ .Params.preachers }}</itunes:author>
       <itunes:summary>{{ .Summary | plainify }}</itunes:summary>
       {{ printf "<description><![CDATA[%s]]></description>" .Content | safeHTML }}
       {{ printf `<googleplay:description><![CDATA[%s]]></googleplay:description>` .Content | safeHTML }}
