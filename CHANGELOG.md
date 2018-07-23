@@ -1,3 +1,6 @@
+# Monday, 23 July 2018
+* Change preachers from an array, since sermons are (normally) only preached by one person.
+
 # Friday, 20 July 2018
 * Include OpenGraph and Twitter Card meta-data.
   * **Note: this breaks previous frontmatter.** feature_image is now deprecated, and replaced with images, which is an array.
