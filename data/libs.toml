@@ -29,8 +29,8 @@
 # CSS
 [css.fontawesome]
   #Note: these are the details for the CSS method
-  version = "5.1.0"
-  integrity = "sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+  version = "5.2.0"
+  integrity = "sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
 
 [css.leaflet]
   version = "1.3.1"
