@@ -1,3 +1,6 @@
+# Tuesday, 24 July 2018
+* Update FontAwesome to 5.2
+
 # Monday, 23 July 2018
 * Change preachers from an array, since sermons are (normally) only preached by one person.
 
