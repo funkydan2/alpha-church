@@ -4,7 +4,7 @@ This theme is based on [Alpha by HTML5 UP](//html5up.net/alpha) [@ajlkn](http://
 
 A clean, super minimal responsive template geared towards churches though it could be adapted for other community groups. This theme includes a landing page, open street maps, blog posts and a sermon podcast.
 
-![Screenshot](//github.com/funkydan2/alpha-church/raw/master/images/screenshot.png)
+![Screenshot](https://github.com/funkydan2/alpha-church/raw/master/images/screenshot.png)
 
 Demo images courtesy of [freelyphotos](//freelyphotos.com), totally free high-quality stock photography available under the fantastic [CC0 (public domain)](http://creativecommons.org/publicdomain/zero/1.0/) license.
 
