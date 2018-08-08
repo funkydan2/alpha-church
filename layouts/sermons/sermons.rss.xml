@@ -30,7 +30,12 @@
     <itunes:block>no</itunes:block>
     <itunes:explicit>no</itunes:explicit>
     <generator>Hugo -- gohugo.io</generator>
-    {{ range .Pages }}
+    {{ if isset .Site.Params.Podcast "num_episodes" }}
+      {{ .Scratch.Set "num_ep" .Site.Params.Podcast.num_episodes }}
+    {{ else }}
+      {{ .Scratch.Set "num_ep" 50 }}
+    {{ end }}
+    {{ range first .Scratch.Get "num_ep" .Pages }}
     <item>
       <title>{{ title .Params.title }}</title>
       <itunes:author>{{ .Params.preachers }}</itunes:author>
