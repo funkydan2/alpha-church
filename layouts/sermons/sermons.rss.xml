@@ -35,7 +35,7 @@
     {{ else }}
       {{ .Scratch.Set "num_ep" 50 }}
     {{ end }}
-    {{ range first .Scratch.Get "num_ep" .Pages }}
+    {{ range first (.Scratch.Get "num_ep") .Pages }}
     <item>
       <title>{{ title .Params.title }}</title>
       <itunes:author>{{ .Params.preachers }}</itunes:author>

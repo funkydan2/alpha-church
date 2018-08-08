@@ -1,3 +1,6 @@
+# Wednesday, 8 August 2018
+* Limit podcast episodes to 50 by default. This can be changed by setting num_episodes in the [Podcast] section of config.toml.
+
 # Tuesday, 24 July 2018
 * Update FontAwesome to 5.2
 
