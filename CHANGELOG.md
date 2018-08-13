@@ -1,3 +1,6 @@
+# Tuesday, 14 August 2018
+* [Plyr 3.4.0](https://github.com/sampotts/plyr/releases/tag/v3.4.0)
+
 # Wednesday, 8 August 2018
 * Limit podcast episodes to 50 by default. This can be changed by setting num_episodes in the [Podcast] section of config.toml.
 
