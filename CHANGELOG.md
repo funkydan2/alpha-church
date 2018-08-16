@@ -1,5 +1,6 @@
-# Thursday, 16 August 2018
+# Friday, 17 August 2018
 * Added [honeypot spam protection for netlify forms](https://www.netlify.com/docs/form-handling/#honeypot-field)
+   * Updated to use scss to hide field (hopefully trickier for bots).
 
 # Tuesday, 14 August 2018
 * [Plyr 3.4.0](https://github.com/sampotts/plyr/releases/tag/v3.4.0)
