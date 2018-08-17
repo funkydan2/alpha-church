@@ -1,3 +1,6 @@
+# Saturday, 18 August 2018
+* Added scss for `input:not([type]),` to deal with `hugo --minify` in 0.47
+
 # Friday, 17 August 2018
 * Added [honeypot spam protection for netlify forms](https://www.netlify.com/docs/form-handling/#honeypot-field)
    * Updated to use scss to hide field (hopefully trickier for bots).

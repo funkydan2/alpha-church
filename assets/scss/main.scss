@@ -1440,6 +1440,7 @@ body.landing {
     color: _palette(accent2, bg);
   }
 
+  input:not([type]),
   input[type="text"],
   input[type="password"],
   input[type="email"],
