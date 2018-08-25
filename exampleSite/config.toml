@@ -1,7 +1,8 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Alpha Church"
-theme = ["../.."]
+theme = ['alpha-church']
+themesDir = "../.."
 
 enableEmoji = true
 customCSS = ["", ""]
