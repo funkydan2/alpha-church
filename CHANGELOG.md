@@ -1,3 +1,6 @@
+# Thursday, 30 August 2018
+* FontAwesome 5.3.1 now has some ['religious' icons](https://fontawesome.com/icons?d=gallery&c=religion)
+
 # Saturday, 18 August 2018
 * Added scss for `input:not([type]),` to deal with `hugo --minify` in 0.47
 

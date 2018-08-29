@@ -133,7 +133,7 @@ googleAnalytics = ""
         text = "Growing people who serve our community."
 
       [[params.landing.feature_icons.tile]]
-        icon = "fa-users"
+        icon = "fa-church"
         icon_pack = "fas"
         accent = "2"
         title = "Meet"
