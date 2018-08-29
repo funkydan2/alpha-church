@@ -8,7 +8,7 @@ description = "A hugo port of html5up Alpha theme. Customised for church use."
 homepage = "https://github.com/funkydan2/alpha-church"
 tags = ["church", "podcast"]
 features = ["drop down menu", "banner", "feature images", "fontawesome", "podcast"]
-min_version = "0.43"
+min_version = "0.48"
 
 [author]
   name = "Daniel Saunders"
