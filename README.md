@@ -6,6 +6,8 @@ A clean, super minimal responsive template geared towards churches though it cou
 
 ![Screenshot](https://github.com/funkydan2/alpha-church/raw/master/images/screenshot.png)
 
+You can see this theme 'in the wild' at https://gympiepresbyterian.org.au.
+
 Demo images courtesy of [freelyphotos](//freelyphotos.com), totally free high-quality stock photography available under the fantastic [CC0 (public domain)](http://creativecommons.org/publicdomain/zero/1.0/) license.
 
 [Feedback, bug reports, and comments](//github.com/funkydan2/alpha-church/issues) are not only welcome but encouraged :)
