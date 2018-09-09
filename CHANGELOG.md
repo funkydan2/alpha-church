@@ -1,3 +1,6 @@
+# Sunday, 9 September 2018
+* Changed to Relative Permalinks for assets to ensure the exampleSite builds on //themes.gohugo.io.
+
 # Thursday, 30 August 2018
 * FontAwesome 5.3.1 now has some ['religious' icons](https://fontawesome.com/icons?d=gallery&c=religion)
 
