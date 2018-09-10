@@ -10,6 +10,9 @@
     	{{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
 		{{- end -}}
 		{{ .Hugo.Generator }}
+		{{ with .Site.Params.Podcast.iTunesID }}
+			<meta name="apple-itunes-app" content="app-id={{ . }}" />
+		{{ end }}
 		{{ template "_internal/opengraph.html" . }}
 		{{ template "_internal/twitter_cards.html" . }}
 		{{- $css := .Site.Data.libs.css -}}

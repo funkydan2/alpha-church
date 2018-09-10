@@ -80,6 +80,7 @@ googleAnalytics = ""
     category = "Religion & Spirituality"
     sub_category = "Christianity"
     num_episodes = "10"
+    #iTunesID = ""
 
   [params.map]
     # For Open Street Map widgets
