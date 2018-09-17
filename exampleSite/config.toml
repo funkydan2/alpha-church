@@ -71,7 +71,6 @@ googleAnalytics = ""
   bible_popups = true
 
   [params.podcast]
-    enable = true
     title = "Listen to Alpha Church"
     subtitle = ""
     summary = "Alpha-Church sermons, talks, messages—podcasted."
