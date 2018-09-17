@@ -1,6 +1,11 @@
+# Monday, 17 September 2018
+Big changes for podcast discovery.
+* Added 'Subscribe on Android' and 'Subscribe in iTunes' link to list of sermons.
+To make this work, there's been a few variables changed in `config.toml` - see the exampleSite config for details.
+
 # Monday, 10 September 2018
 * Added meta tag for linking to Apple Podcasts on iOS ([see this page for more information](https://blog.pacific-content.com/optimize-your-podcast-website-for-ios-with-a-single-line-of-code-cf56a7a3f486))
-** `.Site.Params.Podcast.iTunesID` in config.toml required for this feature.
+** `.Site.Params.Podcast.iTunesID` in config.toml required for this feature. **NB changes on 17/9/18**
 
 # Sunday, 9 September 2018
 * Changed to Relative Permalinks for assets to ensure the exampleSite builds on //themes.gohugo.io.

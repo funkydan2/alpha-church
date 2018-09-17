@@ -71,6 +71,7 @@ googleAnalytics = ""
   bible_popups = true
 
   [params.podcast]
+    enable = true
     title = "Listen to Alpha Church"
     subtitle = ""
     summary = "Alpha-Church sermons, talks, messages—podcasted."
@@ -80,7 +81,8 @@ googleAnalytics = ""
     category = "Religion & Spirituality"
     sub_category = "Christianity"
     num_episodes = "10"
-    #iTunesID = ""
+    iTunes = "https://itunes.apple.com/us/podcast/tgc-word-of-the-week/id1034013280"
+    feed = "https://www.thegospelcoalition.org/podcasts/word-of-the-week/feed/?feed=podcast"
 
   [params.map]
     # For Open Street Map widgets

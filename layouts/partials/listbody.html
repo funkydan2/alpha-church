@@ -1,0 +1,40 @@
+  <div class="box">
+  {{ $pages := .Paginator.Pages }}
+  {{ $len := (len $pages) }}
+  {{ range $index, $key := $pages }}
+    {{ if .Params.images }}
+      <div class="row no-collapse 50% uniform">
+        <div class="6u">
+          <a href="{{ .Permalink }}">{{ if .Draft }}DRAFT: {{end}}{{ .Title | markdownify }}</a>
+          <time class="date-meta">({{ .Date.Format "Jan 2, 2006" }})</time>
+          <br>
+          {{ .Summary | plainify | safeHTML }}
+          {{ if .Truncated }}
+            <a class="button small alt" href="{{ .Permalink }}" >
+                Read more<i class="fas fa-angle-double-right"></i>
+            </a>
+          {{ end }} {{/* if */}}
+        </div>
+        <div class="6u">
+          <span class="image fit"><img src="{{ index .Params.images 0 | absURL }}"></span>
+        </div>
+    </div>
+    {{ else }}
+    <div>
+      <a href="{{ .Permalink }}">{{ if .Draft }}DRAFT: {{end}}{{ .Title | markdownify }}</a>
+      <time class="date-meta">({{ .Date.Format "Jan 2, 2006" }})</time>
+      <br>
+      {{ .Summary | plainify | safeHTML }}
+      {{ if .Truncated }}
+        <a class="button small alt" href="{{ .Permalink }}" >
+            Read more<i class="fas fa-angle-double-right"></i>
+        </a>
+      {{ end }} {{/* if */}}
+    </div>
+    {{ end }}{{/* if */}}
+    {{ if lt (add $index 1) $len }}
+      <hr />
+    {{ end }}{{/* if */}}
+  {{ end }} {{/* range */}}
+  {{ template "_internal/pagination.html" . }}
+  </div>
