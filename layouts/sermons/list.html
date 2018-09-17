@@ -6,10 +6,10 @@
 				{{ if .Site.Params.Podcast.enable }}
 					<ul class="icons">
 						<li>
-							<a href="https://subscribeonandroid.com/{{ index (split .Site.Params.Podcast.feed "://") 1 }}"><i class="icon fab fa-android"><span class="label">Subscribe on Android</span></i>Subscribe on Android</a>
+							<a href="https://subscribeonandroid.com/{{ index (split .Site.Params.Podcast.feed "://") 1 }}" target="_blank"><i class="icon fab fa-android"><span class="label">Subscribe on Android</span></i>Subscribe on Android</a>
 						</li>
 						<li>
-							<a href="{{ .Site.Params.Podcast.iTunes }}"><i class="icon fab fa-apple"><span class="label">Subscribe on iTunes</span></i>Subscribe in iTunes</a>
+							<a href="{{ .Site.Params.Podcast.iTunes }}" target="_blank"><i class="icon fab fa-apple"><span class="label">Subscribe on iTunes</span></i>Subscribe in iTunes</a>
 						</li>
 					</ul>
 				{{ end }}
