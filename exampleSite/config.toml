@@ -5,7 +5,6 @@ theme = ['alpha-church']
 themesDir = "../.."
 
 enableEmoji = true
-customCSS = ["", ""]
 
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
@@ -67,6 +66,8 @@ googleAnalytics = ""
   title = "Alpha Church"
   subtitle = "Another Church Theme"
   author = "Daniel Saunders"
+
+  customCSS = ["example.css"]
 
   bible_popups = true
 

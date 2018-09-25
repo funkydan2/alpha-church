@@ -25,7 +25,7 @@
 		{{ printf "<!--[if lte IE 8]><script src=\"%s\"></script><link rel=\"stylesheet\" href=\"%s\" /><![endif]-->" $ieJs.RelPermalink $ieStyles.RelPermalink | safeHTML }}
 		{{- $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint -}}
 		<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" crossorigin="anonymous" />
-		{{- range .Site.Params.Assets.customCSS -}}
-    	<link rel='stylesheet' href='{{ . | absURL }}'>
+		{{- range .Site.Params.customCSS -}}
+    	<link rel="stylesheet" href="{{ . | absURL }}">
   	{{- end -}}
 	</head>

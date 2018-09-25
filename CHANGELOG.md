@@ -1,3 +1,6 @@
+# Wednesday, 26 September 2018
+* Bugfix: Custom CSS variable was incorrect. To enable custom CSS, see the updated config.toml in the exampleSite. Place you custom CSS file in `/static`.
+
 # Monday, 17 September 2018
 Big changes for podcast discovery.
 * Added 'Subscribe on Android' and 'Subscribe in iTunes' link to list of sermons.
