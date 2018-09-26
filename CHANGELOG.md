@@ -1,5 +1,6 @@
 # Wednesday, 26 September 2018
 * Bugfix: Custom CSS variable was incorrect. To enable custom CSS, see the updated config.toml in the exampleSite. Place you custom CSS file in `/static`.
+* Updated to [plyr 3.4.4](https://github.com/sampotts/plyr/releases/tag/v3.4.4)
 
 # Monday, 17 September 2018
 Big changes for podcast discovery.

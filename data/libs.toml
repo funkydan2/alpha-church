@@ -24,8 +24,8 @@
 
 [js.plyr]
   #Make sure the hash is for the polyfilled version
-  version = "3.4.1"
-  integrity = "sha384-s+RVF3cx4l+eIGegHhjP7j9g1DyaohsbbuO3pgcYt+kev3y4jkkT4m3kNNj3bT8v"
+  version = "3.4.4"
+  integrity = "sha384-sjKvJS2ZXie8sikXQJ+qoE73T3hO6N47L+p909nzTcYwtO9tY1iYOlw2CL++o7nk"
 
 # CSS
 [css.fontawesome]
@@ -38,5 +38,5 @@
   integrity = "sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
 
 [css.plyr]
-  version = "3.4.1"
-  integrity = "sha384-bfJhIbgdA3NoSimZmmx27x3SxlEB8MOOzXpS6RKw5xgkJ2z5sjH+cactMNOlBBh1"
+  version = "3.4.4"
+  integrity = "sha384-2vpn9GfASb/BJIGGXpnHYAvN7hMw4YikNNkWxkAjbuSaiYNil6OSsn2m3MwC0zX1"
