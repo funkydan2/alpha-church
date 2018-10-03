@@ -1,3 +1,6 @@
+# Wednesday, 3 October 2018
+Just a small change to the single sermon partial to make code more [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+
 # Wednesday, 26 September 2018
 * Bugfix: Custom CSS variable was incorrect. To enable custom CSS, see the updated config.toml in the exampleSite. Place you custom CSS file in `/static`.
 * Updated to [plyr 3.4.4](https://github.com/sampotts/plyr/releases/tag/v3.4.4)

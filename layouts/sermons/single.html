@@ -1,6 +1,4 @@
-{{ partial "header" . }}
-{{ partial "nav" . }}
-
+{{ define "main" }}
 			{{ "<!-- Main -->" | safeHTML }}
 				<section id="main" class="container">
 					<header>
@@ -60,4 +58,4 @@
 						</div>
 					</div>
 				</section>
-{{ partial "footer" . }}
+{{ end }}
