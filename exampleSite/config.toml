@@ -4,6 +4,8 @@ title = "Alpha Church"
 theme = ['alpha-church']
 themesDir = "../.."
 
+rssLimit = 5
+
 enableEmoji = true
 
 # Enter your tracking code to enable Google Analytics
@@ -80,7 +82,6 @@ googleAnalytics = ""
     image = "img/podcast-cover.jpg"
     category = "Religion & Spirituality"
     sub_category = "Christianity"
-    num_episodes = "10"
     iTunes = "https://itunes.apple.com/us/podcast/tgc-word-of-the-week/id1034013280"
     feed = "https://www.thegospelcoalition.org/podcasts/word-of-the-week/feed/?feed=podcast"
 

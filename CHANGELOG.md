@@ -1,5 +1,6 @@
 # Wednesday, 3 October 2018
-Just a small change to the single sermon partial to make code more [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+* A small change to the single sermon partial to make code more [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+* Discovered the [`rssLimit` configuration setting](https://gohugo.io/getting-started/configuration/#all-configuration-settings) so removed `.Params.Podcast.num_episodes` setting and code which used it. So now, to set how many episodes use the built in setting. (This does mean all feeds, e.g. blog and podcast, will have the same number of entries.)
 
 # Wednesday, 26 September 2018
 * Bugfix: Custom CSS variable was incorrect. To enable custom CSS, see the updated config.toml in the exampleSite. Place you custom CSS file in `/static`.
