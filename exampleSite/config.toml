@@ -16,8 +16,8 @@ googleAnalytics = ""
   preacher = "preachers"
   series = "series"
 
-#This theme can generate a multi-level theme.
-#Use the weight= to specify the order of menu items, and the parent= to create a submenu item.
+#This theme can generate a multi-level menu.
+#Use weight= to specify the order of menu items, and parent= to create a submenu item.
 [menu]
   [[menu.main]]
     name = "Home"
