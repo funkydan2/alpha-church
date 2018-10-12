@@ -1,3 +1,6 @@
+# Saturday, 13 October 2018
+* FontAwesome 5.4.1
+
 # Wednesday, 3 October 2018
 * A small change to the single sermon partial to make code more [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 * Discovered the [`rssLimit` configuration setting](https://gohugo.io/getting-started/configuration/#all-configuration-settings) so removed `.Params.Podcast.num_episodes` setting and code which used it. So now, to set how many episodes use the built in setting. (This does mean all feeds, e.g. blog and podcast, will have the same number of entries.)
