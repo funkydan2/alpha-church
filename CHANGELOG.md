@@ -1,5 +1,6 @@
 # Saturday, 13 October 2018
 * FontAwesome 5.4.1
+* [Leaflet JS 1.3.4](https://leafletjs.com/2018/08/21/leaflet-1.3.4.html)
 
 # Wednesday, 3 October 2018
 * A small change to the single sermon partial to make code more [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
