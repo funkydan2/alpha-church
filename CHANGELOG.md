@@ -1,3 +1,6 @@
+# Monday, 5 November 2018
+* FontAwesome 5.5
+
 # Saturday, 13 October 2018
 * FontAwesome 5.4.1
 * [Leaflet JS 1.3.4](https://leafletjs.com/2018/08/21/leaflet-1.3.4.html)

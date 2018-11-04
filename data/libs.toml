@@ -30,8 +30,8 @@
 # CSS
 [css.fontawesome]
   #Note: these are the details for the CSS method
-  version = "5.4.1"
-  integrity = "sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+  version = "5.5.0"
+  integrity = "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
 
 [css.leaflet]
   version = "1.3.4"
