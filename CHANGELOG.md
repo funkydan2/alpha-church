@@ -1,5 +1,6 @@
 # Monday, 5 November 2018
 * FontAwesome 5.5
+* Fixed pluralised titles for sermon series.
 
 # Saturday, 13 October 2018
 * FontAwesome 5.4.1
