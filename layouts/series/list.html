@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{ "<!-- Main -->" | safeHTML }}
+		<section id="main" class="container">
+			<header>
+				<h2>{{ .Title | title }}</h2>
+			</header>
+			{{ partial "listbody" . }}
+	</section>
+{{ end }}
