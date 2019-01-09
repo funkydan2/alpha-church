@@ -69,13 +69,13 @@ This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscin
 
 This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
-*Note: the [Figure-Figcaption](http://html5doctor.com/the-figure-figcaption-elements/) and [Details-Summary](http://html5doctor.com/the-details-and-summary-elements/) elements are not currently supported in markdown.*
+*Note: the [Figure-Figcaption](//html5doctor.com/the-figure-figcaption-elements/) and [Details-Summary](//html5doctor.com/the-details-and-summary-elements/) elements are not currently supported in markdown.*
 
 * * *
 
 #  Text Elements
 
-The [a element](#) and [external a element](https://example.com) examples
+The [a element](#) and [external a element](//example.com) examples
 
 The <abbr>abbr element</abbr> and an <abbr title="Abbreviation">abbr</abbr> element with title examples
 
