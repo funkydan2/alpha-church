@@ -1,3 +1,6 @@
+# Monday, 14 January 2019
+* Added a small space between icon and word in download button for sermon recordings.
+
 # Monday, 5 November 2018
 * FontAwesome 5.5
 * Fixed pluralised titles for sermon series.
