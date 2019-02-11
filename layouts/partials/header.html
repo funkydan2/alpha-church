@@ -17,7 +17,7 @@
 		{{ template "_internal/twitter_cards.html" . }}
 		{{- $css := .Site.Data.libs.css -}}
 		{{ printf "<link rel=\"stylesheet\" href=\"//use.fontawesome.com/releases/v%s/css/all.css\" integrity=\"%s\" crossorigin=\"anonymous\">" $css.fontawesome.version $css.fontawesome.integrity | safeHTML }}
-		{{ printf "<link rel=\"stylesheet\" href=\"//cdn.plyr.io/%s/plyr.css\" integrity=\"%s\" crossorigin=\"anonymous\">" $css.plyr.version $css.plyr.integrity | safeHTML }}
+		{{ if .IsPage }}{{ printf "<link rel=\"stylesheet\" href=\"//cdn.plyr.io/%s/plyr.css\" integrity=\"%s\" crossorigin=\"anonymous\">" $css.plyr.version $css.plyr.integrity | safeHTML }}{{ end }}
 		<!-- OpenStreetMaps -->
 		{{ printf "<link rel=\"stylesheet\" href=\"//unpkg.com/leaflet@%s/dist/leaflet.css\" integrity=\"%s\" crossorigin=\"anonymous\"/>" $css.leaflet.version $css.leaflet.integrity | safeHTML }}
 		{{- $ieStyles := resources.Get "scss/main.scss" | toCSS | minify -}}

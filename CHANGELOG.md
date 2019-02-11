@@ -1,5 +1,6 @@
 # Monday, 11 February 2019
 * Added optional [instant.page](//instant.page) support. This allows for prefetching of pages in some modern browsers and should increase the speed of the site for users. To enable, set `instant_page = true` in the `[params]` section of `config.toml`.
+* Only load [plyr](//plyr.io) on *pages*. This should slightly improve loading time, but it would be even better to only load the library when  `<audio>` is on a page - I'm not sure how to do that.
 
 # Tuesday, 29 January 2019
 * [FontAwesome 5.7.0](https://github.com/FortAwesome/Font-Awesome/releases/tag/5.7.0)
