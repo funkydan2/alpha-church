@@ -1,3 +1,6 @@
+# Monday, 11 February 2019
+* Added optional [instant.page](//instant.page) support. This allows for prefetching of pages in some modern browsers and should increase the speed of the site for users. To enable, set `instant_page = true` in the `[params]` section of `config.toml`.
+
 # Tuesday, 29 January 2019
 * [FontAwesome 5.7.0](https://github.com/FortAwesome/Font-Awesome/releases/tag/5.7.0)
 

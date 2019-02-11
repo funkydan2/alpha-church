@@ -72,6 +72,7 @@ googleAnalytics = ""
   customCSS = ["example.css"]
 
   bible_popups = true
+  instant_page = true
 
   [params.podcast]
     title = "Listen to Alpha Church"

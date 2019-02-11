@@ -27,6 +27,10 @@
   version = "3.4.5"
   integrity = "sha384-3Rhs1/DCBHbOtj6pKQvilXNF1pSedRc2uHv00t+RTrXel/1TmLTIOGMU+ISaG3au"
 
+[js.instantpage]
+  version = "1.1.0"
+  integrity = "sha384-EwBObn5QAxP8f09iemwAJljc+sU+eUXeL9vSBw1eNmVarwhKk2F9vBEpaN9rsrtp"
+
 # CSS
 [css.fontawesome]
   #Note: these are the details for the CSS method

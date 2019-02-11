@@ -26,6 +26,7 @@
 {{ printf "<script src=\"//unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
 {{ printf "<script src=\"//cdn.plyr.io/%s/plyr.polyfilled.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}
 {{ if .Site.GoogleAnalytics }}{{ template "_internal/google_analytics_async.html" . }}{{ end }}
+{{ if .Site.Params.instant_page }}{{ printf "<script src=\"//instant.page/%s\" type=\"module\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.instantpage.version $js.instantpage.integrity | safeHTML }}{{ end }}
 {{ "<!-- Local Scripts -->" | safeHTML }}
 {{ $util := resources.Get "js/util.js" | minify | fingerprint }}
 {{ $scrollgress := resources.Get "js/jquery.scrollgress.min.js" | minify | fingerprint }}
