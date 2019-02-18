@@ -1,3 +1,6 @@
+# Tuesday, 19 February 2019
+* [Plyr 3.5.0](https://github.com/sampotts/plyr/releases/tag/v3.5.0)
+
 # Monday, 18 February 2019
 * Somehow `overlay.png` got lost (probably when I converted to using Hugo Pipes). It's not found.
 

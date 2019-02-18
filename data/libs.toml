@@ -24,8 +24,8 @@
 
 [js.plyr]
   #Make sure the hash is for the polyfilled version
-  version = "3.4.5"
-  integrity = "sha384-3Rhs1/DCBHbOtj6pKQvilXNF1pSedRc2uHv00t+RTrXel/1TmLTIOGMU+ISaG3au"
+  version = "3.5.0"
+  integrity = "sha384-g5XWqNkboW7EHf70PDDgLVOwcSsDhomIh0gjQPcfKEs+ZU4i8S6CjNJfM+TuxLn/"
 
 [js.instantpage]
   version = "1.1.0"
@@ -42,5 +42,5 @@
   integrity = "sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
 
 [css.plyr]
-  version = "3.4.5"
-  integrity = "sha384-JqfplAQ7gnCzjJ6j4zjffZi4KkVBkO/+vvvL5Ax4tzvCrQ8sQVBtjoHY3z3WmDDh"
+  version = "3.5.0"
+  integrity = "sha384-isCW9H/FX+mXAJvva5Cxo7XA8tMO2oa0DLqamf2c0HcNVRpvWd9CoXBZv5mWYswz"
