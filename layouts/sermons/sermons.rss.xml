@@ -32,7 +32,7 @@
     <generator>Hugo -- gohugo.io</generator>
     {{- range .Pages -}}
     <item>
-      <title>{{ title .Params.title }}{{ with .Params.passage }}({{ . }}){{ end }}</title>
+      <title>{{ title .Params.title }}{{ with .Params.passage }} ({{ . }}){{ end }}</title>
       <itunes:author>{{ .Params.preachers }}</itunes:author>
       <itunes:summary>{{ .Summary | plainify }}</itunes:summary>
       {{ printf "<description><![CDATA[%s]]></description>" .Content | safeHTML }}
