@@ -1,3 +1,6 @@
+# Monday, 4 March 2019
+* Changed podcast feed so passage is displayed in brackets following the sermon title.
+
 # Tuesday, 19 February 2019
 * [Plyr 3.5.0](https://github.com/sampotts/plyr/releases/tag/v3.5.0)
 
