@@ -37,7 +37,7 @@
       <itunes:summary>{{ .Summary | plainify }}</itunes:summary>
       {{ printf "<description><![CDATA[%s]]></description>" .Content | safeHTML }}
       {{ printf `<googleplay:description><![CDATA[%s]]></googleplay:description>` .Content | safeHTML }}
-      <content:encoded>{{ printf "<description><![CDATA[%s]]></description>" .Content | safeHTML }}</content:encoded>
+      {{ printf "<content:encoded><![CDATA[%s]]></content:encoded>" .Content | safeHTML }}
       {{- with .Params.images -}}<itunes:image href="{{ index . 0 | absURL }}"/>{{- end -}}
       {{ $audio_name_arr := split .Params.audio "." }}
       {{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
