@@ -28,7 +28,7 @@
 	</form>
 {{ else if eq .Site.Params.Contact.service "formspree" }}
 	<div class="box">
-		<form method="POST" action="https://formspree.io/{{ .Site.Params.formspree_email }}">
+		<form method="POST" action="https://formspree.io/{{ .Site.Params.Contact.formspree_email }}">
 			<div class="row uniform 50%">
 				<div class="6u 12u(mobilep)">
 					<input type="text" name="name" id="name" value="" placeholder="Name" />
