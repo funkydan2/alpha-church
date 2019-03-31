@@ -1,3 +1,6 @@
+# Monday, 1 April 2019
+* A bunch of changes to javascript libraries. Fewer are now pulled from CDN, and there's a few more libraries loaded which weren't being before (my mistake) with the hope of improving sites using Safari.
+
 # Monday, 4 March 2019
 * Changed podcast feed so passage is displayed in brackets following the sermon title.
 

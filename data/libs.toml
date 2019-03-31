@@ -5,15 +5,6 @@
 # Or, the SRI for the appropriate asset can be copied from https://cdnjs.com/ .
 
 # JavaScript
-
-[js.jQuery]
-  version = "3.3.1"
-  integrity = "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-
-[js.dropotron]
-  version = "1.4.3"
-  integrity = "sha256-o7QFslEPuitprNVNQJrtEo/jXNfwgn1BTgVR2BJ5VOI="
-
 [js.skel]
   version = "3.0.1"
   integrity = "sha256-3e+NvOq+D/yeJy1qrWpYkEUr6SlOCL5mHpc2nZfX74E="
