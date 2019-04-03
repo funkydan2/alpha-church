@@ -19,8 +19,8 @@
   integrity = "sha384-g5XWqNkboW7EHf70PDDgLVOwcSsDhomIh0gjQPcfKEs+ZU4i8S6CjNJfM+TuxLn/"
 
 [js.instantpage]
-  version = "1.1.0"
-  integrity = "sha384-EwBObn5QAxP8f09iemwAJljc+sU+eUXeL9vSBw1eNmVarwhKk2F9vBEpaN9rsrtp"
+  version = "1.2.2"
+  integrity = "sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"
 
 # CSS
 [css.fontawesome]
