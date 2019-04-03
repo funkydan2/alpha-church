@@ -42,7 +42,6 @@
 <script src="{{ $maps.RelPermalink }}" integrity="{{ $maps.Data.Integrity }}" crossorigin="anonymous"></script>
 <script src="{{ $plyr.RelPermalink }}" integrity="{{ $plyr.Data.Integrity }}" crossorigin="anonymous"></script>
 
-{{ printf "<script src=\"//cdnjs.cloudflare.com/ajax/libs/skel/%s/skel.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.skel.version $js.skel.integrity | safeHTML }}
 {{ printf "<script src=\"//unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
 {{ if $.IsPage }}{{ printf "<script src=\"//cdn.plyr.io/%s/plyr.polyfilled.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}{{ end }}
 {{ if .Site.GoogleAnalytics }}{{ template "_internal/google_analytics_async.html" . }}{{ end }}
