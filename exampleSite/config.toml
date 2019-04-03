@@ -113,7 +113,7 @@ googleAnalytics = ""
       [[params.landing.banner.button]]
         url = "/contact"
         text = "Get in touch"
-        type = "special"
+        type = "primary"
 
         [[params.landing.banner.button]]
         url = "#feature-icons"

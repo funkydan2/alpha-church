@@ -3,22 +3,18 @@
 		<div class="hpot">
 			<label>Get some honey <input name="special_email" /></label>
 		</div>
-		<div class="row uniform 50%">
-			<div class="6u 12u(mobilep)">
+		<div class="row gtr-50 gtr-uniform">
+			<div class="col-6 col-12-mobilep">
 	    	<input type="text" name="name" placeholder="Your name">
 	  	</div>
-			<div class="6u 12u(mobilep)">
+			<div class="col-6 col-12-mobilep">
 	    	<input type="email" name="email" placeholder = "Email address">
 	  	</div>
-		</div>
-		<div class="row uniform 50%">
-			<div class="12u">
+			<div class="col-12">
 				<textarea name="message" placeholder="Enter your message" rows="6"></textarea>
 			</div>
-		</div>
-		<div class="row uniform">
-			<div class="12u">
-				<ul class="actions align-center">
+			<div class="col-12">
+				<ul class="actions special">
 	  			<li>
 						<input type="submit" value="Send" />
 					</li>
@@ -29,22 +25,18 @@
 {{ else if eq .Site.Params.Contact.service "formspree" }}
 	<div class="box">
 		<form method="POST" action="https://formspree.io/{{ .Site.Params.Contact.formspree_email }}">
-			<div class="row uniform 50%">
-				<div class="6u 12u(mobilep)">
+			<div class="row gtr-50 gtr-uniform">
+				<div class="col-6 col-12-mobilep">
 					<input type="text" name="name" id="name" value="" placeholder="Name" />
 				</div>
-				<div class="6u 12u(mobilep)">
+				<div class="col-6 col-12-mobilep">
 					<input type="email" name="_replyto" id="email" value="" placeholder="Email" />
 				</div>
-			</div>
-			<div class="row uniform 50%">
-				<div class="12u">
+				<div class="col-12">
 					<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
 				</div>
-			</div>
-			<div class="row uniform">
-				<div class="12u">
-					<ul class="actions align-center">
+				<div class="col-12">
+					<ul class="actions special">
 						<li><input type="submit" value="Send Message" /></li>
 					</ul>
 				</div>

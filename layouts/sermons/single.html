@@ -24,12 +24,12 @@
 						</ul>
 						{{ end }} {{/* if .audio */}}
 						<div class="row">
-							<div class="6u 12u(mobilep)">
+							<div class="col-6 col-12-mobilep">
 							{{ with .Params.images }}
 								<span class="image fit"><img src="{{ index . 0 | absURL }}" alt=""></span>
 							{{ end }}
 							</div>
-							<div class="6u 12u(mobilep)">
+							<div class="col-6 col-12-mobilep">
 							{{ .Content }}
 							{{ with .Params.preachers }}
 								<p>Preacher: <a href="/preachers/{{ . | urlize }}/">{{ . }}</a></p>

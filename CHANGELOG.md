@@ -1,3 +1,7 @@
+# Wednesday, 3 April 2019
+Big change - really version 2 now!
+* Updated a bunch of SCSS and js to newer version from html5up.
+
 # Monday, 1 April 2019
 * A bunch of changes to javascript libraries. Fewer are now pulled from CDN, and there's a few more libraries loaded which weren't being before (my mistake) with the hope of improving sites using Safari.
 
