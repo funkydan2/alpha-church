@@ -56,7 +56,7 @@
 										<h3>{{ $key.title }}</h3>
 										<p>{{ $key.text | markdownify }}</p>
 										{{ if $key.button_text }}
-											<ul class="actions">
+											<ul class="actions special">
 												<li><a href="{{ $key.url }}" class="button alt">{{ $key.button_text }}</a></li>
 											</ul>
 											{{ end }}
