@@ -16,35 +16,3 @@
   </footer>
 
 </div>
-{{ "<!-- Scripts -->" | safeHTML }}
-{{ $js := .Site.Data.libs.js }}
-{{ $jquery := resources.Get "js/jquery.min.js" | fingerprint }}
-{{ $dropotron := resources.Get "js/jquery.dropotron.min.js" | fingerprint }}
-{{ $scrollex := resources.Get "js/jquery.scrollex.min.js" | fingerprint }}
-{{ $browser := resources.Get "js/browser.min.js" | fingerprint }}
-{{ $breakpoints := resources.Get "js/breakpoints.min.js" | fingerprint }}
-{{ $util := resources.Get "js/util.js" | minify | fingerprint }}
-{{ $bible := resources.Get "js/reftagger.js" | minify | fingerprint }}
-{{ $ie := resources.Get "js/ie/respond.min.js" | minify | fingerprint }}
-{{ $main := resources.Get "js/main.js" | minify | fingerprint }}
-{{ $maps := resources.Get "/js/osmaps.init.js" | minify | fingerprint }}
-{{ $plyr := resources.Get "/js/plyr.init.js" | minify | fingerprint }}
-{{ "<!-- Scripts-HTML5up -->" | safeHTML }}
-<script src="{{ $jquery.RelPermalink }}" integrity="{{ $jquery.Data.Integrity }}" crossorigin="anonymous"></script>
-<script src="{{ $dropotron.RelPermalink }}" integrity="{{ $dropotron.Data.Integrity }}" crossorigin="anonymous"></script>
-<script src="{{ $scrollex.RelPermalink }}" integrity="{{ $scrollex.Data.Integrity }}" crossorigin="anonymous"></script>
-<script src="{{ $browser.RelPermalink }}" integrity="{{ $browser.Data.Integrity }}" crossorigin="anonymous"></script>
-<script src="{{ $breakpoints.RelPermalink }}" integrity="{{ $breakpoints.Data.Integrity }}" crossorigin="anonymous"></script>
-<script src="{{ $util.RelPermalink }}" integrity="{{ $util.Data.Integrity }}" crossorigin="anonymous"></script>
-<script src="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}" crossorigin="anonymous"></script>
-{{ "<!-- Scripts ALPHA-CHURCH-->" | safeHTML }}
-{{ if .Site.Params.bible_popups }}<script src="{{ $bible.RelPermalink }}" integrity="{{ $bible.Data.Integrity }}" crossorigin="anonymous"></script>{{ end }}
-{{ `<!--[if lte IE 8]><script src=" {{ $ie.RelPermalink }} "></script><![endif]-->` | safeHTML}}
-<script src="{{ $maps.RelPermalink }}" integrity="{{ $maps.Data.Integrity }}" crossorigin="anonymous"></script>
-{{ if .IsPage }}<script src="{{ $plyr.RelPermalink }}" integrity="{{ $plyr.Data.Integrity }}" crossorigin="anonymous"></script>{{ end }}
-{{ printf "<script src=\"//unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
-{{ if $.IsPage }}{{ printf "<script src=\"//cdn.plyr.io/%s/plyr.polyfilled.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}{{ end }}
-{{ if .Site.GoogleAnalytics }}{{ template "_internal/google_analytics_async.html" . }}{{ end }}
-{{ if .Site.Params.instant_page }}{{ printf "<script src=\"//instant.page/%s\" type=\"module\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.instantpage.version $js.instantpage.integrity | safeHTML }}{{ end }}
-</body>
-</html>

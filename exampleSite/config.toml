@@ -72,6 +72,7 @@ googleAnalytics = ""
   customCSS = ["example.css"]
 
   bible_popups = true
+  bible_version = "CSB" #HCSB, NIV, NLT, ESV, etc.
   instant_page = true
 
   [params.podcast]
