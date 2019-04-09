@@ -12,9 +12,7 @@ function initMap() {
     {
       attribution:
         'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      maxZoom: 18,
-      id: "mapbox.streets",
-      accessToken: "your.mapbox.access.token"
+      maxZoom: 18
     }
   ).addTo(mymap);
   var marker = L.marker(loc).addTo(mymap);
