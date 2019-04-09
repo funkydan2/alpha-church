@@ -1,3 +1,6 @@
+# Tuesday, 9 April 2019
+* There's now an option to use either [Faithlife Reftagger](https://faithlife.com/products/reftagger) or the [Blue Letter Bible ScriptTagger](https://faithlife.com/products/reftagger). I think Faithlife's reftagger looks much better, but it's incompatability with [adblock plus](https://community.logos.com/forums/p/139517/890932.aspx) may be a deal breaker for some websites.
+
 # Wednesday, 3 April 2019
 Big change - really version 2 now!
 * Updated a bunch of SCSS and js to newer version from html5up.

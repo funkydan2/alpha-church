@@ -19,23 +19,36 @@
 <script src="{{ $util.RelPermalink }}" integrity="{{ $util.Data.Integrity }}" crossorigin="anonymous"></script>
 <script src="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ "<!-- Scripts ALPHA-CHURCH-->" | safeHTML }}
-{{ if .Site.Params.bible_popups }}
-{{ $ver := "ESV"}}
-{{ with .Site.Params.bible_version }}{{ $ver = . }}{{ end }}
-<script>
-	var refTagger = {
-		settings: {
-			bibleVersion: "{{ $ver }}",
-			roundCorners: true,
-			socialSharing: []
-		}
-	};
-	(function(d, t) {
-		var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-		g.src = "//api.reftagger.com/v2/RefTagger.js";
-		s.parentNode.insertBefore(g, s);
-	}(document, "script"));
-</script>
+{{ if isset .Site.Params "bible_popups" }}
+  {{ $ver := "ESV"}}
+  {{ with .Site.Params.bible_version }}{{ $ver = . }}{{ end }}
+  {{ if (eq .Site.Params.bible_popups "faithlife") }}
+    <script>
+    	var refTagger = {
+    		settings: {
+    			bibleVersion: "{{ $ver }}",
+    			roundCorners: true,
+    			socialSharing: []
+    		}
+    	};
+    	(function(d, t) {
+    		var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    		g.src = "//api.reftagger.com/v2/RefTagger.js";
+    		s.parentNode.insertBefore(g, s);
+    	}(document, "script"));
+    </script>
+  {{ else if (eq .Site.Params.bible_popups "blb") }}
+    <script src="//www.blueletterbible.org/assets/scripts/blbToolTip/BLB_ScriptTagger-min.js"></script>
+    <script>
+        BLB.Tagger.Translation = '{{ $ver }}';
+        BLB.Tagger.HyperLinks = 'none'; // 'all', 'none', 'hover'
+        BLB.Tagger.HideTanslationAbbrev = false;
+        BLB.Tagger.TargetNewWindow = true;
+        BLB.Tagger.Style = 'par'; // 'line' or 'par'
+        BLB.Tagger.NoSearchTagNames = ''; // HTML element list
+        BLB.Tagger.NoSearchClassNames = 'noTag doNotTag'; // CSS class list
+      </script>
+  {{ end }}
 {{ end }}
 {{ `<!--[if lte IE 8]><script src=" {{ $ie.RelPermalink }} "></script><![endif]-->` | safeHTML}}
 <script src="{{ $maps.RelPermalink }}" integrity="{{ $maps.Data.Integrity }}" crossorigin="anonymous"></script>

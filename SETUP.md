@@ -173,9 +173,12 @@ At the very bottom of each page is a bunch of icons (from FontAwesome) which can
 ```
 
 ### 8. Bible Popups
-New in release 1.1.
-Configuration in [params]. Set `bible_popups = true` to include Bible reference popups from Faithlife.
-**Note:** reftagger (the Javascript library which builds these popups) is [incompatable with adblock plus](https://community.logos.com/forums/p/139517/890932.aspx). On browsers with Adblock Plus installed, this causes the front page to load very strangely. I'm looking to changing this to another popup system (possibly [Blue Letter Bible popups](https://www.blueletterbible.org/webtools/BLB_ScriptTagger.cfm)).
+*Changed on Tuesday, 9 April 2019..*
+Configuration in [params]. Set `bible_popups = "faithlife"` to include Bible reference popups from [Faithlife](https://faithlife.com/products/reftagger), or `bible_popups = "blb"` to use the [Blue Letter Bible](https://www.blueletterbible.org/webtools/BLB_ScriptTagger.cfm) popups.
+
+You may also set the bible translation by defining `bible_version = "ESV"` (or NLT, KJV, CSB, etc.). If you don't define a translation, the default *ESV* will be used.
+
+**Note:** reftagger (the Javascript library which builds these popups) is [incompatable with adblock plus](https://community.logos.com/forums/p/139517/890932.aspx). On browsers with Adblock Plus installed, this causes the front page to load very strangely.
 
 ## Nearly finished
 

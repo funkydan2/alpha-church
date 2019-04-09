@@ -71,7 +71,7 @@ googleAnalytics = ""
 
   customCSS = ["example.css"]
 
-  bible_popups = true
+  bible_popups = "blb" #faithlife, blb
   bible_version = "CSB" #HCSB, NIV, NLT, ESV, etc.
   instant_page = true
 
