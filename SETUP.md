@@ -178,8 +178,6 @@ Configuration in [params]. Set `bible_popups = "faithlife"` to include Bible ref
 
 You may also set the bible translation by defining `bible_version = "ESV"` (or NLT, KJV, CSB, etc.). If you don't define a translation, the default *ESV* will be used.
 
-**Note:** reftagger (the Javascript library which builds these popups) is [incompatable with adblock plus](https://community.logos.com/forums/p/139517/890932.aspx). On browsers with Adblock Plus installed, this causes the front page to load very strangely.
-
 ## Nearly finished
 
 To preview your site, run Hugo's built-in local server.
