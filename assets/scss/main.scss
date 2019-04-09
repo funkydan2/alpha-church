@@ -516,6 +516,7 @@
 				background: _palette(accent1, bg);
 				border-color: _palette(accent1, bg);
 				color: _palette(accent2, fg-bold);
+				font-family: "FontAwesome 5 Free";
 				content: '\f00c';
 			}
 		}
@@ -1734,19 +1735,21 @@
 					outline: 0;
 
 					&:before {
-						background: rgba(192,192,192,0.75);
-						border-radius: _size(border-radius);
-						color: #fff;
-						content: '\f0c9';
-						display: block;
-						font-size: 16px;
-						height: 2.25em;
-						left: 0.5em;
-						line-height: 2.25em;
-						position: absolute;
-						text-align: center;
-						top: 0.5em;
-						width: 3.5em;
+		        background: rgba(192, 192, 192, 0.75);
+		        border-radius: _size(border-radius);
+		        color: #fff;
+		        font-family: "Font Awesome 5 Free";
+		        font-weight: 900;
+		        content: "\f0c9";
+		        display: block;
+		        font-size: 16px;
+		        height: 2.25em;
+		        left: 0.5em;
+		        line-height: 2.25em;
+		        position: absolute;
+		        text-align: center;
+		        top: 0.5em;
+		        width: 3.5em;
 					}
 				}
 			}
