@@ -1,11 +1,30 @@
-{{ if .Site.Params.Map.latitude }}
-  {{ if .Site.Params.Map.longitude }}
-      {{ "<!-- OpenStreetMap -->" | safeHTML }}
-      <span style="display: none; visibility: hidden">
-        <input id="map-lat" value="{{ .Site.Params.Map.latitude }}" />
-        <input id="map-lng" value="{{ .Site.Params.Map.longitude }}" />
-        <input id="map-zoom" value="{{ .Site.Params.Map.zoom }}" />
-      </span>
-      <div id="map" class="box"></div>
+{{ with .Site.Params.Map }}
+  {{ if eq .service "osm" }}
+    {{ if .latitude }}
+      {{ if .longitude }}
+          {{ "<!-- OpenStreetMap -->" | safeHTML }}
+          <span style="display: none; visibility: hidden">
+            <input id="map-lat" value="{{ .latitude }}" />
+            <input id="map-lng" value="{{ .longitude }}" />
+            <input id="map-zoom" value="{{ .zoom }}" />
+          </span>
+          <div id="map" class="box"></div>
+      {{ end }}
+    {{ end }}
+  {{ else if eq .service "google" }}
+    <div id="map" class="box"></div>
+    <script>
+        var map;
+        var centre = {lat: {{ float .latitude }}, lng: {{ float .longitude}}};
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: centre,
+            zoom: {{ float .zoom }}
+          });
+          marker = new google.maps.Marker({position: centre, map: map});
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEg1R08cr7I7h306JwAmyxfGa6rjSUNOI&callback=initMap"
+      async defer></script>
   {{ end }}
 {{ end }}

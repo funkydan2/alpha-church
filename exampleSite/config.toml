@@ -88,10 +88,14 @@ googleAnalytics = ""
     feed = "https://www.thegospelcoalition.org/podcasts/word-of-the-week/feed/?feed=podcast"
 
   [params.map]
+    service = "osm" #"osm" for OpenStreetMaps or "google"
     # For Open Street Map widgets
     latitude = "48.8530"
     longitude = "2.3498"
     zoom = "18"
+    # If you want to use google maps, you'll need an API Key from Google https://developers.google.com/maps/documentation/embed/get-api-key
+    #service = "google"
+    #api_key = "?????"
 
   [params.contact]
     #Use this section to automate contact form.

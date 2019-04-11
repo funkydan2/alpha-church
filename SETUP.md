@@ -127,13 +127,24 @@ This theme makes use of [open street maps](https://openstreetmap.org) on the lan
 To set your organisations' location edit `config.toml`.
 ```
 [params.map]
+  service = "osm"
   latitude = "48.8530"
   longitude = "2.3498"
   zoom = "18"
 ```
 To find the appropriate values, visit https://openstreetmap.org and find the location you want to be shown on your map. Then look at the URL in your browser's location bar. You'll see something like `https://www.openstreetmap.org/search?query=New%20York#map=14/40.6971/-73.9796`. The final three numbers in this URL give the values of Zoom/Latitude/Longitude.
 
-If you'd like a map on another page, you can use the shortcode `{{< osmap >}}`
+If you'd like a map on another page, you can use the shortcode `{{< osmap >}}`.
+
+You can also use Google Maps. To do this, you'll need an [API Key from Google](https://developers.google.com/maps/documentation/embed/get-api-key) and set it in `config.toml`:
+```
+[params.map]
+  service = "google"
+  latitude = "48.8530"
+  longitude = "2.3498"
+  zoom = "18"
+  api_key = "XXXXXXXX"
+```
 
 ### 7. Contact Form
 You can have a contact form using either a [netlify form](https://www.netlify.com/docs/form-handling/) (if you're deploying with netlify) or [formspree](https://formspree.io)

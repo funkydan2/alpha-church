@@ -1,3 +1,8 @@
+# Thursday, 11 April 2019
+* New option - maps can be either from Google or Open Street Maps.
+    * New setting in `config.toml` under [Params.Map] you need to set `service = "osm"` or `service="google"`
+    * To use Google Maps, you also need to define `api_key` https://developers.google.com/maps/documentation/embed/get-api-key
+
 # Tuesday, 9 April 2019
 * There's now an option to use either [Faithlife Reftagger](https://faithlife.com/products/reftagger) or the [Blue Letter Bible ScriptTagger](https://faithlife.com/products/reftagger). I think Faithlife's reftagger looks much better, ~~but it's incompatability with [adblock plus](https://community.logos.com/forums/p/139517/890932.aspx) may be a deal breaker for some websites~~. (Actually, I've no idea what causes the site to break with adblock plus. It's javascript, but I can't work out which one.)
 
