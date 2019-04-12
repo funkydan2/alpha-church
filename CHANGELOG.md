@@ -1,3 +1,6 @@
+# Saturday, 13 April 2019
+* Shortcode {{< osmap >}} is now {{< map >}} because it could be google or OSM.
+
 # Thursday, 11 April 2019
 * New option - maps can be either from Google or Open Street Maps.
     * New setting in `config.toml` under [Params.Map] you need to set `service = "osm"` or `service="google"`
