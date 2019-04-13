@@ -5,6 +5,7 @@ theme = ['alpha-church']
 themesDir = "../.."
 
 rssLimit = 5
+paginate = 4
 
 enableEmoji = true
 

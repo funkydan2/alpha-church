@@ -172,6 +172,12 @@
 		}
 	}
 
+	h1 {
+  font-size: 2.75em;
+  line-height: 1.5em;
+  letter-spacing: -0.035em;
+	}
+
 	h2 {
 		font-size: 2.25em;
 		line-height: 1.5em;
@@ -1153,6 +1159,7 @@
 			height: inherit;
 			left: 1.25em;
 			line-height: inherit;
+			font-size: 1.5em;
 			margin: 0;
 			padding: 0;
 			position: absolute;
@@ -1442,6 +1449,20 @@
 			}
 		}
 	}
+
+	.pagination {
+    text-align: center;
+    a {
+      text-decoration: none;
+      border-bottom: none;
+    }
+    li {
+      display: inline-block;
+      list-style: none;
+      margin-left: 1em;
+      padding-left: 1em;
+    }
+  }
 
 	body.landing {
 		#main {
