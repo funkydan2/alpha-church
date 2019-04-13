@@ -3,8 +3,8 @@ title: "{{ replace .Name "-" " " | title }}"
 passage: ""
 date: {{ .Date }}
 audio: ""
-audio_duration: ""
-audio_size: 0
+audio_duration: "1:00"
+audio_size: 1
 preacher: ""
 images: [""]
 series: []
