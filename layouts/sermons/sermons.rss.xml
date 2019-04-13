@@ -30,7 +30,12 @@
     <itunes:block>no</itunes:block>
     <itunes:explicit>no</itunes:explicit>
     <generator>Hugo -- gohugo.io</generator>
-    {{- range .Pages -}}
+    {{- $pages := .Data.Pages -}}
+    {{- $limit := .Site.Config.Services.RSS.Limit -}}
+    {{- if ge $limit 1 -}}
+    {{- $pages = $pages | first $limit -}}
+    {{- end -}}
+    {{- range $pages -}}
     <item>
       <title>{{ title .Params.title }}{{ with .Params.passage }} ({{ . }}){{ end }}</title>
       <itunes:author>{{ .Params.preachers }}</itunes:author>
