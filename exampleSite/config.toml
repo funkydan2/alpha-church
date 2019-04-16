@@ -96,7 +96,9 @@ googleAnalytics = ""
     zoom = "18"
     # If you want to use google maps, you'll need an API Key from Google https://developers.google.com/maps/documentation/embed/get-api-key
     #service = "google"
-    #api_key = "?????"
+    #api_key = "XXXXXXXX"
+    #language = "fr" #Optional
+    #region = "FR" #Optional
 
   [params.contact]
     #Use this section to automate contact form.

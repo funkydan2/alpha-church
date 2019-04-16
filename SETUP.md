@@ -145,6 +145,13 @@ You can also use Google Maps. To do this, you'll need an [API Key from Google](h
   zoom = "18"
   api_key = "XXXXXXXX"
 ```
+If you're using Google Maps there are two *optional* settings `langauge` and `region`. Without these settings, Google Maps will display in the language of the user's browser. Using these settings will force Google Maps to be displayed for the given localisation. See [here for a list of supported languages](https://developers.google.com/maps/faq#languagesupport) and [here for a list of valid regions](https://www.iso.org/obp/ui/#search).
+
+e.g.
+```
+  language = "fr"
+  region = "FR"
+```
 
 ### 7. Contact Form
 You can have a contact form using either a [netlify form](https://www.netlify.com/docs/form-handling/) (if you're deploying with netlify) or [formspree](https://formspree.io)

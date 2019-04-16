@@ -20,6 +20,9 @@
           var marker = L.marker(loc).addTo(mymap);
     </script>
   {{ else if eq .service "google" }}
+    {{ $opt := "" }}
+    {{ if isset . "language" }}{{ $opt = print $opt "&language=" .language }}{{ end }}
+    {{ if isset . "region" }}{{ $opt = print $opt "&region=" .region }}{{ end }}
     {{ "<!-- Google Map -->" | safeHTML }}
     <script>
         var map;
@@ -32,7 +35,7 @@
           marker = new google.maps.Marker({position: centre, map: map});
         }
       </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key={{- .api_key -}}&callback=initMap"
+      <script src="https://maps.googleapis.com/maps/api/js?key={{- .api_key -}}{{- safeURL $opt -}}&callback=initMap"
       async defer></script>
   {{ end }}
 {{ end }}

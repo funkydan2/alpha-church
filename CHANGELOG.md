@@ -1,3 +1,6 @@
+# Wednesday, 17 April 2019
+Added *optional* setting for Google Maps to be localised due to [this issue](https://github.com/funkydan2/alpha-church/issues/10). Under `[params.map]` there are two *optional* settings `langauge` and `region`. These will force Google Maps to be displayed for the given localisation. See [here for a list of supported languages](https://developers.google.com/maps/faq#languagesupport) and [here for a list of valid regions](https://www.iso.org/obp/ui/#search) (Google uses the two-letter, Alpha-2 code).
+
 # Saturday, 13 April 2019
 * Shortcode {{< osmap >}} is now {{< map >}} because it could be google or OSM.
 
