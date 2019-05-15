@@ -11,18 +11,18 @@
 			{{ "<!-- Main -->" | safeHTML }}
 				<section id="main" class="container">
 
-					{{ if .Site.Params.Landing.Services.title }}
+					{{ if .Params.Services.title }}
 					<section class="box special">
 						<header class="major">
-							<h2>{{ .Site.Params.Landing.Services.title }}</h2><a name="services"></a>
-							<p>{{ .Site.Params.Landing.Services.text | markdownify }}</p>
+							<h2>{{ .Params.Services.title }}</h2><a name="services"></a>
+							<p>{{ .Params.Services.text | markdownify }}</p>
 						</header>
 						{{ partial "map" . }}
 					</section>
 					{{ end }}
 
-					{{ if .Site.Params.Landing.Feature_icons.enable }}
-						{{ $tiles := .Site.Params.Landing.Feature_icons.tile }}
+					{{ if .Params.Feature_icons.enable }}
+						{{ $tiles := .Params.Feature_icons.tile }}
 						{{ $len := (len $tiles) }}
 						<a name="feature-icons"></a>
 						<section class="box special features">
@@ -42,8 +42,8 @@
 						</section>
 					{{ end }}
 
-					{{ if .Site.Params.Landing.Feature_images.enable }}
-						{{ $tiles := .Site.Params.Landing.Feature_images.tile }}
+					{{ if .Params.Feature_images.enable }}
+						{{ $tiles := .Params.Feature_images.tile }}
 						{{ $len := (len $tiles) }}
 						<a name="feature-images"></a>
 						<div class="row">
@@ -73,8 +73,8 @@
 			{{ "<!-- CTA -->" | safeHTML }}
 				<section id="cta"><a name="call-to-action"></a>
 
-					<h2>{{ .Site.Params.Landing.CTA.heading}}</h2>
-					<p>{{ .Site.Params.Landing.CTA.message}}</p>
+					<h2>{{ .Params.CTA.heading}}</h2>
+					<p>{{ .Params.CTA.message}}</p>
 					{{ partial "contact" .}}
 
 				</section>
