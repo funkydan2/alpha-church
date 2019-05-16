@@ -1,5 +1,5 @@
 # Wednesday, 15 May 2019
-Big change to configuration. Options for the landing/home page are now defined in `/content/_index.md`. The reason for this is to make the main configuration smaller and neater—`config.toml` should mainly have whole-site configuration values.
+Big change to configuration. Options for the landing/home page are now defined in `/content/_index.md` (This is a [homepage template](https://gohugo.io/templates/homepage/)). The reason for this is to make the main configuration smaller and neater—`config.toml` should mainly have whole-site configuration values.
 
 # Wednesday, 17 April 2019
 Added *optional* setting for Google Maps to be localised due to [this issue](https://github.com/funkydan2/alpha-church/issues/10). Under `[params.map]` there are two *optional* settings `langauge` and `region`. These will force Google Maps to be displayed for the given localisation. See [here for a list of supported languages](https://developers.google.com/maps/faq#languagesupport) and [here for a list of valid regions](https://www.iso.org/obp/ui/#search) (Google uses the two-letter, Alpha-2 code).
