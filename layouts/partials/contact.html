@@ -1,8 +1,5 @@
 {{ if eq .Site.Params.Contact.service "netlify" }}
-	<form name="contact" method="POST" action="{{ .Site.Params.Contact.confirm_page }}" netlify-honeypot="special_email" netlify>
-		<div class="hpot">
-			<label>Get some honey <input name="special_email" /></label>
-		</div>
+	<form name="contact" method="POST" action="{{ .Site.Params.Contact.confirm_page }}" netlify>
 		<div class="row gtr-50 gtr-uniform">
 			<div class="col-6 col-12-mobilep">
 	    	<input type="text" name="name" placeholder="Your name">

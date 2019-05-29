@@ -90,13 +90,15 @@ The podcast feed is found at `/sermons/index.xml`.
 ### 5. Landing (Home) page
 The landing page is quite customisable. It consists of five blocks: a banner, an area for information about services (including a map), featured icons, featured images, and a contact form.
 
+Settings for the landing page are configured in the frontmatter of `/content/_index.md`. There is an example configuration in the `exampleSite` folder.
+
 #### a. Banner
 The banner section requires a background image to be set. This image should be 1800*1200 px, and a relatively simple image will probably look best.
 
 You can place link buttons in this area by using the following settings.
 
 ```
-[[params.landing.banner.button]]
+[[banner.button]]
   url = "/contact"
   text = "Get in touch"
   type = "primary"
@@ -109,7 +111,7 @@ Below the banner is an area which could be used for highlight service location a
 These feature icons are pulled from [fontawesome](https://fontawesome.com). The layout requires an even number of these blocks (well, you could have an odd number, but it would look, well, odd). To find items [search around on the fontawesome site](https://fontawesome.com/icons?d=gallery)
 
 ```
-[[params.landing.feature_icons.tile]]
+[[feature_icons.tile]]
   icon = "fa-users"
   icon_pack = "fas"
   accent = "2"
