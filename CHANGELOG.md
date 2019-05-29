@@ -1,3 +1,6 @@
+# Thursday, 30 May 2019
+* Merged [PR from Clint Davis](https://github.com/funkydan2/alpha-church/pull/11) to improve accessability of theme.
+
 # Tuesday, 28 May 2019
 * Netlify now uses [Akismet spam filtering](https://www.netlify.com/blog/2019/02/12/improved-netlify-forms-spam-filtering-using-akismet/), so no more need for a honeypot.
 
