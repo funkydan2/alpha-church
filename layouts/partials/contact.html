@@ -2,13 +2,13 @@
 	<form name="contact" method="POST" action="{{ .Site.Params.Contact.confirm_page }}" netlify>
 		<div class="row gtr-50 gtr-uniform">
 			<div class="col-6 col-12-mobilep">
-	    	<input type="text" name="name" placeholder="Your name">
+	    	<input type="text" name="name" aria-label="Your name" placeholder="Your name">
 	  	</div>
 			<div class="col-6 col-12-mobilep">
-	    	<input type="email" name="email" placeholder = "Email address">
+	    	<input type="email" name="email" aria-label="Email address" placeholder = "Email address">
 	  	</div>
 			<div class="col-12">
-				<textarea name="message" placeholder="Enter your message" rows="6"></textarea>
+				<textarea name="message" aria-label="Enter your message" placeholder="Enter your message" rows="6"></textarea>
 			</div>
 			<div class="col-12">
 				<ul class="actions special">
@@ -24,13 +24,13 @@
 		<form method="POST" action="https://formspree.io/{{ .Site.Params.Contact.formspree_email }}">
 			<div class="row gtr-50 gtr-uniform">
 				<div class="col-6 col-12-mobilep">
-					<input type="text" name="name" id="name" value="" placeholder="Name" />
+					<input type="text" name="name" id="name" value="" aria-label="Name" placeholder="Name" />
 				</div>
 				<div class="col-6 col-12-mobilep">
-					<input type="email" name="_replyto" id="email" value="" placeholder="Email" />
+					<input type="email" name="_replyto" id="email" value="" aria-label="Email" placeholder="Email" />
 				</div>
 				<div class="col-12">
-					<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+					<textarea name="message" id="message" aria-label="Enter your message" placeholder="Enter your message" rows="6"></textarea>
 				</div>
 				<div class="col-12">
 					<ul class="actions special">

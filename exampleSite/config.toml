@@ -69,6 +69,7 @@ googleAnalytics = ""
   title = "Alpha Church"
   subtitle = "Another Church Theme"
   author = "Daniel Saunders"
+  languageCode = "en" # For accessibility this needs to be set. You can find all language codes at https://www.w3schools.com/tags/ref_language_codes.asp
 
   customCSS = ["example.css"]
 
