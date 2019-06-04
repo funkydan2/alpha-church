@@ -15,8 +15,8 @@
 		{{ end }}
 		{{ template "_internal/opengraph.html" . }}
 		{{ template "_internal/twitter_cards.html" . }}
+		<script src="https://kit.fontawesome.com/b76b73e8e8.js"></script>
 		{{- $css := .Site.Data.libs.css -}}
-		{{ printf "<link rel=\"stylesheet\" href=\"//use.fontawesome.com/releases/v%s/css/all.css\" integrity=\"%s\" crossorigin=\"anonymous\">" $css.fontawesome.version $css.fontawesome.integrity | safeHTML }}
 		{{ if .IsPage }}{{ printf "<link rel=\"stylesheet\" href=\"//cdn.plyr.io/%s/plyr.css\" integrity=\"%s\" crossorigin=\"anonymous\">" $css.plyr.version $css.plyr.integrity | safeHTML }}{{ end }}
 		{{- $ieStyles := resources.Get "scss/main.scss" | toCSS | minify -}}
 		{{- $ieJs := resources.Get "js/ie/html5shiv.js" | minify -}}

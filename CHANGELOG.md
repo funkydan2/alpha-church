@@ -1,3 +1,6 @@
+# Wednesday, 5 June 2019
+Now using the [FontAwesome kit](https://blog.fontawesome.com/introducing-font-awesome-kits-7134d1d59959) to load icons.
+
 # Thursday, 30 May 2019
 * Merged [PR from Clint Davis](https://github.com/funkydan2/alpha-church/pull/11) to improve accessability of theme.
 

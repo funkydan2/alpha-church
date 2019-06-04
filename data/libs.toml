@@ -19,11 +19,6 @@
   integrity = "sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"
 
 # CSS
-[css.fontawesome]
-  #Note: these are the details for the CSS method
-  version = "5.8.1"
-  integrity = "sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-
 [css.leaflet]
   version = "1.4.0"
   integrity = "sha256-YR4HrDE479EpYZgeTkQfgVJq08+277UXxMLbi/YP69o="
