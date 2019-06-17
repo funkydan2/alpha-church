@@ -8,21 +8,6 @@
 						{{ end }}
 					</header>
 					<div class="box">
-						{{ with .Params.audio }}
-							{{ $audio_name_arr := split . "." }}
-							{{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
-							<ul class="actions small">
-								<li>
-								<audio id="player" controls>
-									<source src="{{ . }}" preload="auto" type="audio/{{ $audio_type }}">
-									Your browser doesn't support embedded audio.
-								</audio>
-							</li>
-							<li>
-								<a href="{{ . }}" class="button alt small" download><i class="icon fas fa-download"></i>&nbsp;Download</a>
-							</li>
-						</ul>
-						{{ end }} {{/* if .audio */}}
 						<div class="row">
 							<div class="col-6 col-12-mobilep">
 							{{ with .Params.images }}
@@ -30,6 +15,21 @@
 							{{ end }}
 							</div>
 							<div class="col-6 col-12-mobilep">
+								{{ with .Params.audio }}
+									{{ $audio_name_arr := split . "." }}
+									{{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
+									<ul class="actions small">
+										<li>
+										<audio id="player" controls>
+											<source src="{{ . }}" preload="auto" type="audio/{{ $audio_type }}">
+											Your browser doesn't support embedded audio.
+										</audio>
+										</li>
+										<li>
+											<a href="{{ . }}" class="button alt small" download><i class="icon fas fa-download"></i>&nbsp;Download</a>
+										</li>
+									</ul>
+								{{ end }} {{/* with .audio */}}
 							{{ .Content }}
 							{{ with .Params.preachers }}
 								<p>Preacher: <a href="/preachers/{{ . | urlize }}/">{{ . }}</a></p>

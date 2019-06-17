@@ -1,3 +1,6 @@
+# Monday, 17 June 2019
+Moved audio player for the sermons into the same <div> as the content because I didn't like where the download button was being placed.
+
 # Wednesday, 5 June 2019
 Now using the [FontAwesome kit](https://blog.fontawesome.com/introducing-font-awesome-kits-7134d1d59959) to load icons.
 
