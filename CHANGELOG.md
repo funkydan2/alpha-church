@@ -1,3 +1,8 @@
+# Thursday, 27 June 2019
+* Thank to @fabianying for notices a few problems
+** Gone back to distributing FontAwesome with the site, so that mobile UI is complete.
+** 
+
 # Monday, 17 June 2019
 Moved audio player for the sermons into the same <div> as the content because I didn't like where the download button was being placed.
 
