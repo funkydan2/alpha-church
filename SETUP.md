@@ -24,7 +24,7 @@ In the next step navigate to the `exampleSite` folder at `themes/hugo-travelify-
 Now, let us take a look at `config.toml`. Let's take a look at some of the settings.
 
 ### 1. Custom CSS
-The easiest way to change the look of your site is by overriding the included style sheet. You can do this by putting your css file in `static/css/my.css` and entering `customCSS = ["my.css"]` in the config file.
+The easiest way to change the look of your site is by overriding the included style sheet. You can do this by putting your css file in `static/css/my.css` and entering `customCSS = ["/css/my.css"]` in the config file.
 
 ### 2. Google Analytics
 Enable by putting your Analytics key here.
