@@ -1,3 +1,7 @@
+# Friday, 5 July 2019
+* Using some caching to speed up build time.
+* Added an image to the exampleSite contact page.
+
 # Thursday, 27 June 2019
 * Thank to @fabianying for notices a few problems.
 ** Gone back to distributing FontAwesome with the site, so that mobile UI is complete.

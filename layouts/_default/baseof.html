@@ -1,8 +1,8 @@
-{{ partial "header" . }}
-{{ partial "nav" . }}
+{{ partialCached "header" . }}
+{{ partialCached "nav" . }}
 
 {{ block "main" . }}
 {{ end }}
 
-{{ partial "footer" . }}
-{{ partial "scripts" . }}
+{{ partialCached "footer" . }}
+{{ partialCached "scripts" . }}
