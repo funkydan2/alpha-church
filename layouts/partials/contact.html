@@ -20,7 +20,6 @@
 		</div>
 	</form>
 {{ else if eq .Site.Params.Contact.service "formspree" }}
-	<div class="box">
 		<form method="POST" action="https://formspree.io/{{ .Site.Params.Contact.formspree_email }}">
 			<div class="row gtr-50 gtr-uniform">
 				<div class="col-6 col-12-mobilep">
@@ -39,5 +38,4 @@
 				</div>
 			</div>
 		</form>
-	</div>
 {{ end }}
