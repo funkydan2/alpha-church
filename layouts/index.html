@@ -5,7 +5,7 @@
 -->
 
 {{ partialCached "header" . }}
-{{ partialCached "nav" . }}
+{{ partial "nav" . }}
 {{ partial "banner" . }}
 
 			{{ "<!-- Main -->" | safeHTML }}
@@ -79,4 +79,4 @@
 
 				</section>
 {{ partialCached "footer" . }}
-{{ partialCached "scripts" . }}
+{{ partial "scripts" . }}
