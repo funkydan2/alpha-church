@@ -1,5 +1,5 @@
 {{ partial "header" . }}
-{{ partial "nav" . }}
+{{ partialCached "nav" . .Section }}
 
 {{ block "main" . }}
 {{ end }}

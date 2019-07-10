@@ -1,4 +1,7 @@
-# Friday, 5 July 2019
+# Tuesday, 9 July 2019
+* Fix to Contact form when using Formspree (thanks [@sjloregonwi](https://github.com/funkydan2/alpha-church/commit/e04873db2d36bf73ead1de4cd1dd887b0313cd71))
+
+Friday, 5 July 2019
 * Using some caching to speed up build time.
 * Added an image to the exampleSite contact page.
 
