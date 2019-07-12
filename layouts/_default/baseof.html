@@ -1,8 +1,16 @@
-{{ partial "header" . }}
+{{ if .IsPage }}
+  {{ partialCached "header" . .Section "single" }}
+{{ else }}
+  {{ partialCached "header" . .Section "list" }}
+{{ end }}
 {{ partialCached "nav" . .Section }}
 
 {{ block "main" . }}
 {{ end }}
 
 {{ partialCached "footer" . }}
-{{ partial "scripts" . }}
+{{ if .IsPage }}
+  {{ partialCached "scripts" . .Section "single" }}
+{{ else }}
+  {{ partialCached "scripts" . .Section "list" }}
+{{ end }}
