@@ -1,8 +1,4 @@
-{{ if .IsPage }}
-  {{ partialCached "header" . .Section "single" }}
-{{ else }}
-  {{ partialCached "header" . .Section "list" }}
-{{ end }}
+{{ partial "header" . .Section "list" }}
 {{ partialCached "nav" . .Section }}
 
 {{ block "main" . }}
