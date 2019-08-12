@@ -1,3 +1,9 @@
+# Tuesday, 13 August 2019
+* Thanks to [@Anaeijon](https://github.com/Anaeijon) who [provided a PR](https://github.com/funkydan2/alpha-church/pull/15) with some improved SCSS process.
+    * Banner Image is now set in `config.toml` by the variable `Params.banner_image` so it can be processed through Hugo Pipes.
+    * _Optional_ more google fonts can be loaded through `config.toml` (See `config.toml` in exampleSite)
+    * _Optional_ some plain text contact information can be included above the contact form.
+
 # Tuesday, 9 July 2019
 * Fix to Contact form when using Formspree (thanks [@sjloregonwi](https://github.com/funkydan2/alpha-church/commit/e04873db2d36bf73ead1de4cd1dd887b0313cd71))
 
