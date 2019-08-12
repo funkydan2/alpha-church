@@ -1374,7 +1374,7 @@
 	#banner {
 		background-attachment:	scroll,							fixed;
 		background-color:		#666;
-		background-image:		url({{ "img/overlay.png" | absURL }}), url({{ .Params.Banner.image | absURL }});
+		background-image:		url({{ "img/overlay.png" | absURL }}), url({{ .Site.Params.Banner.image | absURL }});
 		background-position:	top left,						center center;
 		background-repeat:		repeat,							no-repeat;
 		background-size:		auto,							cover;
