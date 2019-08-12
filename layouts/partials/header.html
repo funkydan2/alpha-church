@@ -18,10 +18,10 @@
 		<link rel="stylesheet" href="/fontawesome/css/all.min.css" />
 		{{- $css := .Site.Data.libs.css -}}
 		{{ if .IsPage }}{{ printf "<link rel=\"stylesheet\" href=\"//cdn.plyr.io/%s/plyr.css\" integrity=\"%s\" crossorigin=\"anonymous\">" $css.plyr.version $css.plyr.integrity | safeHTML }}{{ end }}
-		{{- $ieStyles := resources.Get "scss/main.scss" | toCSS | minify -}}
+		{{- $ieStyles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify -}}
 		{{- $ieJs := resources.Get "js/ie/html5shiv.js" | minify -}}
 		{{ printf "<!--[if lte IE 8]><script src=\"%s\"></script><link rel=\"stylesheet\" href=\"%s\" /><![endif]-->" $ieJs.RelPermalink $ieStyles.RelPermalink | safeHTML }}
-		{{- $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint -}}
+		{{ $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
 		<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" crossorigin="anonymous" />
 		{{- range .Site.Params.customCSS -}}
     	<link rel="stylesheet" href="{{ . | absURL }}">

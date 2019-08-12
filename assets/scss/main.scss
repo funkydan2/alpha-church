@@ -5,7 +5,11 @@
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
-
+/* 	import additional Fonts from fonts.google.com
+	use Format e.g. "Playfair+Display:400,700" 		*/
+{{ range .Site.Params.Style.googleFonts }}
+@import url("https://fonts.googleapis.com/css?family={{ . }}");
+{{ end }}
 /*
 	Alpha by HTML5 UP
 	html5up.net | @ajlkn
@@ -1370,7 +1374,7 @@
 	#banner {
 		background-attachment:	scroll,							fixed;
 		background-color:		#666;
-		background-image:		url('images/overlay.png'),		url('../../images/banner.jpg');
+		background-image:		url({{ "img/overlay.png" | absURL }}), url({{ .Site.Params.Banner.image | absURL }});
 		background-position:	top left,						center center;
 		background-repeat:		repeat,							no-repeat;
 		background-size:		auto,							cover;
@@ -1523,6 +1527,11 @@
 		color: _palette(accent2, fg);
 		padding: 3.5em 0 4em 0;
 		text-align: center;
+
+		a {
+			color: inherit;
+			font-weight: bold;
+		}
 
 		h2, h3, h4, h5, h6 {
 			color: inherit;
