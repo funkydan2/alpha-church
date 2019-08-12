@@ -5,7 +5,11 @@
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
-
+/* 	import additional Fonts from fonts.google.com
+	use Format e.g. "Playfair+Display:400,700" 		*/
+{{ range .Site.Params.Style.googleFonts }}
+@import url("https://fonts.googleapis.com/css?family={{ . }}");
+{{ end }}
 /*
 	Alpha by HTML5 UP
 	html5up.net | @ajlkn
