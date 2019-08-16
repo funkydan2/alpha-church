@@ -14,3 +14,4 @@ Error.log
 .config
 .forestry/
 *~
+exampleSite/resources/_gen
