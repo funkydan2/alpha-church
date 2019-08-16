@@ -93,7 +93,11 @@ The landing page is quite customisable. It consists of five blocks: a banner, an
 Settings for the landing page are configured in the frontmatter of `/content/_index.md`. There is an example configuration in the `exampleSite` folder.
 
 #### a. Banner
-The banner section requires a background image to be set. This image should be 1800*1200 px, and a relatively simple image will probably look best.
+The banner section requires a background image to be set. This image should be 1800*1200 px, and a relatively simple image will probably look best. The filename of this banner is set in `config.toml`
+```
+[params.banner]
+  image = "/img/banner.jpg"
+```
 
 You can place link buttons in this area by using the following settings.
 

@@ -2,7 +2,7 @@
 	<p>{{ .Site.Params.Contact.text }}
 	{{ if .Site.Params.Contact.phone }}
 		<br />
-		<a href="tel:{{ .Site.Params.Contact.phone }}" target="_blank" aria-label="{{ .Site.Params.Contact.phone }}">
+		<a href="tel:{{ .Site.Params.Contact.phone }}" target="_blank" aria-label="{{.Site.Params.Contact.phone }}">
 			<i class="icon fas fa-phone-alt">
 				<span class="label">
 					{{ .Site.Params.Contact.phone }}
@@ -14,7 +14,7 @@
 	{{ end }}
 	{{ if .Site.Params.Contact.mail }}
 		<br />
-		<a href="mailto:{{ .Site.Params.Contact.mail }}" target="_blank" aria-label="{{ .Site.Params.Contact.mail }}">
+		<a href="mailto:{{ .Site.Params.Contact.mail }}" target="_blank" aria-label="{{.Site.Params.Contact.mail }}">
 			<i class="icon fas fa-envelope">
 				<span class="label">
 					{{ .Site.Params.Contact.mail }}

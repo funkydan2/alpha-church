@@ -1,7 +1,5 @@
 +++
 [banner]
-  image = "img/banner.jpg"
-
   [[banner.button]]
       url = "/contact"
       text = "Get in touch"
