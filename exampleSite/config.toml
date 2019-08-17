@@ -78,7 +78,7 @@ googleAnalytics = ""
   customCSS = ["example.css"]
 
   [params.banner]
-    image = "/img/banner.jpg"
+    image = "img/banner.jpg"
 
 #  [params.style]
 #    googleFonts = ["Cardo", "Crimson+Text", "Merriweather", "Playfair+Display:400,700", "Roboto+Slab"]
