@@ -73,14 +73,15 @@ googleAnalytics = ""
 
   bible_popups = "faithlife" #faithlife, blb
   bible_version = "CSB" #HCSB, NIV, NLT, ESV, etc.
-  instant_page = true
+  instant_page = false
 
   customCSS = ["example.css"]
+
   [params.banner]
     image = "/img/banner.jpg"
-    
-  [params.style]
-    googleFonts = ["Cardo", "Crimson+Text", "Merriweather", "Playfair+Display:400,700", "Roboto+Slab"]
+
+#  [params.style]
+#    googleFonts = ["Cardo", "Crimson+Text", "Merriweather", "Playfair+Display:400,700", "Roboto+Slab"]
 
   [params.podcast]
     title = "Listen to Alpha Church"
