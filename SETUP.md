@@ -17,7 +17,7 @@ If the theme has been updated, you can use `git` to merge latest commits to the 
 
 ## Configuration
 
-In the next step navigate to the `exampleSite` folder at `themes/hugo-travelify-theme/exampleSite/` and copy `config.toml` from the exampleSite folder into the root folder of your Hugo site. (Please refer to https://gohugo.io/overview/quickstart/ for installing a Hugo theme.)
+In the next step navigate to the `exampleSite` folder at `themes/alpha-church/exampleSite/` and copy `config.toml` from the exampleSite folder into the root folder of your Hugo site. (Please refer to https://gohugo.io/overview/quickstart/ for installing a Hugo theme.)
 
 ## The `config` file
 
