@@ -13,7 +13,7 @@ $ git submodule add https://github.com/funkydan2/alpha-church.git
 You should see a folder called `alpha-church` inside the `themes` directory that we created a few moments ago. For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
 
 ## Update the theme
-If the theme has been updated, you can use `git` to merge latest commits to the submodule by running `git submodule update --rebase --remote` in root directory of your project.
+  If the theme has been updated, you can use `git` to merge latest commits to the submodule by running `git submodule update --rebase --remote` in root directory of your project.
 
 ## Configuration
 
@@ -174,6 +174,7 @@ If you're using formspree, you'll also need to set `formspree_email` to your ema
 If you're using netlify, you'll also want to set the `confirm_page = "url"` to a page on your site. That way after a user submits the form they'll be sent to a page with your customised thank you message, rather than a generic netlify page.
 
 If you'd like a contact form on another page, use the shortcode `{{< contact_form >}}`
+
 ### 8. Links
 At the very bottom of each page is a bunch of icons (from FontAwesome) which can be used for links to social media, RSS feeds, or whatever you like!
 ```
@@ -211,3 +212,13 @@ $ hugo server -D
 ```
 
 Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
+
+# Usage Instructions
+## Image Dimensions
+This theme makes use of 'hero' images for regular and sermon/podcast pages. Images need to be the right dimesions in order to display properly.
+
+|Page Type|Width|Height|
+|---|---|---|
+|Sermon|768px|644px|
+|Regular page|1280px|   |
+|Front page feature images|618px|412px|
