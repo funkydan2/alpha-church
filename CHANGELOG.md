@@ -2,6 +2,7 @@
 I've made it possible for a sermon to have multiple preachers. Now, 99% of the time a sermon will only be preached by one person, so why the change?
 1. It makes [the taxonomies](https://gohugo.io/content-management/taxonomies/#readout) more consistent with pluarlisation.
 2. There is a potential *use case* for having multiple preachers, such as a panel discussion, or a sermon where one person does an exegetical portion and another person applies the passage.
+
 This is a **breaking change**: you'll need to change all your sermons to have the `preachers:` paramater an array. If you're using TOML frontmatter you can do this with a regular expression. In [atom](//atom.io) I ran a regex find-and-replace over my whole project *Finding* `preachers: "([A-z ]+)"` and replacing it with `preachers: ["$1"]`.
 
 # Tuesday, 13 August 2019
