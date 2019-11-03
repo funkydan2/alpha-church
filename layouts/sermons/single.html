@@ -31,9 +31,15 @@
 									</ul>
 								{{ end }} {{/* with .audio */}}
 							{{ .Content }}
-							{{ with .Params.preachers }}
-								<p>Preacher: <a href="/preachers/{{ . | urlize }}/">{{ . }}</a></p>
-							{{ end }} {{/* end with preachers */}}
+							{{ if .Params.preachers }}
+								<p>Preacher:
+									{{ range $index, $key := .Params.preachers }}
+									{{ if $index }}, {{ end }}
+									{{ if gt (len $key) 0 }}
+										<a href="/preachers/{{ $key | urlize }}/">{{ $key }}</a>
+									{{ end }} {{/* if */}}
+									{{ end }} {{/* range */}}
+							{{ end }} {{/* end if preachers */}}
 							{{ if .Params.series }}
 								<p> Series:
 									{{ range $index, $key := .Params.series }}

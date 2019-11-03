@@ -38,7 +38,7 @@
     {{- range $pages -}}
     <item>
       <title>{{ title .Params.title }}{{ with .Params.passage }} ({{ . }}){{ end }}</title>
-      <itunes:author>{{ .Params.preachers }}</itunes:author>
+      <itunes:author>{{ index .Params.preachers 0 }}</itunes:author>
       <itunes:summary>{{ .Summary | plainify }}</itunes:summary>
       {{ printf "<description><![CDATA[%s]]></description>" .Content | safeHTML }}
       {{ printf `<googleplay:description><![CDATA[%s]]></googleplay:description>` .Content | safeHTML }}
