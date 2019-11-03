@@ -5,7 +5,7 @@ date: {{ .Date }}
 audio: ""
 audio_duration: "1:00"
 audio_size: 1
-preacher: ""
+preachers: ""
 images: [""]
 series: []
 tags: []
