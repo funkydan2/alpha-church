@@ -26,6 +26,7 @@
     accent = "1"
     title = "Serve"
     text = "Growing people who serve our community."
+    url = "/kids"
 
   [[feature_icons.tile]]
     icon = "fa-church"

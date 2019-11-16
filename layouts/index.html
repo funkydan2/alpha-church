@@ -29,9 +29,11 @@
 							<div class="features-row">
 								{{ range $index, $key := $tiles}}
 									<section>
-										<span class="icon major {{ $key.icon_pack }} {{ $key.icon }} accent{{- $key.accent -}}"></span>
-										<h3>{{ $key.title }}</h3>
-										<p>{{ $key.text | markdownify }}</p>
+										{{ if $key.url }}<a href="{{ $key.url }}"><div>{{ end }}
+											<span class="icon major {{ $key.icon_pack }} {{ $key.icon }} accent{{- $key.accent -}}"></span>
+											<h3>{{ $key.title }}</h3>
+											<p>{{ $key.text | markdownify }}</p>
+										{{ if $key.url }}</div></a>{{ end }}
 									</section>
 									{{ if and (mod $index 2) (lt (add $index 1) $len) }}
 											</div>
