@@ -1,5 +1,5 @@
 # Saturday, 16 November 2019
-On the home page (_index.html), feature_icons tiles can have an optional `url` specified that wil make the whole tile clickable. The text of that tile will turn into the link accent color.
+On the home page (\_index.html), feature_icons tiles can have an optional `url` specified that wil make the whole tile clickable. The text of that tile will turn into the link accent color.
 
 # Sunday, 3 November 2019
 I've made it possible for a sermon to have multiple preachers. Now, 99% of the time a sermon will only be preached by one person, so why the change?
