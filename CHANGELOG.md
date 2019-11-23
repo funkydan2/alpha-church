@@ -1,3 +1,7 @@
+# Saturday, 23 November 2019
+* Support for sub-submenus. See `exampleSite/config.toml` for an idea of how to implement this. Note that these sub-sub-menus *will not have a visual prompt for users*, so don't hide essential navigation in them. (This is because I couldn't work out a way to implement this atractively in the UI, as well as to discourage burying essential navigation.)
+Note: this is the last update which will be reported in this changelog. This project will move to using [github tags](https://developer.github.com/v3/git/tags/). 
+
 # Saturday, 16 November 2019
 On the home page (\_index.html), feature_icons tiles can have an optional `url` specified that wil make the whole tile clickable. The text of that tile will turn into the link accent color.
 
@@ -6,7 +10,7 @@ I've made it possible for a sermon to have multiple preachers. Now, 99% of the t
 1. It makes [the taxonomies](https://gohugo.io/content-management/taxonomies/#readout) more consistent with pluarlisation.
 2. There is a potential *use case* for having multiple preachers, such as a panel discussion, or a sermon where one person does an exegetical portion and another person applies the passage.
 
-This is a **breaking change**: you'll need to change all your sermons to have the `preachers:` paramater an array. If you're using TOML frontmatter you can do this with a regular expression. In [atom](//atom.io) I ran a regex find-and-replace over my whole project *Finding* `preachers: "([A-z ]+)"` and replacing it with `preachers: ["$1"]`.
+This is a **breaking change**: you'll need to change all your sermons to have the `preachers:` parameter an array. If you're using TOML frontmatter you can do this with a regular expression. In [atom](//atom.io) I ran a regex find-and-replace over my whole project *Finding* `preachers: "([A-z ]+)"` and replacing it with `preachers: ["$1"]`.
 
 # Tuesday, 13 August 2019
 * Thanks to [@Anaeijon](https://github.com/Anaeijon) who [provided a PR](https://github.com/funkydan2/alpha-church/pull/15) with some improved SCSS process.

@@ -54,6 +54,18 @@ googleAnalytics = ""
     weight = 1
 
   [[menu.main]]
+    name = "Preachers"
+    url = "/preachers"
+    parent = "Sermons"
+    weight = 1
+
+  [[menu.main]]
+    name = "Best Ever"
+    url = "#"
+    parent = "Sermons"
+    weight = 1
+
+  [[menu.main]]
     name = "Blog"
     url = "/posts"
     parent = "Resources"

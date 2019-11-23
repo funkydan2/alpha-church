@@ -15,9 +15,18 @@
                     </a>
                     <ul>
                       {{ range .Children }}
-                          <li>
+                          {{ if .HasChildren }}
+                            <li>
                               <a href="{{ .URL }}">{{ .Name }}</a>
-                            </li>
+                              <ul>
+                              {{ range .Children }}
+                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                              {{ end }}
+                              </ul>
+                          {{ else }}
+                            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                          {{ end }}
+                          </li>
                       {{ end }}
                     </ul>
                   </li>
