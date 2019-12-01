@@ -6,4 +6,4 @@ images: ["/img/pavan-trikutam-71CjSSB83Wo-unsplash.jpg"]
 tags: ""
 draft: false
 ---
-{{< contact_form >}}
+{{< contact.inline >}}{{ partial "contact" . }}{{< /contact.inline >}}

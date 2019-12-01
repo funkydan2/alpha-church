@@ -15,4 +15,4 @@ With a bible quote for good measure!
 (John 3:16–18 NIV)
 
 And a map
-{{< map >}}
+{{< loc.inline >}}{{ partial "map" . }}{{< /loc.inline >}}
