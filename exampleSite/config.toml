@@ -2,6 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Alpha Church"
 theme = "alpha-church"
+themesDir = "../.."
 
 rssLimit = 5
 paginate = 4
