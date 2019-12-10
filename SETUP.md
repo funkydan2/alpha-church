@@ -17,7 +17,9 @@ You should see a folder called `alpha-church` inside the `themes` directory that
 
 ## Configuration
 
-In the next step navigate to the `exampleSite` folder at `themes/alpha-church/exampleSite/` and copy `config.toml` from the exampleSite folder into the root folder of your Hugo site. (Please refer to https://gohugo.io/overview/quickstart/ for installing a Hugo theme.)
+In the next step navigate to the `exampleSite` folder at `themes/alpha-church/exampleSite/` and copy `config.toml` from the exampleSite folder into the root folder of your Hugo site. Then delete the line which says `themesDir = "../.."`.
+
+(Please refer to https://gohugo.io/overview/quickstart/ for installing a Hugo theme.)
 
 ## The `config` file
 
@@ -140,7 +142,7 @@ To set your organisations' location edit `config.toml`.
 ```
 To find the appropriate values, visit https://openstreetmap.org and find the location you want to be shown on your map. Then look at the URL in your browser's location bar. You'll see something like `https://www.openstreetmap.org/search?query=New%20York#map=14/40.6971/-73.9796`. The final three numbers in this URL give the values of Zoom/Latitude/Longitude.
 
-If you'd like a map on another page, you can use the shortcode `{{< osmap >}}`.
+If you'd like a map on another page, you can use an inline shortcode `{{< map.inline >}}{{ partial "map" . }}{{< /map.inline >}}`.
 
 You can also use Google Maps. To do this, you'll need an [API Key from Google](https://developers.google.com/maps/documentation/embed/get-api-key) and set it in `config.toml`:
 ```
@@ -173,7 +175,7 @@ If you're using formspree, you'll also need to set `formspree_email` to your ema
 
 If you're using netlify, you'll also want to set the `confirm_page = "url"` to a page on your site. That way after a user submits the form they'll be sent to a page with your customised thank you message, rather than a generic netlify page.
 
-If you'd like a contact form on another page, use the shortcode `{{< contact_form >}}`
+If you'd like a contact form on another page, use an inline shortcode `{{< contact.inline >}}{{ partial "contact" . }}{{< /contact.inline >}}`
 
 ### 8. Links
 At the very bottom of each page is a bunch of icons (from FontAwesome) which can be used for links to social media, RSS feeds, or whatever you like!
