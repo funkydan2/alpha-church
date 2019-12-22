@@ -2,7 +2,7 @@
 			{{ "<!-- Main -->" | safeHTML }}
 				<section id="main" class="container">
 					<header>
-						<h2>{{ .Params.title }}</h2>
+						<h2>{{ if .Draft }}DRAFT: {{end}}{{ .Params.title }}</h2>
 						{{ with .Params.passage }}
 							<p>{{ . }}</p>
 						{{ end }}
