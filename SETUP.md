@@ -142,7 +142,7 @@ To set your organisations' location edit `config.toml`.
 ```
 To find the appropriate values, visit https://openstreetmap.org and find the location you want to be shown on your map. Then look at the URL in your browser's location bar. You'll see something like `https://www.openstreetmap.org/search?query=New%20York#map=14/40.6971/-73.9796`. The final three numbers in this URL give the values of Zoom/Latitude/Longitude.
 
-If you'd like a map on another page, you can use an inline shortcode `{{< map.inline >}}{{ partial "map" . }}{{< /map.inline >}}`.
+If you'd like a map on another page, you can use an inline shortcode `{{< map.inline >}}{{ partial "map" . }}{{< /map.inline >}}`. **N.B. inline shortcodes must be [enabled in your config file](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes).**
 
 You can also use Google Maps. To do this, you'll need an [API Key from Google](https://developers.google.com/maps/documentation/embed/get-api-key) and set it in `config.toml`:
 ```
@@ -175,7 +175,7 @@ If you're using formspree, you'll also need to set `formspree_email` to your ema
 
 If you're using netlify, you'll also want to set the `confirm_page = "url"` to a page on your site. That way after a user submits the form they'll be sent to a page with your customised thank you message, rather than a generic netlify page.
 
-If you'd like a contact form on another page, use an inline shortcode `{{< contact.inline >}}{{ partial "contact" . }}{{< /contact.inline >}}`
+If you'd like a contact form on another page, use an inline shortcode `{{< contact.inline >}}{{ partial "contact" . }}{{< /contact.inline >}}` **N.B. inline shortcodes must be [enabled in your config file](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes).**
 
 ### 8. Links
 At the very bottom of each page is a bunch of icons (from FontAwesome) which can be used for links to social media, RSS feeds, or whatever you like!
