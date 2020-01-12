@@ -10,21 +10,21 @@
           {{ range .Site.Menus.main }}
             {{ if .HasChildren }}
                 <li>
-                    <a href="{{ .URL }}"><i class="fas fa-angle-down"></i>
+                    <a href="{{ .URL | absURL }}"><i class="fas fa-angle-down"></i>
                         {{ .Name }}
                     </a>
                     <ul>
                       {{ range .Children }}
                           {{ if .HasChildren }}
                             <li>
-                              <a href="{{ .URL }}">{{ .Name }}</a>
+                              <a href="{{ .URL | absURL }}">{{ .Name }}</a>
                               <ul>
                               {{ range .Children }}
-                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                                <li><a href="{{ .URL |absURL }}">{{ .Name }}</a></li>
                               {{ end }}
                               </ul>
                           {{ else }}
-                            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                            <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
                           {{ end }}
                           </li>
                       {{ end }}
@@ -32,7 +32,7 @@
                   </li>
             {{ else }}
                 <li>
-                    <a href="{{ .URL }}">
+                    <a href="{{ .URL | absURL }}">
                         {{ .Pre }} {{ .Name }}
                     </a>
                 </li>

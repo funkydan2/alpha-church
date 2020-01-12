@@ -29,7 +29,7 @@
 							<div class="features-row">
 								{{ range $index, $key := $tiles}}
 									<section>
-										{{ if $key.url }}<a href="{{ $key.url }}"><div>{{ end }}
+										{{ if $key.url }}<a href="{{ $key.url | absURL }}"><div>{{ end }}
 											<span class="icon major {{ $key.icon_pack }} {{ $key.icon }} accent{{- $key.accent -}}"></span>
 											<h3>{{ $key.title }}</h3>
 											<p>{{ $key.text | markdownify }}</p>
@@ -57,7 +57,7 @@
 										<p>{{ $key.text | markdownify }}</p>
 										{{ if $key.button_text }}
 											<ul class="actions special">
-												<li><a href="{{ $key.url }}" class="button alt">{{ $key.button_text }}</a></li>
+												<li><a href="{{ $key.url | absURL }}" class="button alt">{{ $key.button_text }}</a></li>
 											</ul>
 											{{ end }}
 										</section>
