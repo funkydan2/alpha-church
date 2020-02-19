@@ -4,9 +4,7 @@
 				<section id="main" class="container">
 					<header>
 						<h2>{{ if .Draft }}DRAFT: {{end}}{{ .Params.title }}</h2>
-						{{ with .Params.subtitle }}
-							<p>{{ . }}</p>
-						{{ end }}
+						{{ with .Params.subtitle }}<p>{{ . }}</p>{{ end }}
 					</header>
 					<div class="box">
 						{{ with .Params.images }}
@@ -23,6 +21,7 @@
 								{{ end }} {{/* range */}}
 						  </p>
 						{{ end }} {{/* if tags */}}
+						{{ with .Params.Date }}<p>Date: {{ . | dateFormat "January 2, 2006"}}</p>{{ end }}
 						</div>
 					</div>
 				</section>

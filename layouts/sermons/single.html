@@ -3,9 +3,7 @@
 				<section id="main" class="container">
 					<header>
 						<h2>{{ if .Draft }}DRAFT: {{end}}{{ .Params.title }}</h2>
-						{{ with .Params.passage }}
-							<p>{{ . }}</p>
-						{{ end }}
+						{{ with .Params.passage }}<p>{{ . }}</p>{{ end }}
 					</header>
 					<div class="box">
 						<div class="row">
@@ -60,6 +58,7 @@
 										{{ end }} {{/* range */}}
 								</p>
 							{{ end }} {{/* end if tags */}}
+							{{ with .Params.date }}<p>Date: {{ . | dateFormat "January 2, 2006"}}</p>{{ end }}
 							</div>
 						</div>
 					</div>
