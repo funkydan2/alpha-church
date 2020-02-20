@@ -13,6 +13,7 @@
 						{{ .Content }}
 						{{ if or .Params.tags .Params.date }}
 							<hr />
+							<div id="meta">
 							{{ with .Params.tags }}
 								<p>Tags:
 									{{ range $index, $key:= . }}
@@ -23,9 +24,9 @@
 									{{ end }} {{/* range */}}
 							  </p>
 							{{ end }} {{/* if tags */}}
-							{{ with .Params.date }}<p>Published: {{ . | dateFormat "January 2, 2006"}}</p>{{ end }}
-						{{ end }}
-						</div>
+							{{ with .Params.date }}<p class="meta">Published: {{ . | dateFormat "January 2, 2006"}}</p>{{ end }}
+							</div>
+						{{ end }} {{/* if meta */}}
 					</div>
 				</section>
 {{ end }}
