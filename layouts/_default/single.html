@@ -11,17 +11,20 @@
 							<span class="image featured"><img src="{{ index . 0 | absURL }}" alt=""></span>
 						{{ end }}
 						{{ .Content }}
-						{{ if .Params.tags }}
-							<p>Tags:
-								{{ range $index, $key:= .Params.tags }}
-									{{ if $index }}, {{ end }}
-									{{ if gt (len $key) 0 }}
-							  		<a href="/tags/{{$key | urlize }}/">#{{ $key }}</a>
-									{{ end }} {{/* if gt len */}}
-								{{ end }} {{/* range */}}
-						  </p>
-						{{ end }} {{/* if tags */}}
-						{{ with .Params.Date }}<p>Date: {{ . | dateFormat "January 2, 2006"}}</p>{{ end }}
+						{{ if or .Params.tags .Params.date }}
+							<hr />
+							{{ with .Params.tags }}
+								<p>Tags:
+									{{ range $index, $key:= . }}
+										{{ if $index }}, {{ end }}
+										{{ if gt (len $key) 0 }}
+								  		<a href="/tags/{{$key | urlize }}/">#{{ $key }}</a>
+										{{ end }} {{/* if gt len */}}
+									{{ end }} {{/* range */}}
+							  </p>
+							{{ end }} {{/* if tags */}}
+							{{ with .Params.date }}<p>Published: {{ . | dateFormat "January 2, 2006"}}</p>{{ end }}
+						{{ end }}
 						</div>
 					</div>
 				</section>
