@@ -13,7 +13,7 @@
 							{{ end }}
 							</div>
 							<div class="col-6 col-12-mobilep">
-								{{ with .Params.audio }}
+								{{ range .Params.audio }}
 									{{ $audio_name_arr := split . "." }}
 									{{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
 									<ul class="actions small">
@@ -27,7 +27,7 @@
 											<a href="{{ . }}" class="button alt small" download><i class="icon fas fa-download"></i>&nbsp;Download</a>
 										</li>
 									</ul>
-								{{ end }} {{/* with .audio */}}
+								{{ end }} {{/* range .Params.audio */}}
 							{{ .Content }}
 							{{ if .Params.preachers }}
 								<p>Preacher:

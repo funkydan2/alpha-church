@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 passage: ""
 date: {{ .Date }}
-audio: ""
+audio: [""]
 audio_duration: "1:00"
 audio_size: 1
 preachers: [""]
