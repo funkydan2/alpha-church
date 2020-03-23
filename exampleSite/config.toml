@@ -113,7 +113,7 @@ unsafe = true
     feed = "https://www.thegospelcoalition.org/podcasts/word-of-the-week/feed/?feed=podcast"
 
   [params.map]
-    service = "osm" #"osm" for OpenStreetMaps or "google"
+    service = "osm" #"osm" for OpenStreetMaps, "google" for Google Maps, or "mapbox" for Mapbox, see SETUP.md
     # For Open Street Map widgets
     latitude = "48.8530"
     longitude = "2.3498"
