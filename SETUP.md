@@ -161,6 +161,18 @@ e.g.
   region = "FR"
 ```
 
+You can also use Mapbox. To do this you'll need an [API Key from Mapbox](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/) and set it in `config.toml`. You can also define your custom map style using [Mapbox Studio](https://www.mapbox.com/mapbox-studio/).
+
+```
+[params.map]
+  service = "mapbox" 
+  latitude = "48.137232"
+  longitude = "11.575503"
+  zoom = "13"
+  api_key = "XXXXXXXX"
+  style_url = "mapbox://LINK_TO_MAPBOXP_STYLE"
+```
+
 ### 7. Contact Form
 You can have a contact form using either a [netlify form](https://www.netlify.com/docs/form-handling/) (if you're deploying with netlify) or [formspree](https://formspree.io)
 ```

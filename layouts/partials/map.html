@@ -37,5 +37,24 @@
       </script>
       <script src="https://maps.googleapis.com/maps/api/js?key={{- .api_key -}}{{- safeURL $opt -}}&callback=initMap"
       async defer></script>
+  {{ else if eq .service "mapbox" }}
+    {{ printf "<meta name=\"viewport\" content=\"initial-scale=1,maximum-scale=1,user-scalable=no\" />" | safeHTML }}
+    {{ printf "<script src=\"https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js\"></script>" | safeHTML }}
+    {{ printf "<link href=\"https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css\" rel=\"stylesheet\" />" | safeHTML }}
+    <style>
+      body { margin: 0; padding: 0; }
+      #map { top: 0; bottom: 0; padding: 0; width: 100%; }
+    </style>
+    <script>
+      var loc = [{{- float .longitude -}}, {{- float .latitude -}}];
+      mapboxgl.accessToken = "{{- .api_key -}}";
+      var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: "{{- safeHTML .style_url  -}}", // stylesheet location
+        center: loc, // starting position [lng, lat]
+        zoom: {{- int .zoom -}} // starting zoom
+      });
+      map.addControl(new mapboxgl.NavigationControl());
+    </script>
   {{ end }}
 {{ end }}
