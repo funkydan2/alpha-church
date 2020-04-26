@@ -16,7 +16,11 @@
           {{ end }} {{/* if */}}
         </div>
         <div class="col-6 col-12-mobilep">
-          <span class="image fit"><img src="{{ index .Params.images 0 | absURL }}"></span>
+          <span class="image fit">
+            <a href="{{ .Permalink }}">
+              <img src="{{ index .Params.images 0 | absURL }}"></img>
+            </a/>
+          </span>
         </div>
     </div>
     {{ else }}
