@@ -15,8 +15,8 @@
   integrity = "sha384-JIdG6JQfPhPXusD2gXnR4AyixjsSndggmkXTXANkuI1Kjk34eKHLrxzv9u02NkjW"
 
 [js.instantpage]
-  version = "3.0.0"
-  integrity = "sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"
+  version = "5.1.0"
+  integrity = "sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"
 
 # CSS
 [css.leaflet]
