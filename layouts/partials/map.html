@@ -48,12 +48,50 @@
     <script>
       var loc = [{{- float .longitude -}}, {{- float .latitude -}}];
       mapboxgl.accessToken = "{{- .api_key -}}";
+
+      var geojson = {
+        type: 'FeatureCollection',
+        features: [{
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [{{- float .longitude -}}, {{- float .latitude -}}],
+          },
+          properties: {
+            title: "{{- .marker_title -}}",
+            description: "{{- .marker_address -}}"
+          }
+        }]
+      };
+
       var map = new mapboxgl.Map({
         container: 'map', // container id
         style: "{{- safeHTML .style_url  -}}", // stylesheet location
         center: loc, // starting position [lng, lat]
         zoom: {{- int .zoom -}} // starting zoom
       });
+
+      // add markers to map
+      geojson.features.forEach(function(marker) {
+
+      // create a HTML element for each feature
+      var el = document.createElement('div');
+      el.className = 'marker';
+
+      // make a marker for each feature and add to the map
+      new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+
+      if (marker.properties.title || marker.properties.description) {
+        new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+            .setHTML('<h4>' + marker.properties.title + '</h4><div>' + marker.properties.description + '</div>'))
+          .addTo(map);
+      }
+      });
+
       map.addControl(new mapboxgl.NavigationControl());
     </script>
   {{ end }}

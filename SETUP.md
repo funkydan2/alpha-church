@@ -171,7 +171,11 @@ You can also use Mapbox. To do this you'll need an [API Key from Mapbox](https:/
   zoom = "13"
   api_key = "XXXXXXXX"
   style_url = "mapbox://LINK_TO_MAPBOXP_STYLE"
+  marker_title = "Popup Marker Title"
+  marker_address= "Streetname <br> Postcode Town"
 ```
+
+> If `marker_title` and `marker_address` are not set, the popup will not be rendered in the map.
 
 ### 7. Contact Form
 You can have a contact form using either a [netlify form](https://www.netlify.com/docs/form-handling/) (if you're deploying with netlify) or [formspree](https://formspree.io)
