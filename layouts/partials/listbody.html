@@ -6,7 +6,9 @@
       <div class="row no-collapse 50% uniform">
         <div class="col-6 col-12-mobilep">
           <a href="{{ .Permalink }}">{{ if .Draft }}DRAFT: {{end}}{{ .Title | markdownify }}</a>
-          <time class="date-meta">({{ .Date.Format "Jan 2, 2006" }})</time>
+          {{ with .Params.subtitle }} | {{ . | markdownify }} | {{ end }}
+          {{ with .Params.passage }} | {{ . | markdownify }} | {{ end }}
+          <time class="date-meta">{{ .Date.Format "Jan 2, 2006" }}</time>
           <br>
           {{ .Summary | plainify | safeHTML }}
           {{ if .Truncated }}
@@ -16,7 +18,11 @@
           {{ end }} {{/* if */}}
         </div>
         <div class="col-6 col-12-mobilep">
-          <span class="image fit"><img src="{{ index .Params.images 0 | absURL }}"></span>
+          <span class="image fit">
+            <a href="{{ .Permalink }}">
+              <img src="{{ index .Params.images 0 | absURL }}"></img>
+            </a/>
+          </span>
         </div>
     </div>
     {{ else }}

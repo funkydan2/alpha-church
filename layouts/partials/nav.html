@@ -10,20 +10,29 @@
           {{ range .Site.Menus.main }}
             {{ if .HasChildren }}
                 <li>
-                    <a href="{{ .URL }}"><i class="fas fa-angle-down"></i>
+                    <a href="{{ .URL | relURL }}"><i class="fas fa-angle-down"></i>
                         {{ .Name }}
                     </a>
                     <ul>
                       {{ range .Children }}
-                          <li>
-                              <a href="{{ .URL }}">{{ .Name }}</a>
-                            </li>
+                          {{ if .HasChildren }}
+                            <li>
+                              <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+                              <ul>
+                              {{ range .Children }}
+                                <li><a href="{{ .URL |relURL }}">{{ .Name }}</a></li>
+                              {{ end }}
+                              </ul>
+                          {{ else }}
+                            <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+                          {{ end }}
+                          </li>
                       {{ end }}
                     </ul>
                   </li>
             {{ else }}
                 <li>
-                    <a href="{{ .URL }}">
+                    <a href="{{ .URL | relURL }}">
                         {{ .Pre }} {{ .Name }}
                     </a>
                 </li>

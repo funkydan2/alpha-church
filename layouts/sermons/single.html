@@ -2,10 +2,8 @@
 			{{ "<!-- Main -->" | safeHTML }}
 				<section id="main" class="container">
 					<header>
-						<h2>{{ .Params.title }}</h2>
-						{{ with .Params.passage }}
-							<p>{{ . }}</p>
-						{{ end }}
+						<h2>{{ if .Draft }}DRAFT: {{end}}{{ .Params.title }}</h2>
+						{{ with .Params.passage }}<p>{{ . }}</p>{{ end }}
 					</header>
 					<div class="box">
 						<div class="row">
@@ -15,7 +13,7 @@
 							{{ end }}
 							</div>
 							<div class="col-6 col-12-mobilep">
-								{{ with .Params.audio }}
+								{{ range .Params.audio }}
 									{{ $audio_name_arr := split . "." }}
 									{{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
 									<ul class="actions small">
@@ -29,11 +27,17 @@
 											<a href="{{ . }}" class="button alt small" download><i class="icon fas fa-download"></i>&nbsp;Download</a>
 										</li>
 									</ul>
-								{{ end }} {{/* with .audio */}}
+								{{ end }} {{/* range .Params.audio */}}
 							{{ .Content }}
-							{{ with .Params.preachers }}
-								<p>Preacher: <a href="/preachers/{{ . | urlize }}/">{{ . }}</a></p>
-							{{ end }} {{/* end with preachers */}}
+							{{ if .Params.preachers }}
+								<p>Preacher:
+									{{ range $index, $key := .Params.preachers }}
+									{{ if $index }}, {{ end }}
+									{{ if gt (len $key) 0 }}
+										<a href="/preachers/{{ $key | urlize }}/">{{ $key }}</a>
+									{{ end }} {{/* if */}}
+									{{ end }} {{/* range */}}
+							{{ end }} {{/* end if preachers */}}
 							{{ if .Params.series }}
 								<p> Series:
 									{{ range $index, $key := .Params.series }}
@@ -54,6 +58,7 @@
 										{{ end }} {{/* range */}}
 								</p>
 							{{ end }} {{/* end if tags */}}
+							{{ with .Params.date }}<p>Date: {{ . | dateFormat "January 2, 2006"}}</p>{{ end }}
 							</div>
 						</div>
 					</div>

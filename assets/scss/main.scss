@@ -5,7 +5,11 @@
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
-
+/* 	import additional Fonts from fonts.google.com
+	use Format e.g. "Playfair+Display:400,700" 		*/
+{{ range .Site.Params.Style.googleFonts }}
+@import url("https://fonts.googleapis.com/css?family={{ . }}");
+{{ end }}
 /*
 	Alpha by HTML5 UP
 	html5up.net | @ajlkn
@@ -157,7 +161,7 @@
 	}
 
 	p {
-		margin: 0 0 _size(element-margin) 0;
+		margin: _size(element-margin) 0 _size(element-margin) 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -787,7 +791,7 @@
 
 	ol {
 		list-style: decimal;
-		margin: 0 0 _size(element-margin) 0;
+//		margin: 0 0 _size(element-margin) 0;
 		padding-left: 1.25em;
 
 		li {
@@ -797,7 +801,7 @@
 
 	ul {
 		list-style: disc;
-		margin: 0 0 _size(element-margin) 0;
+//		margin: 0 0 _size(element-margin) 0;
 		padding-left: 1em;
 
 		li {
@@ -1370,7 +1374,7 @@
 	#banner {
 		background-attachment:	scroll,							fixed;
 		background-color:		#666;
-		background-image:		url('images/overlay.png'),		url('../../images/banner.jpg');
+		background-image:		url({{ "img/overlay.png" | relURL }}), url({{ .Site.Params.Banner.image | relURL }});
 		background-position:	top left,						center center;
 		background-repeat:		repeat,							no-repeat;
 		background-size:		auto,							cover;
@@ -1467,6 +1471,14 @@
 		}
 	}
 
+/* Meta */
+
+	#meta {
+		color: _palette(fg-light);
+		font-size: 75%;
+		line-height: 60%;
+	}
+
 /* Footer */
 
 	#footer {
@@ -1523,6 +1535,11 @@
 		color: _palette(accent2, fg);
 		padding: 3.5em 0 4em 0;
 		text-align: center;
+
+		a {
+			color: inherit;
+			font-weight: bold;
+		}
 
 		h2, h3, h4, h5, h6 {
 			color: inherit;
@@ -2108,3 +2125,24 @@
 			}
 
 	}
+
+.marker {
+	background-size: cover;
+	color: black;
+	cursor: pointer;
+}
+
+.marker::before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f51d";
+	text-align: center; ;
+	font-size: large;
+}
+.mapboxgl-popup {
+	max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+	text-align: left;
+}

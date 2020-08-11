@@ -2,7 +2,7 @@
 title: "About"
 subtitle: "About Alpha-Church"
 date: 2018-04-30T10:05:49+10:00
-images: ["/img/freely-20445.jpg"]
+images: ["img/freely-20445.jpg"]
 draft: false
 ---
 
@@ -15,4 +15,4 @@ With a bible quote for good measure!
 (John 3:16–18 NIV)
 
 And a map
-{{< map >}}
+{{< loc.inline >}}{{ partial "map" . }}{{< /loc.inline >}}

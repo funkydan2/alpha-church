@@ -1,9 +1,9 @@
-<section id="banner" style="background-image:url({{ "img/overlay.png" | absURL }}), url({{ .Params.Banner.image | absURL }})">
+<section id="banner">
   <h2>{{ .Site.Params.title }}</h2>
   <p>{{ .Site.Params.subtitle }}</p>
   <ul class="actions special">
     {{ range .Params.Banner.button }}
-      <li><a href="{{ .url }}" class="button {{ .type }}">{{ .text }}</a></li>
+      <li><a href="{{ .url | relURL }}" class="button {{ .type }}">{{ .text }}</a></li>
     {{ end }}
   </ul>
 </section>

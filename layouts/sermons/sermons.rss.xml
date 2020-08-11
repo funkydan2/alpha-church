@@ -38,18 +38,18 @@
     {{- range $pages -}}
     <item>
       <title>{{ title .Params.title }}{{ with .Params.passage }} ({{ . }}){{ end }}</title>
-      <itunes:author>{{ .Params.preachers }}</itunes:author>
+      <itunes:author>{{ index .Params.preachers 0 }}</itunes:author>
       <itunes:summary>{{ .Summary | plainify }}</itunes:summary>
       {{ printf "<description><![CDATA[%s]]></description>" .Content | safeHTML }}
       {{ printf `<googleplay:description><![CDATA[%s]]></googleplay:description>` .Content | safeHTML }}
       {{ printf "<content:encoded><![CDATA[%s]]></content:encoded>" .Content | safeHTML }}
       {{- with .Params.images -}}<itunes:image href="{{ index . 0 | absURL }}"/>{{- end -}}
-      {{ $audio_name_arr := split .Params.audio "." }}
+      {{ $audio_name_arr := split (index .Params.audio 0) "." }}
       {{ $audio_type := index $audio_name_arr (sub (len $audio_name_arr) 1) }}
       {{ $audio_size := 1 }}
       {{- if .Params.audio_size }}{{ $audio_size = int .Params.audio_size }} {{ end -}}
-      <enclosure url="{{ .Params.audio }}" length="{{ $audio_size }}" type="audio/{{ $audio_type }}" />
-      <guid>{{ .Params.audio }}</guid>
+      <enclosure url="{{ index .Params.audio 0 | absURL }}" length="{{ $audio_size }}" type="audio/{{ $audio_type }}" />
+      <guid>{{ index .Params.audio 0 | absURL }}</guid>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>
       {{ with .Params.audio_duration }}<itunes:duration>{{ . }}</itunes:duration>{{ end }}
