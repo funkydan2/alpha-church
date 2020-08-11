@@ -48,22 +48,43 @@
 		</div>
 	</form>
 {{ else if eq .Site.Params.Contact.service "formspree" }}
-		<form method="POST" action="https://formspree.io/{{ .Site.Params.Contact.formspree_email }}">
-			<div class="row gtr-50 gtr-uniform">
-				<div class="col-6 col-12-mobilep">
-					<input type="text" name="name" id="name" value="" aria-label="Name" placeholder="Name" />
-				</div>
-				<div class="col-6 col-12-mobilep">
-					<input type="email" name="_replyto" id="email" value="" aria-label="Email" placeholder="Email" />
-				</div>
-				<div class="col-12">
-					<textarea name="message" id="message" aria-label="Enter your message" placeholder="Enter your message" rows="6"></textarea>
-				</div>
-				<div class="col-12">
-					<ul class="actions special">
-						<li><input type="submit" value="Send Message" /></li>
-					</ul>
-				</div>
+	<form method="POST" action="https://formspree.io/{{ .Site.Params.Contact.formspree_email }}">
+		<div class="row gtr-50 gtr-uniform">
+			<div class="col-6 col-12-mobilep">
+				<input type="text" name="name" id="name" value="" aria-label="Name" placeholder="Name" />
 			</div>
-		</form>
+			<div class="col-6 col-12-mobilep">
+				<input type="email" name="_replyto" id="email" value="" aria-label="Email" placeholder="Email" />
+			</div>
+			<div class="col-12">
+				<textarea name="message" id="message" aria-label="Enter your message" placeholder="Enter your message" rows="6"></textarea>
+			</div>
+			<div class="col-12">
+				<ul class="actions special">
+					<li><input type="submit" value="Send Message" /></li>
+				</ul>
+			</div>
+		</div>
+	</form>
+{{ else if eq .Site.Params.Contact.service "php" }}
+	<form name="contact" method="POST" action="/contact_mail.php" netlify>
+		<div class="row gtr-50 gtr-uniform">
+			<div class="col-6 col-12-mobilep">
+				<input type="text" name="name" aria-label="Your name" placeholder="Your name">
+			</div>
+			<div class="col-6 col-12-mobilep">
+				<input type="email" name="email" aria-label="Email address" placeholder = "Email address">
+			</div>
+			<div class="col-12">
+				<textarea name="message" aria-label="Enter your message" placeholder="Enter your message" rows="6"></textarea>
+			</div>
+			<div class="col-12">
+				<ul class="actions special">
+					<li>
+						<input type="submit" value="Send" name="send"/>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</form>
 {{ end }}
