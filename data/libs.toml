@@ -6,8 +6,8 @@
 
 # JavaScript
 [js.leaflet]
-  version = "1.7.0"
-  integrity = "sha384-UYn5aDdnSToqO3lXMktQ9F7ttldUeadL5sfPHthwvpFfeV5tzIgztARkF7nG52LK"
+  version = "1.7.1"
+  integrity = "sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 
 [js.plyr]
   #Make sure the hash is for the polyfilled version
@@ -20,8 +20,8 @@
 
 # CSS
 [css.leaflet]
-  version = "1.7.0"
-  integrity = "sha384-VzLXTJGPSyTLX6d96AxgkKvE/LRb7ECGyTxuwtpjHnVWVZs2gp5RDjeM/tgBnVdM"
+  version = "1.7.1"
+  integrity = "sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
 
 [css.plyr]
   version = "3.6.2"
