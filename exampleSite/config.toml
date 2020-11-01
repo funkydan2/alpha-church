@@ -86,6 +86,7 @@ unsafe = true
   title = "Alpha Church"
   subtitle = "Another Church Theme"
   author = "Daniel Saunders"
+  keywords = ["theme", "hugo", "podcast"]
   languageCode = "en" # For accessibility this needs to be set. You can find all language codes at https://www.w3schools.com/tags/ref_language_codes.asp
 
   bible_popups = "faithlife" #faithlife, blb
@@ -133,7 +134,7 @@ unsafe = true
     #If you use netlify, you'll need to set the confirm_page value (or else users will see a generic netlify response)
     #If you use formspree, you'll need to set your formspree email address.
     #
-    #If you use php, you need to host this site on a Server capable of running php. 
+    #If you use php, you need to host this site on a Server capable of running php.
     # Please edit the /static/contact_mail.php file from the exampleSite.
     service = "netlify"
     confirm_page = "/contact_thanks"
