@@ -55,6 +55,6 @@
   {{ printf "<script src=\"//cdn.plyr.io/%s/plyr.polyfilled.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}
 {{ end }}
 {{ if .Site.Params.instant_page }}{{ printf "<script src=\"//instant.page/%s\" type=\"module\" defer integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.instantpage.version $js.instantpage.integrity | safeHTML }}{{ end }}
-{{ if .Site.GoogleAnalytics }}{{ template "_internal/google_analytics_async.html" . }}{{ end }}
+{{ if .Site.GoogleAnalytics }}{{ template "_internal/google_analytics.html" . }}{{ end }}
 </body>
 </html>
