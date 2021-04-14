@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+{{ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>"  | safeHTML }}
 <rss version="2.0"
    xmlns:content="https://purl.org/rss/1.0/modules/content/"
    xmlns:wfw="https://wellformedweb.org/CommentAPI/"
@@ -63,6 +63,6 @@
         </itunes:keywords>
       {{- end -}}
     </item>
-    {{ end }}
+    {{- end -}}
   </channel>
 </rss>
