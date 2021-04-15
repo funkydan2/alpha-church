@@ -103,10 +103,9 @@ unsafe = true
 
   [params.podcast]
     title = "Listen to Alpha Church"
-    subtitle = ""
     summary = "Alpha-Church sermons, talks, messages—podcasted."
     email = "test@example.com"
-    copyright = "Podcast: [CC0 (public domain)](//creativecommons.org/publicdomain/zero/1.0/)"
+    copyright = "The files in the podcast are in the public domain."
     image = "img/podcast-cover.jpg"
     category = "Religion & Spirituality"
     sub_category = "Christianity"
