@@ -85,10 +85,10 @@ unsafe = true
 [params]
   title = "Alpha Church"
   subtitle = "Another Church Theme"
+  #favicon = "/example.ico"
   author = "Daniel Saunders"
   keywords = ["theme", "hugo", "podcast"]
   languageCode = "en" # For accessibility this needs to be set. You can find all language codes at https://www.w3schools.com/tags/ref_language_codes.asp
-
   bible_popups = "faithlife" #faithlife, blb
   bible_version = "CSB" #HCSB, NIV, NLT, ESV, etc.
   instant_page = true

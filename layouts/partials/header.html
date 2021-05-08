@@ -21,6 +21,7 @@
     	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 		{{- end -}}
 		{{ hugo.Generator }}
+		{{- with .Site.Params.favicon}}<link rel="shortcut icon" href="{{ . }}" />{{ end -}}
 		{{ with .Site.Params.Podcast.itunes }}
 			<meta name="apple-itunes-app" content="app-id={{ replaceRE "https\\:\\/\\/itunes\\.apple\\.com\\/[a-z]{2}\\/podcast\\/[a-z\\-]*\\/id(\\d{10}).*" "$1" . }}" />
 		{{ end }}
