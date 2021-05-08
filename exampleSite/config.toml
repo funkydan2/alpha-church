@@ -85,7 +85,6 @@ unsafe = true
 [params]
   title = "Alpha Church"
   subtitle = "Another Church Theme"
-  #favicon = "/example.ico"
   author = "Daniel Saunders"
   keywords = ["theme", "hugo", "podcast"]
   languageCode = "en" # For accessibility this needs to be set. You can find all language codes at https://www.w3schools.com/tags/ref_language_codes.asp
@@ -94,6 +93,11 @@ unsafe = true
   instant_page = true
 
   customCSS = ["example.css"]
+
+  [params.favicon]
+    sml = "/example16.png"
+    med = "/example32.png"
+    #lge = "example96.png"
 
   [params.banner]
     image = "img/banner.jpg"
