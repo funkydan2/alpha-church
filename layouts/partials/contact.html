@@ -48,7 +48,7 @@
 		</div>
 	</form>
 {{ else if eq .Site.Params.Contact.service "formspree" }}
-	<form method="POST" action="https://formspree.io/{{ .Site.Params.Contact.formspree_email }}">
+	<form method="POST" action="https://formspree.io/f/{{ .Site.Params.Contact.formspree_formid }}">
 		<div class="row gtr-50 gtr-uniform">
 			<div class="col-6 col-12-mobilep">
 				<input type="text" name="name" id="name" value="" aria-label="Name" placeholder="Name" />
