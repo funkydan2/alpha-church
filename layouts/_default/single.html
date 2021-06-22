@@ -25,6 +25,7 @@
 							  </p>
 							{{ end }} {{/* if tags */}}
 							{{ with .Params.date }}<p class="meta">Published: {{ . | dateFormat "January 2, 2006"}}</p>{{ end }}
+							{{ with .Params.lastmod }}<p class="meta">Updated: {{ . | dateFormat "January 2, 2006"}}</p>{{ end }}
 							</div>
 						{{ end }} {{/* if meta */}}
 					</div>
