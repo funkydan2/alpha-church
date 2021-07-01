@@ -8,7 +8,7 @@ description = "A hugo port of html5up Alpha theme. Customised for church use."
 homepage = "https://github.com/funkydan2/alpha-church"
 tags = ["church", "podcast"]
 features = ["drop down menu", "banner", "feature images", "fontawesome", "podcast"]
-min_version = "0.55.0"
+min_version = "0.82.0"
 
 [author]
   name = "Daniel Saunders"
@@ -16,6 +16,5 @@ min_version = "0.55.0"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Alpha"
+  homepage = "https://html5up.net/alpha"
