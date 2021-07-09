@@ -115,6 +115,7 @@ unsafe = true
     sub_category = "Christianity"
     iTunes = "https://itunes.apple.com/us/podcast/tgc-word-of-the-week/id1034013280"
     feed = "https://www.thegospelcoalition.org/podcasts/word-of-the-week/feed/?feed=podcast"
+    spotify = "https://open.spotify.com/show/1iE3aJkf8fJ2FVTvJGFd4h"
 
   [params.map]
     service = "osm" #"osm" for OpenStreetMaps, "google" for Google Maps, or "mapbox" for Mapbox, see SETUP.md
