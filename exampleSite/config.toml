@@ -142,7 +142,7 @@ unsafe = true
     # Please edit the /static/contact_mail.php file from the exampleSite.
     service = "netlify" #or "formspree" or "php"
     confirm_page = "/contact_thanks" #only used by netlify
-    # form_id="" #only used by formspree
+    # formspree_formid="" #only used by formspree
 
 
     [params.footer]
