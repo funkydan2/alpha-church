@@ -8,7 +8,6 @@
 {{ $util := resources.Get "js/util.js" | minify | fingerprint }}
 {{ $ie := resources.Get "js/ie/respond.min.js" | fingerprint }}
 {{ $main := resources.Get "js/main.js" | minify | fingerprint }}
-{{ $plyr := resources.Get "/js/plyr.init.js" | fingerprint }}
 {{ "<!-- Scripts-HTML5up -->" | safeHTML }}
 <script src="{{ $jquery.RelPermalink }}" integrity="{{ $jquery.Data.Integrity }}" crossorigin="anonymous"></script>
 <script src="{{ $dropotron.RelPermalink }}" integrity="{{ $dropotron.Data.Integrity }}" crossorigin="anonymous"></script>
@@ -52,7 +51,13 @@
 {{ `<!--[if lte IE 8]><script src=" {{ $ie.RelPermalink }} "></script><![endif]-->` | safeHTML}}
 {{ if .IsPage }}
   {{ printf "<script src=\"//cdn.plyr.io/%s/plyr.polyfilled.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}
-  <script src="{{ $plyr.RelPermalink }}" integrity="{{ $plyr.Data.Integrity }}" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      if ($("#player").length) {
+        const player = new Plyr('#player', {settings: ['speed']});
+      }
+    });
+  </script>
 {{ end }}
 {{ if .Site.Params.instant_page }}{{ printf "<script src=\"//instant.page/%s\" type=\"module\" defer integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.instantpage.version $js.instantpage.integrity | safeHTML }}{{ end }}
 {{ if .Site.GoogleAnalytics }}{{ template "_internal/google_analytics.html" . }}{{ end }}
