@@ -10,3 +10,8 @@ title = "Alpha Church"
   tag = "tags"
   preacher = "preachers"
   series = "series"
+
+#This is suggested default minification since Hugo 0.84.0 and later has a minification library that breaks the JS for plyr.io
+[minify]
+  minifyOutput = true
+  disableJS = true
