@@ -15,7 +15,7 @@ googleAnalytics = ""
 enableInlineShortcodes = true
 
 [markup.goldmark.renderer]
-unsafe = true
+  unsafe = true
 
 [taxonomies]
   tag = "tags"
