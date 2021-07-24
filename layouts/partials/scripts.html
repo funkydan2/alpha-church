@@ -50,7 +50,7 @@
 {{ end }}
 {{ `<!--[if lte IE 8]><script src=" {{ $ie.RelPermalink }} "></script><![endif]-->` | safeHTML}}
 {{ if .IsPage }}
-  {{ printf "<script src=\"//cdn.plyr.io/%s/plyr.polyfilled.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}
+  {{ printf "<script src=\"https://cdn.plyr.io/%s/plyr.polyfilled.js\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}
   <script>
     $(document).ready(function() {
       if ($("#player").length) {
@@ -59,7 +59,7 @@
     });
   </script>
 {{ end }}
-{{ if .Site.Params.instant_page }}{{ printf "<script src=\"//instant.page/%s\" type=\"module\" defer integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.instantpage.version $js.instantpage.integrity | safeHTML }}{{ end }}
+{{ if .Site.Params.instant_page }}{{ printf "<script src=\"https://instant.page/%s\" type=\"module\" defer integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.instantpage.version $js.instantpage.integrity | safeHTML }}{{ end }}
 {{ if .Site.GoogleAnalytics }}{{ template "_internal/google_analytics.html" . }}{{ end }}
 </body>
 </html>
