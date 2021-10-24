@@ -50,7 +50,7 @@
 {{ end }}
 {{ `<!--[if lte IE 8]><script src=" {{ $ie.RelPermalink }} "></script><![endif]-->` | safeHTML}}
 {{ if .IsPage }}
-  {{ printf "<script src=\"https://cdn.plyr.io/%s/plyr.polyfilled.js\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}
+  {{ printf "<script src=\"https://cdn.plyr.io/%s/plyr.polyfilled.js\" crossorigin=\"anonymous\"></script>" $js.plyr.version | safeHTML }}
   <script>
     $(document).ready(function() {
       if ($("#player").length) {
