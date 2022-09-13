@@ -1,0 +1,11 @@
+[nameLabel]
+other = "Your name"
+
+[emailLabel]
+other = "Email address"
+
+[messageLabel]
+other = "Enter your message"
+
+[sendLabel]
+other = "Send"
