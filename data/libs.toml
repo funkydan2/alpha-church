@@ -6,8 +6,8 @@
 
 # JavaScript
 [js.leaflet]
-  version = "1.7.1"
-  integrity = "sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  version = "1.8.0"
+  integrity = "sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
 
 [js.plyr]
   #Make sure the hash is for the polyfilled version
@@ -15,13 +15,13 @@
   integrity = "sha384-tP3H/NVPMKfyAD6QtnEop02TYQ+2XbRDjOHmqmbLEowyPgnsikVipSMPMLeMSJag"
 
 [js.instantpage]
-  version = "5.1.0"
-  integrity = "sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"
+  version = "5.1.1"
+  integrity = "sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"
 
 # CSS
 [css.leaflet]
-  version = "1.7.1"
-  integrity = "sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  version = "1.8.0"
+  integrity = "sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
 
 [css.plyr]
   version = "3.6.9"
