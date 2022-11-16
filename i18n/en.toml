@@ -9,3 +9,9 @@ other = "Enter your message"
 
 [sendLabel]
 other = "Send"
+
+[published]
+other = "Published:"
+
+[updated]
+other = "Updated:"
