@@ -30,13 +30,13 @@
 	<form name="contact" method="POST" action="{{ .Site.Params.Contact.confirm_page }}" netlify>
 		<div class="row gtr-50 gtr-uniform">
 			<div class="col-6 col-12-mobilep">
-	    		<input type="text" name="name" aria-label="{{ i18n "nameLabel" }}" placeholder="{{ i18n "nameLabel" }}">
+	    		<input type="text" name="name" aria-label="{{ i18n "nameLabel" }}" placeholder="{{ i18n "nameLabel" }}" required>
 	  		</div>
 			<div class="col-6 col-12-mobilep">
-	    		<input type="email" name="email" aria-label="{{ i18n "emailLabel" }}" placeholder = "{{i18n "emailLabel" }}">
+	    		<input type="email" name="email" aria-label="{{ i18n "emailLabel" }}" placeholder="{{i18n "emailLabel" }}" required>
 	  		</div>
 			<div class="col-12">
-				<textarea name="message" aria-label="{{ i18n "messageLabel" }}" placeholder="{{ i18n "messageLabel" }}" rows="6"></textarea>
+				<textarea name="message" aria-label="{{ i18n "messageLabel" }}" placeholder="{{ i18n "messageLabel" }}" rows="6" required></textarea>
 			</div>
 			<div class="col-12">
 				<ul class="actions special">
@@ -51,13 +51,13 @@
 	<form method="POST" action="https://formspree.io/f/{{ .Site.Params.Contact.formspree_formid }}">
 		<div class="row gtr-50 gtr-uniform">
 			<div class="col-6 col-12-mobilep">
-				<input type="text" name="name" id="name" value="" aria-label="{{ i18n "nameLabel" }}" placeholder="{{ i18n "nameLabel" }}" />
+				<input type="text" name="name" id="name" value="" aria-label="{{ i18n "nameLabel" }}" placeholder="{{ i18n "nameLabel" }}" required />
 			</div>
 			<div class="col-6 col-12-mobilep">
-				<input type="email" name="_replyto" id="email" value="" aria-label="{{ i18n "emailLabel" }}" placeholder="{{ i18n "emailLabel" }}" />
+				<input type="email" name="_replyto" id="email" value="" aria-label="{{ i18n "emailLabel" }}" placeholder="{{ i18n "emailLabel" }}" required />
 			</div>
 			<div class="col-12">
-				<textarea name="message" id="message" aria-label="{{ i18n "messageLabel" }}" placeholder="{{ i18n "messageLabel" }}" rows="6"></textarea>
+				<textarea name="message" id="message" aria-label="{{ i18n "messageLabel" }}" placeholder="{{ i18n "messageLabel" }}" rows="6" required></textarea>
 			</div>
 			<div class="col-12">
 				<ul class="actions special">
@@ -70,13 +70,13 @@
 	<form name="contact" method="POST" action="/contact_mail.php" netlify>
 		<div class="row gtr-50 gtr-uniform">
 			<div class="col-6 col-12-mobilep">
-				<input type="text" name="name" aria-label="{{ i18n "nameLabel" }}" placeholder="{{ i18n "nameLabel" }}">
+				<input type="text" name="name" aria-label="{{ i18n "nameLabel" }}" placeholder="{{ i18n "nameLabel" }}" required>
 			</div>
 			<div class="col-6 col-12-mobilep">
-				<input type="email" name="email" aria-label="{{ i18n "emailLabel" }}" placeholder = "{{ i18n "emailLabel" }}">
+				<input type="email" name="email" aria-label="{{ i18n "emailLabel" }}" placeholder = "{{ i18n "emailLabel" }}" required>
 			</div>
 			<div class="col-12">
-				<textarea name="message" aria-label="{{ i18n "messageLabel" }}" placeholder="{{ i18n "messageLabel" }}" rows="6"></textarea>
+				<textarea name="message" aria-label="{{ i18n "messageLabel" }}" placeholder="{{ i18n "messageLabel" }}" rows="6" required></textarea>
 			</div>
 			<div class="col-12">
 				<ul class="actions special">
