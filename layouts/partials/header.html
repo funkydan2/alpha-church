@@ -32,9 +32,6 @@
 		<link rel="stylesheet" href="{{ "fontawesome/css/all.min.css" | absURL }}" />
 		{{- $css := .Site.Data.libs.css -}}
 		{{ if .IsPage }}{{ printf "<link rel=\"stylesheet\" href=\"https://cdn.plyr.io/%s/plyr.css\" crossorigin=\"anonymous\">" $css.plyr.version | safeHTML }}{{ end }}
-		{{- $ieStyles := resources.Get "scss/ie8.scss" | toCSS | minify -}}
-		{{- $ieJs := resources.Get "js/ie/html5shiv.js" | minify -}}
-		{{ printf "<!--[if lte IE 8]><script src=\"%s\"></script><link rel=\"stylesheet\" href=\"%s\" /><![endif]-->" $ieJs.RelPermalink $ieStyles.RelPermalink | safeHTML }}
 		{{ $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
 		<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" crossorigin="anonymous" />
 		{{- range .Site.Params.customCSS -}}
