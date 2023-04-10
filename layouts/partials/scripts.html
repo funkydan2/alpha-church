@@ -6,7 +6,6 @@
 {{ $browser := resources.Get "js/browser.min.js" | fingerprint }}
 {{ $breakpoints := resources.Get "js/breakpoints.min.js" | fingerprint }}
 {{ $util := resources.Get "js/util.js" | minify | fingerprint }}
-{{ $ie := resources.Get "js/ie/respond.min.js" | fingerprint }}
 {{ $main := resources.Get "js/main.js" | minify | fingerprint }}
 {{ "<!-- Scripts-HTML5up -->" | safeHTML }}
 <script src="{{ $jquery.RelPermalink }}" integrity="{{ $jquery.Data.Integrity }}" crossorigin="anonymous"></script>
@@ -48,9 +47,8 @@
       </script>
   {{ end }}
 {{ end }}
-{{ `<!--[if lte IE 8]><script src=" {{ $ie.RelPermalink }} "></script><![endif]-->` | safeHTML}}
 {{ if .IsPage }}
-  {{ printf "<script src=\"https://cdn.plyr.io/%s/plyr.polyfilled.js\" crossorigin=\"anonymous\"></script>" $js.plyr.version | safeHTML }}
+  {{ printf "<script src=\"https://cdn.plyr.io/%s/plyr.polyfilled.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}
   <script>
     $(document).ready(function() {
       if ($("#player").length) {
