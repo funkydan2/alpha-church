@@ -4,8 +4,8 @@
     {{ $js := $.Site.Data.libs.js }}
     {{ $css := $.Site.Data.libs.css }}
     {{ "<!-- OpenStreetMap -->" | safeHTML }}
-		{{ printf "<link rel=\"stylesheet\" href=\"//unpkg.com/leaflet@%s/dist/leaflet.css\" integrity=\"%s\" crossorigin=\"anonymous\"/>" $css.leaflet.version $css.leaflet.integrity | safeHTML }}
-    {{ printf "<script src=\"//unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
+		{{ printf "<link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@%s/dist/leaflet.css\" integrity=\"%s\" crossorigin=\"anonymous\"/>" $css.leaflet.version $css.leaflet.integrity | safeHTML }}
+    {{ printf "<script src=\"https://unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
     <script>
         var loc = [{{- float .latitude -}}, {{- float .longitude -}}];
         var mymap = L.map("map").setView(loc, {{- int .zoom -}});
