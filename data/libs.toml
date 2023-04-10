@@ -11,12 +11,12 @@
 
 [js.plyr]
   #Make sure the hash is for the polyfilled version
-  version = "3.6.9"
-  integrity = "sha384-tP3H/NVPMKfyAD6QtnEop02TYQ+2XbRDjOHmqmbLEowyPgnsikVipSMPMLeMSJag"
+  version = "3.7.8"
+  integrity = "sha512-uBSV2xuyRYsEVvFo4KHJmRacoJfDr389gCeWCVTZIuFle2Ts+I+k+V7oMZVhidyQIxl9/2M89v/vZpiKG3IgVw=="
 
 [js.instantpage]
-  version = "5.1.1"
-  integrity = "sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"
+  version = "5.2.0"
+  integrity = "sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"
 
 # CSS
 [css.leaflet]
@@ -24,5 +24,5 @@
   integrity = "sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
 
 [css.plyr]
-  version = "3.6.9"
-  integrity = "sha384-wQsQECGrPiFqrOv9DZfIpKJEpL1WJRJFb0j7/ORFQ2lmbRQEQ5ndaHupqZYhPK/z"
+  version = "3.7.8"
+  integrity = "sha512-yexU9hwne3MaLL2PG+YJDhaySS9NWcj6z7MvUDSoMhwNghPgXgcvYgVhfj4FMYpPh1Of7bt8/RK5A0rQ9fPMOw=="
