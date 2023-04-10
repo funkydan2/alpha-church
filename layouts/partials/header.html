@@ -31,7 +31,7 @@
 		{{ template "_internal/twitter_cards.html" . }}
 		<link rel="stylesheet" href="{{ "fontawesome/css/all.min.css" | absURL }}" />
 		{{- $css := .Site.Data.libs.css -}}
-		{{ if .IsPage }}{{ printf "<link rel=\"stylesheet\" href=\"https://cdn.plyr.io/%s/plyr.css\" crossorigin=\"anonymous\">" $css.plyr.version | safeHTML }}{{ end }}
+		{{ if .IsPage }}{{ printf "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/plyr/%s/plyr.min.css\" integrity=\"%s\" crossorigin=\"anonymous\">" $css.plyr.version $css.plyr.integrity | safeHTML }}{{ end }}
 		{{ $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
 		<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" crossorigin="anonymous" />
 		{{- range .Site.Params.customCSS -}}

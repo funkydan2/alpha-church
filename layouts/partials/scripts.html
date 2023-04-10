@@ -48,7 +48,7 @@
   {{ end }}
 {{ end }}
 {{ if .IsPage }}
-  {{ printf "<script src=\"https://cdn.plyr.io/%s/plyr.polyfilled.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}
+  {{ printf "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/plyr/%s/plyr.polyfilled.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.plyr.version $js.plyr.integrity | safeHTML }}
   <script>
     $(document).ready(function() {
       if ($("#player").length) {
