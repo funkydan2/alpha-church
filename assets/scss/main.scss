@@ -932,9 +932,8 @@
 					input[type="submit"],
 					input[type="reset"],
 					input[type="button"],
-					button,
-					.button {
-						width: 100%;
+					button {
+						//width: 100%; (Seems to fix mobile plyr formatting.
 
 						&.icon {
 							&:before {
