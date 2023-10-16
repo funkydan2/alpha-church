@@ -76,8 +76,8 @@
 			{{ "<!-- CTA -->" | safeHTML }}
 				<section id="cta"><a name="call-to-action"></a>
 
-					<h2>{{ .Params.CTA.heading}}</h2>
-					<p>{{ .Params.CTA.message}}</p>
+					{{ if .Params.CTA.heading }}<h2>{{ .Params.CTA.heading }}</h2>{{ end }}
+					{{ if .Params.CTA.message }}<p>{{ .Params.CTA.message }}</p>{{ end }}
 					{{ partial "contact" .}}
 
 				</section>
