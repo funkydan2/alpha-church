@@ -72,6 +72,7 @@
 
 				</section>
 
+			{{ if .Params.CTA.enable }}
 			{{ "<!-- CTA -->" | safeHTML }}
 				<section id="cta"><a name="call-to-action"></a>
 
@@ -80,5 +81,6 @@
 					{{ partial "contact" .}}
 
 				</section>
+			{{ end }} {{/* end if CTA*/}}
 {{ partialCached "footer" . }}
 {{ partial "scripts" . }}

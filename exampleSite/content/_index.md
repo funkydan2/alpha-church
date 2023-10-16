@@ -68,6 +68,7 @@
     button_text="Join a group today!"
 
 [CTA]
+  enable = true
   heading = "Get in touch!"
   message = "We'd love to hear from you."
 +++
