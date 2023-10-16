@@ -1,0 +1,17 @@
+[nameLabel]
+other = "Votre nom"
+
+[emailLabel]
+other = "Adresse e-mail"
+
+[messageLabel]
+other = "Entrez votre message"
+
+[sendLabel]
+other = "Envoyer"
+
+[published]
+other = "Publié :"
+
+[updated]
+other = "Mis à jour :"
