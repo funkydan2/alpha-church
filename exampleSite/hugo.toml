@@ -10,7 +10,9 @@ paginate = 4
 enableEmoji = true
 
 # Enter your tracking code to enable Google Analytics
-googleAnalytics = ""
+[services]
+  [services.googleAnalytics]
+    ID = ""
 
 enableInlineShortcodes = true
 
@@ -85,7 +87,7 @@ enableInlineShortcodes = true
 [params]
   title = "Alpha Church"
   subtitle = "Another Church Theme"
-  author = "Daniel Saunders"
+  author.name = "Daniel Saunders"
   keywords = ["theme", "hugo", "podcast"]
   languageCode = "en" # For accessibility this needs to be set. You can find all language codes at https://www.w3schools.com/tags/ref_language_codes.asp
   bible_popups = "faithlife" #faithlife, blb
