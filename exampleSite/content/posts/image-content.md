@@ -7,6 +7,8 @@ categories = []
 
 Veniam est eu adipisicing reprehenderit do sit sint elit sint. Tempor laborum ut dolore aliqua. Commodo eu qui sint magna veniam laborum. Ad cupidatat do proident ex veniam amet Lorem. Officia laboris aute fugiat id consequat culpa ullamco labore ea amet ad. Occaecat quis dolor commodo pariatur cillum et id id cupidatat officia.
 
+{{< figure src="//via.placeholder.com/2400x200" class="full" caption="Magna sunt ut ea quis aliqua cupidatat ut quis sit aliqua tempor duis." >}}
+
 Magna incididunt proident cupidatat cupidatat enim consectetur sunt. Ipsum velit aliqua ex ipsum qui labore magna. Ea nisi anim ad culpa Lorem occaecat ex cupidatat duis labore officia dolor.
 
 {{< figure src="//via.placeholder.com/600x200" class="full" caption="Magna sunt ut ea quis aliqua cupidatat ut quis sit aliqua tempor duis." >}}
