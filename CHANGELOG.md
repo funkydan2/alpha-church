@@ -1,3 +1,6 @@
+# Monday, 18 March 2024 
+There's been lots of changes since 2019, but I'd forgotten about this file. A new *breaking* change has been made to bring the Google Analytics function up to date with Hugo 0.120.0
+
 # Saturday, 23 November 2019
 * Support for sub-submenus. See `exampleSite/config.toml` for an idea of how to implement this. Note that these sub-sub-menus *will not have a visual prompt for users*, so don't hide essential navigation in them. (This is because I couldn't work out a way to implement this attractively in the UI, as well as to discourage burying essential navigation.)
 Note: this is the last update which will be reported in this changelog. This project will move to use [github tags](https://developer.github.com/v3/git/tags/).

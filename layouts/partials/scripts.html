@@ -58,6 +58,6 @@
   </script>
 {{ end }}
 {{ if .Site.Params.instant_page }}{{ printf "<script src=\"https://instant.page/%s\" type=\"module\" defer integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.instantpage.version $js.instantpage.integrity | safeHTML }}{{ end }}
-{{ if .Site.GoogleAnalytics }}{{ template "_internal/google_analytics.html" . }}{{ end }}
+{{ if .Site.Config.Services.GoogleAnalytics.ID }}{{ template "_internal/google_analytics.html" . }}{{ end }}
 </body>
 </html>
