@@ -5,7 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		{{ with .Site.Params.subtitle }}<meta name="description" content="{{ . }}">{{ end }}
-		{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+		{{ with .Site.Params.Author.name }}<meta name="author" content="{{ . }}">{{ end }}
 		<meta name="keywords" content="
 			{{- if .IsHome -}}
 				{{- if .Site.Params.keywords -}}

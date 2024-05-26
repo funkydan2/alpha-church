@@ -8,12 +8,12 @@
     <language>{{ .Site.LanguageCode }}</language>
     <lastBuildDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</lastBuildDate>
     <copyright>{{ .Site.Params.Podcast.copyright | plainify }}</copyright>
-    <itunes:author>{{ .Site.Params.author }}</itunes:author>
+    <itunes:author>{{ .Site.Params.Author.name }}</itunes:author>
     <itunes:summary>{{ .Site.Params.Podcast.summary | plainify }}</itunes:summary>
     <description>{{ .Site.Params.Podcast.summary |plainify }}</description>
     <itunes:owner>
-      <itunes:name>{{ .Site.Params.author }}</itunes:name>
-      <itunes:email>{{ .Site.Params.Podcast.email }}</itunes:email>
+      <itunes:name>{{ .Site.Params.Author.name }}</itunes:name>
+      <itunes:email>{{ .Site.Params.Author.email }}</itunes:email>
     </itunes:owner>
     <itunes:image href="{{.Site.BaseURL}}{{ .Site.Params.Podcast.image }}" />
     <itunes:category text="{{ .Site.Params.Podcast.category }}">
