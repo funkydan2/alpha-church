@@ -1,15 +1,15 @@
 <!DOCTYPE HTML>
-{{ with .Site.Params.languageCode }}<html lang="{{ . }}">{{ end }}
+{{ with site.Params.languageCode }}<html lang="{{ . }}">{{ end }}
 	<head>
-		<title>{{ if .Title }}{{ .Title }} | {{ end }} {{ .Site.Params.title }}</title>
+		<title>{{ if .Title }}{{ .Title }} | {{ end }} {{ site.Params.title }}</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		{{ with .Site.Params.subtitle }}<meta name="description" content="{{ . }}">{{ end }}
-		{{ with .Site.Params.Author.name }}<meta name="author" content="{{ . }}">{{ end }}
+		{{ with site.Params.subtitle }}<meta name="description" content="{{ . }}">{{ end }}
+		{{ with site.Params.Author.name }}<meta name="author" content="{{ . }}">{{ end }}
 		<meta name="keywords" content="
 			{{- if .IsHome -}}
-				{{- if .Site.Params.keywords -}}
-		    	{{- range $i, $e := .Site.Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end -}}
+				{{- if site.Params.keywords -}}
+		    	{{- range $i, $e := site.Params.keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end -}}
 					{{ end -}}
 			{{ end -}}
 			{{ if .IsPage }}
@@ -18,23 +18,23 @@
 				{{- end -}}
 			{{ end -}}" />
 		{{- with .OutputFormats.Get "rss" -}}
-    	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 		{{- end -}}
 		{{ hugo.Generator }}
-		{{- with .Site.Params.Favicon.sml}}<link rel="shortcut icon" href="{{ . }}" sizes="16x16"/>{{ end -}}
-		{{- with .Site.Params.Favicon.med}}<link rel="shortcut icon" href="{{ . }}" sizes="32x32"/>{{ end -}}
-		{{- with .Site.Params.Favicon.lge}}<link rel="shortcut icon" href="{{ . }}" sizes="96x96"/>{{ end -}}
-		{{ with .Site.Params.Podcast.itunes }}
+		{{- with site.Params.Favicon.sml}}<link rel="shortcut icon" href="{{ . }}" sizes="16x16"/>{{ end -}}
+		{{- with site.Params.Favicon.med}}<link rel="shortcut icon" href="{{ . }}" sizes="32x32"/>{{ end -}}
+		{{- with site.Params.Favicon.lge}}<link rel="shortcut icon" href="{{ . }}" sizes="96x96"/>{{ end -}}
+		{{ with site.Params.Podcast.itunes }}
 			<meta name="apple-itunes-app" content="app-id={{ replaceRE "https\\:\\/\\/itunes\\.apple\\.com\\/[a-z]{2}\\/podcast\\/[a-z\\-]*\\/id(\\d{10}).*" "$1" . }}" />
 		{{ end }}
 		{{ template "_internal/opengraph.html" . }}
 		{{ template "_internal/twitter_cards.html" . }}
 		<link rel="stylesheet" href="{{ "fontawesome/css/all.min.css" | absURL }}" />
-		{{- $css := .Site.Data.libs.css -}}
+		{{- $css := site.Data.libs.css -}}
 		{{ if .IsPage }}{{ printf "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/plyr/%s/plyr.min.css\" integrity=\"%s\" crossorigin=\"anonymous\">" $css.plyr.version $css.plyr.integrity | safeHTML }}{{ end }}
 		{{ $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
 		<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" crossorigin="anonymous" />
-		{{- range .Site.Params.customCSS -}}
+		{{- range site.Params.customCSS -}}
     	<link rel="stylesheet" href="{{ . | absURL }}">
   	{{- end -}}
 	</head>
