@@ -203,6 +203,12 @@ At the very bottom of each page is a bunch of icons (from FontAwesome) which can
   link = "//facebook.com/"
 
 [[params.links]]
+  service = "Instagram"
+  icon = "fa-instagram"
+  icon_pack = "fab"
+  link = "//instagram.com"
+
+[[params.links]]
   service = "Podcast"
   icon = "fa-podcast"
   icon_pack = "fas"

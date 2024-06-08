@@ -173,6 +173,12 @@ enableInlineShortcodes = true
       link = "/sermons/index.xml"
 
     [[params.links]]
+      service = "Instagram"
+      icon = "fa-instagram"
+      icon_pack = "fab"
+      link = "//instagram.com"
+
+    [[params.links]]
       service = "Full RSS Feed"
       icon = "fa-rss"
       icon_pack = "fas"

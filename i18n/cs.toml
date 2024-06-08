@@ -1,0 +1,17 @@
+[nameLabel]
+other = "Vaše jméno"
+
+[emailLabel]
+other = "Emailová adresa"
+
+[messageLabel]
+other = "Vaše zpráva"
+
+[sendLabel]
+other = "Odeslat"
+
+[published]
+other = "Zveřejněno:"
+
+[updated]
+other = "Upraveno:"
