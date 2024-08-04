@@ -17,13 +17,13 @@ You should see a folder called `alpha-church` inside the `themes` directory that
 
 ## Configuration
 
-In the next step navigate to the `exampleSite` folder at `themes/alpha-church/exampleSite/` and copy `config.toml` from the exampleSite folder into the root folder of your Hugo site. Then delete the line which says `themesDir = "../.."`.
+In the next step navigate to the `exampleSite` folder at `themes/alpha-church/exampleSite/` and copy `hugo.toml` from the exampleSite folder into the root folder of your Hugo site. Then delete the line which says `themesDir = "../.."`.
 
 (Please refer to https://gohugo.io/overview/quickstart/ for installing a Hugo theme.)
 
-## The `config` file
+## The `hugo` file
 
-Now, let us take a look at `config.toml`. Let's take a look at some of the settings.
+Now, let us take a look at `hugo.toml`. Let's take a look at some of the settings.
 
 ### 1. Custom CSS
 The easiest way to change the look of your site is by overriding the included style sheet. You can do this by putting your css file in `static/css/my.css` and entering `customCSS = ["/css/my.css"]` in the config file.
@@ -36,7 +36,7 @@ GoogleAnalytics = ""
 
 ### 3. Menu & Nested Menus
 
-The entries in the items menu can be customised. The structure of the menu is defined in `config.toml`.
+The entries in the items menu can be customised. The structure of the menu is defined in `hugo.toml`.
 
 ```
 [menu]
@@ -65,7 +65,7 @@ For sub-menus, you can use the following format:
 In this example, *About* is in the main menu, but *About Us* is in the *About* sub-menu. In *Alpha Church* the sub-menu is a drop-down menu.
 
 ### 4. Podcasting
-In `config.toml` there are settings which are used to generate the podcast RSS feed.
+In `hugo.toml` there are settings which are used to generate the podcast RSS feed.
 
 ```
 [params.podcast]
@@ -95,7 +95,7 @@ The landing page is quite customisable. It consists of five blocks: a banner, an
 Settings for the landing page are configured in the frontmatter of `/content/_index.md`. There is an example configuration in the `exampleSite` folder.
 
 #### a. Banner
-The banner section requires a background image to be set. This image should be 1800*1200 px, and a relatively simple image will probably look best. The filename of this banner is set in `config.toml`
+The banner section requires a background image to be set. This image should be 1800*1200 px, and a relatively simple image will probably look best. The filename of this banner is set in `hugo.toml`
 ```
 [params.banner]
   image = "/img/banner.jpg"
@@ -132,7 +132,7 @@ Like the *Feature Icons* this section looks best with an even number of entries.
 ### 6. Map
 This theme makes use of [open street maps](https://openstreetmap.org) on the landing page and as a shortcode.
 
-To set your organisations' location edit `config.toml`.
+To set your organisations' location edit `hugo.toml`.
 ```
 [params.map]
   service = "osm"
@@ -144,7 +144,7 @@ To find the appropriate values, visit https://openstreetmap.org and find the loc
 
 If you'd like a map on another page, you can use an inline shortcode `{{< map.inline >}}{{ partial "map" . }}{{< /map.inline >}}`. **N.B. inline shortcodes must be [enabled in your config file](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes).**
 
-You can also use Google Maps. To do this, you'll need an [API Key from Google](https://developers.google.com/maps/documentation/embed/get-api-key) and set it in `config.toml`:
+You can also use Google Maps. To do this, you'll need an [API Key from Google](https://developers.google.com/maps/documentation/embed/get-api-key) and set it in `hugo.toml`:
 ```
 [params.map]
   service = "google"
@@ -161,7 +161,7 @@ e.g.
   region = "FR"
 ```
 
-You can also use Mapbox. To do this you'll need an [API Key from Mapbox](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/) and set it in `config.toml`. You can also define your custom map style using [Mapbox Studio](https://www.mapbox.com/mapbox-studio/).
+You can also use Mapbox. To do this you'll need an [API Key from Mapbox](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/) and set it in `hugo.toml`. You can also define your custom map style using [Mapbox Studio](https://www.mapbox.com/mapbox-studio/).
 
 ```
 [params.map]
