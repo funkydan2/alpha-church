@@ -5,7 +5,7 @@ theme = "alpha-church"
 themesDir = "../.."
 
 rssLimit = 5
-paginate = 4
+pagination.pagerSize = 4
 
 enableEmoji = true
 
@@ -88,16 +88,16 @@ enableEmoji = true
 [params]
   title = "Alpha Church"
   subtitle = "Another Church Theme"
-  [params.author]
-    name = "Web Author"
-    email = "test@example.com"
   keywords = ["theme", "hugo", "podcast"]
   languageCode = "en" # For accessibility this needs to be set. You can find all language codes at https://www.w3schools.com/tags/ref_language_codes.asp
   bible_popups = "faithlife" #faithlife, blb
   bible_version = "CSB" #HCSB, NIV, NLT, ESV, etc.
   instant_page = true
-
   customCSS = ["example.css"]
+
+  [params.author]
+    name = "Web Author"
+    email = "test@example.com"
 
   [params.favicon]
     sml = "/example16.png"
