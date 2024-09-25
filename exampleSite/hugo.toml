@@ -14,7 +14,8 @@ enableEmoji = true
   [services.googleAnalytics]
     ID = ""
 
-enableInlineShortcodes = true
+[security]
+  enableInlineShortcodes = true
 
 [markup.goldmark.renderer]
   unsafe = true
