@@ -1,18 +1,19 @@
 {{ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>"  | safeHTML }}
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0">
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" xmlns:podcast="https://podcastindex.org/namespace/1.0"
+>
 
   <channel>
-    <title>{{ site.Params.Podcast.title }}</title>
+    <title>{{ site.Params.Podcast.title | transform.XMLEscape | safeHTML  }}</title>
     <link>{{ site.BaseURL }}</link>
     <atom:link href="{{ site.BaseURL }}sermons/index.xml" rel="self" type="application/rss+xml" />
     <language>{{ site.LanguageCode }}</language>
     <lastBuildDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</lastBuildDate>
     <copyright>{{ site.Params.Podcast.copyright | plainify }}</copyright>
-    <itunes:author>{{ site.Params.Author.name }}</itunes:author>
+    <itunes:author>{{ site.Params.Author.name | transform.XMLEscape | safeHTML }}</itunes:author>
     <itunes:summary>{{ site.Params.Podcast.summary | plainify }}</itunes:summary>
     <description>{{ site.Params.Podcast.summary |plainify }}</description>
     <itunes:owner>
-      <itunes:name>{{ site.Params.Author.name }}</itunes:name>
+      <itunes:name>{{ site.Params.Author.name | transform.XMLEscape | safeHTML }}</itunes:name>
       <itunes:email>{{ site.Params.Author.email }}</itunes:email>
     </itunes:owner>
     <itunes:image href="{{site.BaseURL}}{{ site.Params.Podcast.image }}" />
@@ -27,8 +28,8 @@
     {{- end -}}
     {{- range $pages -}}
     <item>
-      <title>{{ title .Params.title }}{{ with .Params.passage }} ({{ . }}){{ end }}</title>
-      <itunes:author>{{ index .Params.preachers 0 }}</itunes:author>
+      <title>{{ title .Params.title | transform.XMLEscape | safeHTML }}{{ with .Params.passage | transform.XMLEscape | safeHTML }} ({{ . }}){{ end }}</title>
+      <itunes:author>{{ index .Params.preachers 0 | transform.XMLEscape | safeHTML }}</itunes:author>
       <itunes:summary>{{ .Summary | plainify }}</itunes:summary>
       {{ printf "<description><![CDATA[%s]]></description>" .Content | safeHTML }}
       {{ printf `<googleplay:description><![CDATA[%s]]></googleplay:description>` .Content | safeHTML }}
