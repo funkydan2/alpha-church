@@ -30,7 +30,7 @@
     <item>
       <title>{{ title .Params.title | transform.XMLEscape | safeHTML }}{{ with .Params.passage | transform.XMLEscape | safeHTML }} ({{ . }}){{ end }}</title>
       <itunes:author>{{ index .Params.preachers 0 | transform.XMLEscape | safeHTML }}</itunes:author>
-      <itunes:summary>{{ .Summary | plainify }}</itunes:summary>
+      <itunes:summary>{{ .Summary | plainify | htmlUnescape }}</itunes:summary>
       {{ printf "<description><![CDATA[%s]]></description>" .Content | safeHTML }}
       {{ printf `<googleplay:description><![CDATA[%s]]></googleplay:description>` .Content | safeHTML }}
       {{ printf "<content:encoded><![CDATA[%s]]></content:encoded>" .Content | safeHTML }}
