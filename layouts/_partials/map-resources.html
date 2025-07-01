@@ -1,0 +1,25 @@
+{{ $js := site.Data.libs.js }}
+{{ $css := site.Data.libs.css }}
+{{ $service := site.Params.Map.service }}
+
+{{ if eq $service "osm" }}
+    <!-- OpenStreetMap -->
+    {{ printf "<link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@%s/dist/leaflet.css\" integrity=\"%s\" crossorigin=\"anonymous\"/>" $css.leaflet.version $css.leaflet.integrity | safeHTML }}
+    {{ printf "<script src=\"https://unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
+
+{{ else if eq $service "google" }}
+
+    {{ $opt := "" }}
+    {{ if isset .Site.Params.Map "language" }}{{ $opt = print $opt "&language=" .language }}{{ end }}
+    {{ if isset .Site.Params.Map "region" }}{{ $opt = print $opt "&region=" .region }}{{ end }}
+    {{ "<!-- Google Map -->" | safeHTML }}
+    <script src="https://maps.googleapis.com/maps/api/js?key={{- .api_key -}}{{- safeURL $opt -}}&callback=initMap" async defer></script>
+{{ else if eq $service "mapbox" }}
+    {{ printf "<meta name=\"viewport\" content=\"initial-scale=1,maximum-scale=1,user-scalable=no\" />" | safeHTML }}
+    {{ printf "<script src=\"https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js\"></script>" | safeHTML }}
+    {{ printf "<link href=\"https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css\" rel=\"stylesheet\" />" | safeHTML }}
+    <style>
+      body { margin: 0; padding: 0; }
+      #map { top: 0; bottom: 0; padding: 0; width: 100%; }
+    </style>
+{{ end }}

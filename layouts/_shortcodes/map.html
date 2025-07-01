@@ -1,0 +1,22 @@
+{{- $test := .Inner -}}
+
+{{- if .Store.Get "points" -}}
+
+{{ $zoom := .Site.Params.Map.zoom }}
+{{ if .Get "zoom" }}
+{{ $zoom = .Get "zoom" }}
+{{ end }}
+
+
+{{ $service := .Site.Params.Map.service }}
+{{ $mapdetails := dict
+    "points" (.Store.Get "points")
+    "zoom" $zoom
+    "id" (printf "map_%d" .Ordinal)
+    }}
+{{ partial "map.html" $mapdetails }}
+{{- else -}}
+You have no points
+
+Remember, an empty point will give you your site's default location if set
+{{- end -}}

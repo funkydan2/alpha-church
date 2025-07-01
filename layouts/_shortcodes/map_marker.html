@@ -1,0 +1,21 @@
+{{- $newPoint := dict -}}
+
+{{- if and ( .Get "longitude" ) ( .Get "latitude" ) -}}
+
+{{- $newPoint = dict
+    "longitude" (.Get "longitude")
+    "latitude" (.Get "latitude")
+-}}
+
+{{ else }}
+
+{{- $newPoint = dict
+    "longitude" .Site.Params.Map.longitude
+    "latitude" .Site.Params.Map.latitude
+-}}
+
+{{ end }}
+
+
+
+{{- .Parent.Store.Add "points" (slice $newPoint) -}}
