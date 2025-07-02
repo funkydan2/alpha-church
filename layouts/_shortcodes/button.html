@@ -1,0 +1,28 @@
+{{/*
+	This shortcode will insert an anchor (link) with the class of button
+
+	There are no "required" fields, but you probably want to use "link" and "text"
+
+	You can also give an argument "class" which will be appended to the anchors class list
+
+	Useful for "alt" or "fit" which are both provided by the alfa theme
+
+	# Examples
+
+
+	{{< button link="https://example.com" text="Find out more" >}}
+
+*/}}
+{{- $classes := printf "button %s" (.Get "class") -}}
+{{- $text := "Find out more" -}}
+{{- if .Get "text" -}}
+{{- $text = .Get "text" -}}
+{{- end -}}
+{{- $link := "/" -}}
+{{- if .Get "link" -}}
+{{- $link = .Get "link" -}}
+{{- end -}}
+
+
+<a href="{{ $link }}" class="{{ $classes }}">{{ $text }}</a>
+
