@@ -29,8 +29,10 @@
     <script>
         var map;
         var centre = {lat: {{- float (index ( index .points 0) "latitude") -}}, lng: {{- float (index ( index .points 0) "longitude") -}}};
-        function initMap() {
-          map = new google.maps.Map(document.getElementById('map'), {
+        async function initMap() {
+          const { Map } = await google.maps.importLibrary("maps");
+
+          map = new Map(document.getElementById('map'), {
             center: centre,
             zoom: {{- float .zoom -}}
           });
