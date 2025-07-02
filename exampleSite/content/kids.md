@@ -6,9 +6,23 @@ images: [img/freely-10057.jpg]
 tags: ["two_column","ministry"]
 draft: false
 ---
+
+## Section
+
+Here is some text
+
+{{< seperator >}}
+
+
+## Another Section
+
+Here is some more text
+
 This is an example of multiple columns.
 
 Unfortunately it needs the author to write html to work (though I could put everything in the front matter!)
+
+
 <div class="row">
   <div class="col-6 col-12-mobilep">
     <h3>Left Column</h3>
