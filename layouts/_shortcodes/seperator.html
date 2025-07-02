@@ -1,0 +1,36 @@
+{{/*
+	This shortcode adds a seperator between sections of a page
+
+	It will essentially close off the precceding "box" and start a new one when
+	used in its most simple form
+
+	It also accepts start=true or end=true. These are to be used when you don't
+	want to start a new box or end an existing box (perhaps after a feature row)
+
+	# Examples
+
+	## Normal seperator
+
+	This will close the old box and start a new one
+
+	{{< seperator >}}
+
+	## End seperator
+
+	This will close the old box but will not start a new one
+
+	{{< seperator end=true >}}
+
+	## Start seperator
+
+	This will start a new box but will not end the old one
+
+	{{< seperator start=true >}}
+*/}}
+{{- if and (not (.Get "start")) (ne (.Get "start") true) -}}
+</div></div>
+{{- end -}}
+{{- if and (not (.Get "end")) (ne (.Get "end") true) -}}
+<div class="box">
+	<div class="page-content">
+{{- end -}}
