@@ -20,7 +20,6 @@ Here is some more text
 
 This is an example of multiple columns.
 
-Unfortunately it needs the author to write html to work (though I could put everything in the front matter!)
 
 {{< columns >}}
 
