@@ -27,8 +27,9 @@
     {{ if isset . "region" }}{{ $opt = print $opt "&region=" .region }}{{ end }}
     {{ "<!-- Google Map -->" | safeHTML }}
     <script>
-        var map;
-        var centre = {lat: {{- float (index ( index .points 0) "latitude") -}}, lng: {{- float (index ( index .points 0) "longitude") -}}};
+        let map;
+        let centre = {lat: {{- float (index ( index .points 0) "latitude") -}}, lng: {{- float (index ( index .points 0) "longitude") -}}};
+        
         async function initMap() {
           const { Map } = await google.maps.importLibrary("maps");
 
@@ -36,14 +37,11 @@
             center: centre,
             zoom: {{- float .zoom -}}
           });
+
           marker = new google.maps.Marker({position: centre, map: map});
-			{{- range .points -}}
-				new google.maps.Marker({position: { lat: {{ .latitude }}, lng: {{ .longitude }} } , map: map});
-			{{- end -}}
+			    
         }
-      </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key={{- site.Params.Map.api_key -}}{{- safeURL $opt -}}&callback=initMap"
-      async defer></script>
+      </script> 
   {{ else if eq $service "mapbox" }}
     {{ printf "<meta name=\"viewport\" content=\"initial-scale=1,maximum-scale=1,user-scalable=no\" />" | safeHTML }}
     {{ printf "<script src=\"https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js\"></script>" | safeHTML }}

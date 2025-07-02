@@ -129,7 +129,7 @@ enableEmoji = true
     zoom = "18"
     # If you want to use google maps you'll need an API Key from Google https://developers.google.com/maps/documentation/embed/get-api-key
     #service = "google"
-    #api_key = "XXXXXXXX"
+    #api_key = ""
     #language = "fr" #Optional
     #region = "FR" #Optional
 
