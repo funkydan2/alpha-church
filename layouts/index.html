@@ -17,7 +17,15 @@
 							<h2>{{ .Params.Services.title }}</h2><a name="services"></a>
 							<p>{{ .Params.Services.text | markdownify }}</p>
 						</header>
-						{{ partial "map" . }}
+                        {{ $mapdetails := dict
+                            "points" ( slice ( dict
+                            "longitude" .Site.Params.Map.longitude
+                            "latitude" .Site.Params.Map.latitude
+                            ) )
+                            "id" "map_main"
+                            "zoom" .Site.Params.Map.zoom
+                        }}
+						{{ partial "map" $mapdetails }}
 					</section>
 					{{ end }}
 

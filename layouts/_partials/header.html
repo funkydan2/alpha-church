@@ -35,6 +35,11 @@
 		{{ $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
 		<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" crossorigin="anonymous" />
 		{{- range site.Params.customCSS -}}
-    	<link rel="stylesheet" href="{{ . | absURL }}">
-  	{{- end -}}
+			<link rel="stylesheet" href="{{ . | absURL }}">
+		{{- end -}}
+		{{- if isset .Site.Params.Map "service"  -}}
+			{{- if ( or .IsHome ( .Page.HasShortcode "map" ) ) -}}
+				{{ partial "map-resources.html" }}
+			{{- end -}}
+		{{- end -}}
 	</head>

@@ -1,14 +1,14 @@
-{{ with .Site.Params.Map }}
-  <div id="map" class="box"></div>
-  {{ if eq .service "osm" }}
-    {{ $js := $.Site.Data.libs.js }}
-    {{ $css := $.Site.Data.libs.css }}
-    {{ "<!-- OpenStreetMap -->" | safeHTML }}
-		{{ printf "<link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@%s/dist/leaflet.css\" integrity=\"%s\" crossorigin=\"anonymous\"/>" $css.leaflet.version $css.leaflet.integrity | safeHTML }}
-    {{ printf "<script src=\"https://unpkg.com/leaflet@%s/dist/leaflet.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.leaflet.version $js.leaflet.integrity | safeHTML }}
+{{ $service := site.Params.Map.service }}
+
+<div id="{{ .id }}" class="box map"></div>
+
+
+  {{ if eq $service "osm" }}
+
     <script>
-        var loc = [{{- float .latitude -}}, {{- float .longitude -}}];
-        var mymap = L.map("map").setView(loc, {{- int .zoom -}});
+        var loc = [{{- float (index ( index .points 0) "latitude") -}}, {{-
+				float (index ( index .points 0) "longitude") -}}];
+		var mymap = L.map("{{- .id -}}").setView(loc, {{- int .zoom -}});
         L.tileLayer(
           "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
           {
@@ -17,27 +17,32 @@
               maxZoom: {{- int .zoom -}}
             }
         ).addTo(mymap);
-          var marker = L.marker(loc).addTo(mymap);
+		{{- range .points -}}
+		L.marker([{{.latitude}},{{.longitude}}]).addTo(mymap);
+		{{- end -}}
     </script>
-  {{ else if eq .service "google" }}
+  {{ else if eq $service "google" }}
     {{ $opt := "" }}
     {{ if isset . "language" }}{{ $opt = print $opt "&language=" .language }}{{ end }}
     {{ if isset . "region" }}{{ $opt = print $opt "&region=" .region }}{{ end }}
     {{ "<!-- Google Map -->" | safeHTML }}
     <script>
         var map;
-        var centre = {lat: {{- float .latitude -}}, lng: {{- float .longitude -}}};
+        var centre = {lat: {{- float (index ( index .points 0) "latitude") -}}, lng: {{- float (index ( index .points 0) "longitude") -}}};
         function initMap() {
           map = new google.maps.Map(document.getElementById('map'), {
             center: centre,
             zoom: {{- float .zoom -}}
           });
           marker = new google.maps.Marker({position: centre, map: map});
+			{{- range .points -}}
+				new google.maps.Marker({position: { lat: {{ .latitude }}, lng: {{ .longitude }} } , map: map});
+			{{- end -}}
         }
       </script>
       <script src="https://maps.googleapis.com/maps/api/js?key={{- .api_key -}}{{- safeURL $opt -}}&callback=initMap"
       async defer></script>
-  {{ else if eq .service "mapbox" }}
+  {{ else if eq $service "mapbox" }}
     {{ printf "<meta name=\"viewport\" content=\"initial-scale=1,maximum-scale=1,user-scalable=no\" />" | safeHTML }}
     {{ printf "<script src=\"https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js\"></script>" | safeHTML }}
     {{ printf "<link href=\"https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css\" rel=\"stylesheet\" />" | safeHTML }}
@@ -46,7 +51,7 @@
       #map { top: 0; bottom: 0; padding: 0; width: 100%; }
     </style>
     <script>
-      var loc = [{{- float .longitude -}}, {{- float .latitude -}}];
+      var loc = [{{- float (index ( index .points 0) "latitude") -}}, {{- float (index ( index .points 0) "longitude") -}}];
       mapboxgl.accessToken = "{{- .api_key -}}";
 
       var geojson = {
@@ -95,4 +100,3 @@
       map.addControl(new mapboxgl.NavigationControl());
     </script>
   {{ end }}
-{{ end }}
