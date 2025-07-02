@@ -1,0 +1,33 @@
+{{/*
+	This shortcode allows you to write in columns
+
+	Collumns are deliminated by <--->
+
+	# Examples
+
+	{{< columns >}}
+
+	## columnn 1
+
+	<--->
+
+	## column 2
+
+	{{< /columns >}}
+*/}}
+{{- $cols := split .InnerDeindent "<--->" -}}
+{{- $width := div 12 ( $cols | len ) -}}
+{{- $mobWidth := 12 -}}
+{{- if lt $width 6 -}}
+{{- $mobWidth = 6 -}}
+{{- end -}}
+
+
+
+<div class="row">
+{{ range $index, $content := split .InnerDeindent "<--->" }}
+	<div class="col-{{ $width }} col-{{ $mobWidth }}-mobilep">
+    {{ $content | page.RenderString }}
+	</div>
+{{ end }}
+</div>
