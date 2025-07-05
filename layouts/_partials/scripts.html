@@ -1,4 +1,4 @@
-{{ "<!-- Scripts -->" | safeHTML }}
+{{ "<!-- layouts/_partials/scripts.html -->" | safeHTML }}
 {{ $js := .Site.Data.libs.js }}
 {{ $jquery := resources.Get "js/jquery.min.js" | fingerprint }}
 {{ $dropotron := resources.Get "js/jquery.dropotron.min.js" | fingerprint }}
