@@ -7,6 +7,10 @@
     "latitude" (.Get "latitude")
 -}}
 
+{{ else if .Page.Params.location }}
+
+{{- $newPoint = .Page.Params.location -}}
+
 {{ else }}
 
 {{- $newPoint = dict
@@ -16,6 +20,13 @@
 
 {{ end }}
 
+{{- with .Get "title" -}}
+{{- $newPoint = merge $newPoint (dict "title" .) -}}
+{{- end -}}
+
+{{- with .Get "link" -}}
+{{- $newPoint = merge $newPoint (dict "link" .) -}}
+{{- end -}}
 
 
 {{- .Parent.Store.Add "points" (slice $newPoint) -}}
