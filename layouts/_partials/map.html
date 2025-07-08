@@ -1,25 +1,49 @@
+<!-- layouts/_partials/map.html -->
 {{ $service := site.Params.Map.service }}
 
-<div id="{{ .id }}" class="box map"></div>
+<div id="{{ .id }}" class="map"></div>
 
 
   {{ if eq $service "osm" }}
 
     <script>
-        var loc = [{{- float (index ( index .points 0) "latitude") -}}, {{-
-				float (index ( index .points 0) "longitude") -}}];
-		var mymap = L.map("{{- .id -}}").setView(loc, {{- int .zoom -}});
+
+		var points = {{ .points | jsonify | safeJS }};
+		var initialZoom = {{ with .zoom  }}{{ . }}{{ else }} 0 {{ end }};
+		var bounds = new L.LatLngBounds(points.map(p=>{
+			return [p.latitude,p.longitude];
+		}));
+		var mymap = L.map("{{- .id -}}").fitBounds(bounds);
+		if ( initialZoom == 0 ){
+			// If it's not set on the map shortcode, 15 is a reasonable MAXIUMUM
+			// If it has multiple pins, we'll zoom out as much as possible to fit them all
+			if ( mymap.getZoom() > 15){
+				mymap.setZoom(15);
+			}
+		} else {
+				mymap.setZoom(initialZoom);
+		}
         L.tileLayer(
           "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
           {
             attribution:
               'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-              maxZoom: {{- int .zoom -}}
+              zoom: {{- int .zoom -}}
             }
         ).addTo(mymap);
-		{{- range .points -}}
-		L.marker([{{.latitude}},{{.longitude}}]).addTo(mymap);
-		{{- end -}}
+		points.forEach(loc=>{
+			let marker = L.marker([loc.latitude,loc.longitude]).addTo(mymap);
+			if ( loc.title ){
+				let content;
+				if ( loc.link ){
+					content = `<div class="special"><h4>${loc.title}</h4><a class="" href="${loc.link}">Find out more</a></div>`
+				} else {
+					content = `<h4>${loc.title}</h4>`
+				}
+				marker.bindPopup(content,{closeOnClick: false, autoClose: false}).openPopup();
+			}
+		});
+
     </script>
   {{ else if eq $service "google" }}
 
