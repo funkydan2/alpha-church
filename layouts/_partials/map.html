@@ -15,10 +15,10 @@
 		}));
 		var mymap = L.map("{{- .id -}}").fitBounds(bounds);
 		if ( initialZoom == 0 ){
-			// If it's not set on the map shortcode, 15 is a reasonable MAXIUMUM
+			// If it's not set on the map shortcode, 13 is a reasonable MAXIUMUM based on my testing
 			// If it has multiple pins, we'll zoom out as much as possible to fit them all
-			if ( mymap.getZoom() > 15){
-				mymap.setZoom(15);
+			if ( mymap.getZoom() > 13){
+				mymap.setZoom(13);
 			}
 		} else {
 				mymap.setZoom(initialZoom);
