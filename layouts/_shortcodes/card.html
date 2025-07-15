@@ -1,0 +1,12 @@
+{{- $width := 6 -}}
+{{- if .Parent.Get "cols" -}}
+{{- $width = div 12 (.Parent.Get "cols") -}}
+{{- end -}}
+<div class="col-{{ $width }}">
+	<section class="box special">
+	{{ with .Get "image" }}
+		<span class="image featured"><img src="{{ . | absURL}}" alt="" /></span>
+	{{ end }}
+	{{ .Inner | page.RenderString }}
+	</section>
+</div>
