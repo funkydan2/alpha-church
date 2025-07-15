@@ -1,3 +1,4 @@
+<!-- layouts/partials/map-resources.html -->
 {{ $js := site.Data.libs.js }}
 {{ $css := site.Data.libs.css }}
 {{ $service := site.Params.Map.service }}
@@ -10,10 +11,10 @@
 {{ else if eq $service "google" }}
 
     {{ $opt := "" }}
-    {{ if isset .Site.Params.Map "language" }}{{ $opt = print $opt "&language=" .language }}{{ end }}
-    {{ if isset .Site.Params.Map "region" }}{{ $opt = print $opt "&region=" .region }}{{ end }}
+    {{ if isset site.Params.Map "language" }}{{ $opt = print $opt "&language=" site.Params.Map.language }}{{ end }}
+    {{ if isset site.Params.Map "region" }}{{ $opt = print $opt "&region=" site.Params.Map.region }}{{ end }}
     {{ "<!-- Google Map -->" | safeHTML }}
-    <script src="https://maps.googleapis.com/maps/api/js?key={{- site.Params.Map.api_key -}}{{- safeURL $opt -}}&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{- site.Params.Map.api_key -}}&loading=async{{- safeURL $opt -}}&callback=initMap" defer></script>
 {{ else if eq $service "mapbox" }}
     {{ printf "<meta name=\"viewport\" content=\"initial-scale=1,maximum-scale=1,user-scalable=no\" />" | safeHTML }}
     {{ printf "<script src=\"https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js\"></script>" | safeHTML }}

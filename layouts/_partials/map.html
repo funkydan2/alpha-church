@@ -1,3 +1,4 @@
+<!-- layouts/_partials/map.html -->
 {{ $service := site.Params.Map.service }}
 
 <div id="{{ .id }}" class="box map"></div>
@@ -22,9 +23,7 @@
 		{{- end -}}
     </script>
   {{ else if eq $service "google" }}
-    {{ $opt := "" }}
-    {{ if isset . "language" }}{{ $opt = print $opt "&language=" .language }}{{ end }}
-    {{ if isset . "region" }}{{ $opt = print $opt "&region=" .region }}{{ end }}
+
     {{ "<!-- Google Map -->" | safeHTML }}
     <script>
         let map;
@@ -33,7 +32,7 @@
         async function initMap() {
           const { Map } = await google.maps.importLibrary("maps");
 
-          map = new Map(document.getElementById('map'), {
+          map = new Map(document.getElementById('{{- .id -}}'), {
             center: centre,
             zoom: {{- float .zoom -}}
           });
@@ -41,6 +40,7 @@
           marker = new google.maps.Marker({position: centre, map: map});
 			    
         }
+        initMap();
       </script> 
   {{ else if eq $service "mapbox" }}
     {{ printf "<meta name=\"viewport\" content=\"initial-scale=1,maximum-scale=1,user-scalable=no\" />" | safeHTML }}
