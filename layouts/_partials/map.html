@@ -50,20 +50,73 @@
     {{ "<!-- Google Map -->" | safeHTML }}
     <script>
         let map;
-        let centre = {lat: {{- float (index ( index .points 0) "latitude") -}}, lng: {{- float (index ( index .points 0) "longitude") -}}};
-        
+        var points = {{ .points | jsonify | safeJS }};
+
         async function initMap() {
           const { Map } = await google.maps.importLibrary("maps");
 
-          map = new Map(document.getElementById('{{- .id -}}'), {
-            center: centre,
-            zoom: {{- float .zoom -}}
-          });
+          if (points.length == 1) {
+            var centre = {lat: {{- float (index ( index .points 0) "latitude") -}}, lng: {{- float (index ( index .points 0) "longitude") -}}};
+            var title = {{- string (index ( index .points 0) "title") -}};
+            var link = {{- string (index ( index .points 0) "link") -}};
+            var zoom = {{ with .zoom  }}{{ float . }}{{ else }} 0 {{ end }};
 
-          marker = new google.maps.Marker({position: centre, map: map});
+            if ( zoom == 0 ){
+              // If it's not set on the map shortcode, 13 is a reasonable MAXIUMUM based on my testing
+              zoom = 13;
+            }
+
+            map = new Map(document.getElementById('{{- .id -}}'), {
+              center: centre,
+              zoom: zoom
+            });
+            
+            var marker = new google.maps.Marker({
+                position: centre,
+                map: map,
+                title: title
+            });
+            
+            if (link){
+              var infowindow = new google.maps.InfoWindow({
+                content: `<a href="${link}">Click to view ${title} page.</a>`
+                });
+              marker.addListener('click', function() {
+                infowindow.open(map, marker);
+              });
+            }
+          }
+          else {
+            
+            var bounds = new google.maps.LatLngBounds();
+
+            map = new Map(document.getElementById('{{- .id -}}'))
+
+            points.forEach(loc=>{
+              bounds.extend(new google.maps.LatLng(loc.latitude, loc.longitude));
+            });
+
+            points.forEach(function(loc) {
+              var marker = new google.maps.Marker({
+                position: {lat: loc.latitude, lng: loc.longitude},
+                map: map,
+                title: loc.title
+              });
+              if (loc.link){
+                var infowindow = new google.maps.InfoWindow({
+                  content: `<a href="${loc.link}">Click to view ${loc.title} page.</a>`
+                  });
+                marker.addListener('click', function() {
+                  infowindow.open(map, marker);
+                });
+              }
+            });
+          
+            map.fitBounds(bounds);
+          }
 			    
         }
-        initMap();
+        //initMap();
       </script> 
   {{ else if eq $service "mapbox" }}
     {{ printf "<meta name=\"viewport\" content=\"initial-scale=1,maximum-scale=1,user-scalable=no\" />" | safeHTML }}
