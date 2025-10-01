@@ -1,0 +1,31 @@
+{{ define "main" }}
+{{ $colWidth := 3 }}
+{{ with .Params.cols }}
+{{ $colWidth = ( div 12 . ) }}
+{{ end }}
+{{ $pages := .Pages.ByParam "starttime" }}
+{{ "<!-- Main -->" | safeHTML }}
+		<section id="main" class="container">
+			<header>
+				<h2>{{ if .Draft }}DRAFT: {{end}}{{ .Params.title }}</h2>
+				{{ with .Params.subtitle }}<p>{{ . }}</p>{{ end }}
+			</header>
+			<div class="box">
+					<span class="image featured">
+					{{- $points := slice -}}
+					{{ range $index, $key := $pages }}
+						{{- $points = append $points (slice (dict
+						"latitude" .Params.location.latitude
+						"longitude" .Params.location.longitude
+						"title" .Title
+						"link" .Permalink
+						)) -}}
+					{{ end }}
+					{{ partial "map.html" (dict "points" $points "id" "all_locations") }}
+					</span>
+			</div>
+
+
+		{{ partial "listbody.html" . }}
+		</section>
+{{ end }}

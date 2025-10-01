@@ -695,6 +695,12 @@
 						border-radius: 0 0 _size(border-radius) _size(border-radius);
 					}
 				}
+
+				&:first-child:last-child {
+					margin-bottom: $box-padding * -1;
+					margin-top: $box-padding * -1;
+                }
+
 			}
 		}
 	}
