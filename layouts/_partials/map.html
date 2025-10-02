@@ -1,5 +1,12 @@
 <!-- layouts/_partials/map.html -->
 {{ $service := site.Params.Map.service }}
+{{ $zoom := site.Params.Map.zoom }}
+
+{{ if not .id }}
+  {{ $id := printf "map-%d" ( now.Unix ) }}
+{{ else }}
+  {{ $id := .id }}
+{{ end }}
 
 <div id="{{ .id }}" class="map"></div>
 
@@ -9,7 +16,7 @@
     <script>
 
 		var points = {{ .points | jsonify | safeJS }};
-		var initialZoom = {{ with .zoom  }}{{ . }}{{ else }} 0 {{ end }};
+		var initialZoom = {{ with $zoom  }}{{ . }}{{ else }} 0 {{ end }};
 		var bounds = new L.LatLngBounds(points.map(p=>{
 			return [p.latitude,p.longitude];
 		}));
@@ -59,7 +66,7 @@
             var centre = {lat: {{- float (index ( index .points 0) "latitude") -}}, lng: {{- float (index ( index .points 0) "longitude") -}}};
             var title = {{- string (index ( index .points 0) "title") -}};
             var link = {{- string (index ( index .points 0) "link") -}};
-            var zoom = {{ with .zoom  }}{{ float . }}{{ else }} 0 {{ end }};
+            var zoom = {{ with $zoom  }}{{ float . }}{{ else }} 0 {{ end }};
 
             if ( zoom == 0 ){
               // If it's not set on the map shortcode, 13 is a reasonable MAXIUMUM based on my testing
@@ -149,7 +156,7 @@
         container: 'map', // container id
         style: "{{- safeHTML .style_url  -}}", // stylesheet location
         center: loc, // starting position [lng, lat]
-        zoom: {{- int .zoom -}} // starting zoom
+        zoom: {{- int $zoom -}} // starting zoom
       });
 
       // add markers to map
