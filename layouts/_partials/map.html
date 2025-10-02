@@ -66,16 +66,10 @@
             var centre = {lat: {{- float (index ( index .points 0) "latitude") -}}, lng: {{- float (index ( index .points 0) "longitude") -}}};
             var title = {{- string (index ( index .points 0) "title") -}};
             var link = {{- string (index ( index .points 0) "link") -}};
-            var zoom = {{ with $zoom  }}{{ float . }}{{ else }} 0 {{ end }};
-
-            if ( zoom == 0 ){
-              // If it's not set on the map shortcode, 13 is a reasonable MAXIUMUM based on my testing
-              zoom = 13;
-            }
 
             map = new Map(document.getElementById('{{- .id -}}'), {
               center: centre,
-              zoom: zoom
+              zoom: {{- int $zoom -}}
             });
             
             var marker = new google.maps.Marker({
