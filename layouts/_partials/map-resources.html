@@ -1,6 +1,6 @@
 <!-- layouts/partials/map-resources.html -->
-{{ $js := site.Data.libs.js }}
-{{ $css := site.Data.libs.css }}
+{{ $js := hugo.Data.libs.js }}
+{{ $css := hugo.Data.libs.css }}
 {{ $service := site.Params.Map.service }}
 
 {{ if eq $service "osm" }}
