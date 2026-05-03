@@ -16,7 +16,7 @@
 <script src="{{ $util.RelPermalink }}" integrity="{{ $util.Data.Integrity }}" crossorigin="anonymous"></script>
 <script src="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ "<!-- Scripts ALPHA-CHURCH-->" | safeHTML }}
-{{ if isset .Site.Params "bible_popups" }}
+{{ if isset site.Params "bible_popups" }}
   {{ $ver := "ESV"}}
   {{ with .Site.Params.bible_version }}{{ $ver = . }}{{ end }}
   {{ if (eq .Site.Params.bible_popups "faithlife") }}

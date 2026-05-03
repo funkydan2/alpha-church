@@ -37,7 +37,7 @@
 		{{- range site.Params.customCSS -}}
 			<link rel="stylesheet" href="{{ . | absURL }}">
 		{{- end -}}
-		{{- if isset .Site.Params.Map "service"  -}}
+		{{- if isset site.Params.Map "service"  -}}
 			{{- if (or ( eq .Page.Section "locations" ) ( or .IsHome ( .Page.HasShortcode "map" ) ) ) -}}
 				{{ partial "map-resources.html" }}
 			{{- end -}}
