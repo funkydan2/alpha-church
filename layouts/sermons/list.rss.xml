@@ -6,7 +6,7 @@
     <title>{{ site.Params.Podcast.title | transform.XMLEscape | safeHTML  }}</title>
     <link>{{ site.BaseURL }}</link>
     <atom:link href="{{ site.BaseURL }}sermons/index.xml" rel="self" type="application/rss+xml" />
-    <language>{{ site.LanguageCode }}</language>
+    <language>{{ site.Language.Locale }}</language>
     <lastBuildDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</lastBuildDate>
     <copyright>{{ site.Params.Podcast.copyright | plainify }}</copyright>
     <itunes:author>{{ site.Params.Author.name | transform.XMLEscape | safeHTML }}</itunes:author>
