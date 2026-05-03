@@ -1,5 +1,5 @@
 baseURL = "http://example.org/"
-languageCode = "en-us"
+defaultContentLanguage = "en"
 title = "Alpha Church"
 theme = "alpha-church"
 themesDir = "../.."
