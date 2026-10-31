@@ -1,3 +1,8 @@
+# Saturday, 31 Oct. 2026
+[SCSS has been deprecated since Hugo v0.153](https://gohugo.io/functions/css/sass/), so I've changed the stylesheet to use plain CSS. The CSS is from [HTML5UP](https://html5up.net/alpha).
+
+I've also updated icons to FontAwesome 7. This has caused some changes in the required syntax: replace `fas` with `fa-solid` and `fab` with `fa-brands`.
+
 # Monday, 18 March 2024 
 There's been lots of changes since 2019, but I'd forgotten about this file. A new *breaking* change has been made to bring the Google Analytics function up to date with Hugo 0.120.0
 
