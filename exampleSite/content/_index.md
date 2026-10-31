@@ -21,8 +21,8 @@
 
   #Accent is a colour defined in the CSS file. Choose between 1 and 5
   [[feature_icons.tile]]
-    icon = "fa-hands-helping"
-    icon_pack = "fas"
+    icon = "fa-handshake"
+    icon_pack = "fa-solid"
     accent = "1"
     title = "Serve"
     text = "Growing people who serve our community."
@@ -30,21 +30,21 @@
 
   [[feature_icons.tile]]
     icon = "fa-church"
-    icon_pack = "fas"
+    icon_pack = "fa-solid"
     accent = "2"
     title = "Meet"
     text = "Meeting together to hear."
 
   [[feature_icons.tile]]
     icon = "fa-comments"
-    icon_pack = "fas"
+    icon_pack = "fa-solid"
     accent = "5"
     title = "Speak"
     text = "Speaking encouragement to one-another."
 
   [[feature_icons.tile]]
-    icon = "fa-heartbeat"
-    icon_pack = "fas"
+    icon = "fa-heart-pulse"
+    icon_pack = "fa-solid"
     accent = "3"
     title = "Loved"
     text = "Knowing Love. Being Loved."

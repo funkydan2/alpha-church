@@ -174,31 +174,31 @@ enableEmoji = true
                   ]
 
     [[params.links]]
-      service = "Twitter"
-      icon = "fa-twitter"
-      icon_pack = "fab"
-      link = "//twitter.com/"
+      service = "X"
+      icon = "fa-x-twitter"
+      icon_pack = "fa-brands"
+      link = "//x.com/"
 
     [[params.links]]
       service = "Facebook"
       icon = "fa-facebook"
-      icon_pack = "fab"
+      icon_pack = "fa-brands"
       link = "//facebook.com/"
 
     [[params.links]]
       service = "Podcast"
       icon = "fa-podcast"
-      icon_pack = "fas"
+      icon_pack = "fa-solid"
       link = "/sermons/index.xml"
 
     [[params.links]]
       service = "Instagram"
       icon = "fa-instagram"
-      icon_pack = "fab"
+      icon_pack = "fa-brands"
       link = "//instagram.com"
 
     [[params.links]]
       service = "Full RSS Feed"
       icon = "fa-rss"
-      icon_pack = "fas"
+      icon_pack = "fa-solid"
       link = "/index.xml"

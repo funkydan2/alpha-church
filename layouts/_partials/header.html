@@ -29,10 +29,13 @@
 		{{ end }}
 		{{ template "_internal/opengraph.html" . }}
 		{{ template "_internal/twitter_cards.html" . }}
-		<link rel="stylesheet" href="{{ "fontawesome/css/all.min.css" | absURL }}" />
+		
 		{{- $css := hugo.Data.libs.css -}}
 		{{ if .IsPage }}{{ printf "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/plyr/%s/plyr.min.css\" integrity=\"%s\" crossorigin=\"anonymous\">" $css.plyr.version $css.plyr.integrity | safeHTML }}{{ end }}
-		{{ $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
+		
+		{{ $opts := dict "minify" true }}
+		{{ $style := resources.Get "css/main.css" | resources.ExecuteAsTemplate "style.main.css" . | css.Build $opts }}
+		
 		<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" media="screen" crossorigin="anonymous" />
 		{{- range site.Params.customCSS -}}
 			<link rel="stylesheet" href="{{ . | absURL }}">
