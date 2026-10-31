@@ -3255,6 +3255,20 @@
 				padding: 1em 0 1.25em 0;
 			}
 
+	.pagination {
+    	text-align: center;
+    	a {
+      		text-decoration: none;
+      		border-bottom: none;
+    	}
+    	li {
+      		display: inline-block;
+      		list-style: none;
+      		margin-left: 1em;
+      		padding-left: 1em;
+    	}
+  	}
+	
 	body.landing #main {
 		margin-top: -14em;
 	}
