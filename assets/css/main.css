@@ -3255,7 +3255,7 @@
 				padding: 1em 0 1.25em 0;
 			}
 
-	.pagination {
+	#main .pagination {
     	text-align: center;
     	a {
       		text-decoration: none;
