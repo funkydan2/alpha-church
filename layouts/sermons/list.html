@@ -6,16 +6,16 @@
 				{{ if (.Site.Params.Podcast.feed) }}
 					<ul class="icons">
 						<li>
-							<a href="https://subscribeonandroid.com/{{ index (split .Site.Params.Podcast.feed "://") 1 }}" target="_blank"><i class="icon fab fa-android"><span class="label">Subscribe on Android</span></i>Subscribe on Android</a>
+							<a href="https://subscribeonandroid.com/{{ index (split .Site.Params.Podcast.feed "://") 1 }}" target="_blank"><i class="icon fa-brands fa-android"><span class="label">Subscribe on Android</span></i><br>Subscribe on Android</a>
 						</li>
 						{{ if (.Site.Params.Podcast.itunes ) }}
 							<li>
-								<a href="{{ .Site.Params.Podcast.iTunes }}" target="_blank"><i class="icon fab fa-apple"><span class="label">Subscribe on Apple Podcasts</span></i>Subscribe on Apple Podcasts</a>
+								<a href="{{ .Site.Params.Podcast.iTunes }}" target="_blank"><i class="icon fa-brands fa-apple"><span class="label">Subscribe on Apple Podcasts</span></i><br>Subscribe on Apple Podcasts</a>
 							</li>
 						{{ end }}
 						{{ if (.Site.Params.Podcast.spotify ) }}
 							<li>
-								<a href="{{ .Site.Params.Podcast.spotify }}" target="_blank"><i class="icon fab fa-spotify"><span class="label">Subscribe on Spotify</span></i>Subscribe on Spotify</a>
+								<a href="{{ .Site.Params.Podcast.spotify }}" target="_blank"><i class="icon fa-brands fa-spotify"><span class="label">Subscribe on Spotify</span></i><br>Subscribe on Spotify</a>
 							</li>
 						{{ end }}
 					</ul>
