@@ -2886,6 +2886,35 @@
 			opacity: 0.25;
 		}
 
+/* Map */
+
+	.map {
+		height: 25em;
+		padding: 12em 3em;
+	}
+
+	.marker {
+		background-size: cover;
+		color: black;
+		cursor: pointer;
+	}
+
+	.marker::before {
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		content: "\f51d";
+		text-align: center;
+		font-size: large;
+	}
+
+	.mapboxgl-popup {
+		max-width: 200px;
+	}
+
+	.mapboxgl-popup-content {
+		text-align: left;
+	}
+
 /* Header */
 
 	#page-wrapper {
