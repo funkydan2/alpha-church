@@ -13,25 +13,33 @@ $error_page = "/404.html";
 $subject = "Feedback from example.org";
 
 
-if (isset($_POST['send'])) {    
-    $message = "Name: " . $_POST['name'] . "\r\n\r\n";
-    $message .= "Email: " . $_POST['email'] . "\r\n\r\n";
-    $message .= "Message: " . $_POST['message'] . "\r\n\r\n";
+if (isset($_POST['send'])) {
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $message = trim($_POST['message'] ?? '');
 
-    $headers = "From: " . $from . "\r\n";
-    $headers .= "Content-Type: text/plain; charset: utf-8";
-    $email_ok = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-    if ($email_ok) {
-        $headers .= "\r\nReply-To: $email";
+    # Strip line breaks from the name and validate the address, so neither
+    # can be used to inject extra mail headers via Reply-To. Cap input lengths.
+    $name = str_replace(["\r", "\n"], '', $name);
+    if ($name !== '' && mb_strlen($name) <= 200 &&
+        filter_var($email, FILTER_VALIDATE_EMAIL) && strlen($email) <= 254 &&
+        $message !== '' && mb_strlen($message) <= 10000) {
+
+        $body = "Name: " . $name . "\n\n"
+              . "Email: " . $email . "\n\n"
+              . "Message:\n" . $message . "\n";
+
+        # Replies go to the visitor (the validated address), not to the
+        # website account.
+        $headers = "From: " . $from . "\r\n"
+                 . "Reply-To: " . $email . "\r\n"
+                 . "Content-Type: text/plain; charset=utf-8\r\n";
+
+        if (mail($to, $subject, $body, $headers)) {
+            header("Location: ".$confirm_page);
+            exit;
+        }
     }
-    
-    $success = mail($to, $subject, $message, $headers);
-    
-    if (isset($success) && $success){
-        header("Location: ".$confirm_page);
-        exit;
-    }
-} 
+}
 header("Location: ".$error_page);
 exit;
-?>

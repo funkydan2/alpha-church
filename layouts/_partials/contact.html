@@ -68,7 +68,7 @@
 		</div>
 	</form>
 {{ else if eq .Site.Params.Contact.service "php" }}
-	<form name="contact" method="POST" action="/contact_mail.php" netlify>
+	<form name="contact" method="POST" action="/contact_mail.php">
 		<div class="row gtr-50 gtr-uniform">
 			<div class="col-6 col-12-mobilep">
 				<input type="text" name="name" aria-label="{{ i18n "nameLabel" }}" placeholder="{{ i18n "nameLabel" }}" required>
