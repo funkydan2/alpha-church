@@ -29,6 +29,34 @@
 					</section>
 					{{ end }}
 
+					{{ if .Params.Recent_posts.enable }}
+						{{ $section := .Params.Recent_posts.section | default "posts" }}
+						{{ $count := .Params.Recent_posts.count | default 5 }}
+						{{ $pages := first $count (where site.RegularPages "Type" $section) }}
+						{{ if $pages }}
+							<a name="recent-posts"></a>
+							<section class="box special">
+								<header class="major">
+									<h2>{{ .Params.Recent_posts.title | default (i18n "recentPosts") }}</h2>
+								</header>
+								<hr />
+								<ul class="recent-posts">
+									{{ range $pages }}
+										<li>
+											<a href="{{ .Permalink }}">{{ if .Draft }}DRAFT: {{ end }}{{ .Title | markdownify }}</a>
+											<time class="date-meta">({{ .Date | time.Format ":date_long" }})</time>
+										</li>
+									{{ end }} {{/* end range $pages */}}
+								</ul>
+								{{ with .Params.Recent_posts.button_text }}
+									<ul class="actions special">
+										<li><a href="{{ $section | absURL }}" class="button alt">{{ . }}</a></li>
+									</ul>
+								{{ end }}
+							</section>
+						{{ end }} {{/* end if $pages */}}
+					{{ end }} {{/* end if Recent_posts*/}}
+
 					{{ if .Params.Feature_icons.enable }}
 						{{ $tiles := .Params.Feature_icons.tile }}
 						{{ $len := (len $tiles) }}

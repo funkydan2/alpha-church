@@ -15,3 +15,6 @@ other = "Published:"
 
 [updated]
 other = "Updated:"
+
+[recentPosts]
+other = "Recent Posts"
