@@ -67,6 +67,17 @@
     url = "#"
     button_text="Join a group today!"
 
+[recent_posts]
+  enable = true
+  #Number of posts to link to (default: 5)
+  count = 3
+  #Section to pull posts from (default: "posts")
+  section = "posts"
+  #Heading (default: "Recent Posts", translated to the site language)
+  #title = "From the blog"
+  #Optional button linking to the section's archive page
+  button_text = "All posts"
+
 [CTA]
   enable = true
   heading = "Get in touch!"

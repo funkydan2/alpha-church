@@ -2521,6 +2521,11 @@
 					padding-top: 0;
 				}
 
+		ul.recent-posts {
+			display: inline-block;
+			text-align: left;
+		}
+
 		ul.icons {
 			cursor: default;
 			list-style: none;
