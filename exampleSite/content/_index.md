@@ -1,4 +1,12 @@
 +++
+#Order of the home page feature blocks (banner stays on top, CTA at bottom).
+#Available features: "services", "recent_posts", "feature_icons", "feature_images".
+#Omit this list to use the default order shown below.
+#features = ["recent_posts", "services", "feature_icons", "feature_images"]
+#To repeat a feature with different content, use an inline table naming a
+#second settings block (e.g. [feature_icons_youth], same format as [feature_icons]):
+#features = ["services", "feature_icons", { feature = "feature_icons", key = "feature_icons_youth" }]
+
 [banner]
   [[banner.button]]
       url = "/contact"
@@ -18,6 +26,8 @@
 [feature_icons]
   #These feature icons look best if there's an even number of them.
   enable = true
+  #Optional heading above the tiles (useful when repeating this block):
+  #title = "Our Ministries"
 
   #Accent is a colour defined in the CSS file. Choose between 1 and 5
   [[feature_icons.tile]]
