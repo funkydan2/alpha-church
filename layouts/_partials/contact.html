@@ -68,6 +68,17 @@
 		</div>
 	</form>
 {{ else if eq .Site.Params.Contact.service "php" }}
+	{{/* Catch captcha misconfigurations at build time, not in production. */}}
+	{{ with .Site.Params.Contact.captcha }}
+		{{ if eq .service "altcha" }}
+			{{ if eq ($.Site.Params.Contact.php_script | default "/contact_mail.php") "/contact_mail.php" }}
+				{{ warnf "ALTCHA captcha with the classic mail() script requires the ALTCHA PHP library (Composer) and altcha_verify.php on the server; without them submissions fail closed. See SETUP.md (Captcha). (contact form at %s)" $.RelPermalink }}
+			{{ end }}
+			{{ if strings.HasPrefix site.BaseURL "http://" }}
+				{{ warnf "ALTCHA captcha requires HTTPS (the widget uses Web Crypto, which needs a secure context); baseURL is %s" site.BaseURL }}
+			{{ end }}
+		{{ end }}
+	{{ end }}
 	<form name="contact" method="POST" action="{{ .Site.Params.Contact.php_script | default "/contact_mail.php" }}">
 		<div class="row gtr-50 gtr-uniform">
 			<div class="col-6 col-12-mobilep">
@@ -79,6 +90,17 @@
 			<div class="col-12">
 				<textarea name="message" aria-label="{{ i18n "messageLabel" }}" placeholder="{{ i18n "messageLabel" }}" rows="6" required></textarea>
 			</div>
+			{{ with .Site.Params.Contact.captcha }}
+				{{ if eq .service "altcha" }}
+			<div class="col-12">
+				<altcha-widget
+					challenge="{{ .challenge_url | default "/altcha_challenge.php" }}"
+					auto="onload"
+					language="{{ site.Language.Lang }}"
+					name="altcha"></altcha-widget>
+			</div>
+				{{ end }}
+			{{ end }}
 			<div class="col-12" style="display:none" aria-hidden="true">
 				<input type="text" name="website" tabindex="-1" autocomplete="off" />
 			</div>
@@ -91,4 +113,17 @@
 			</div>
 		</div>
 	</form>
+	{{ with .Site.Params.Contact.captcha }}
+		{{ if eq .service "altcha" }}
+			{{/* Emit once per page: the form can appear twice (CTA + shortcode).
+			    The context may be a page or a shortcode; use the page's store. */}}
+			{{ $page := $ }}
+			{{ with $.Page }}{{ $page = . }}{{ end }}
+			{{ if not ($page.Store.Get "altcha_script_loaded") }}
+				{{ $page.Store.Set "altcha_script_loaded" true }}
+				{{ $altcha := resources.Get "js/altcha.i18n.min.js" | fingerprint }}
+				<script src="{{ $altcha.RelPermalink }}" integrity="{{ $altcha.Data.Integrity }}" crossorigin="anonymous" defer></script>
+			{{ end }}
+		{{ end }}
+	{{ end }}
 {{ end }}

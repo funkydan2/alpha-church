@@ -14,6 +14,11 @@
  * Requirements (install with Composer, ideally OUTSIDE the web root):
  *   composer require phpmailer/phpmailer
  *   composer require league/oauth2-google   # only needed for 'oauth2' mode
+ *   composer require altcha-org/altcha      # only needed for the captcha
+ *
+ * Optional captcha: set $captcha_service = 'altcha' (and the secrets below,
+ * shared with altcha_challenge.php) to require a solved ALTCHA proof-of-work
+ * challenge before sending. See SETUP.md ("Captcha").
  *
  * Three authentication modes are supported (set $smtp_mode below):
  *
@@ -80,6 +85,22 @@ $oauth_refresh_token = 'INSERT REFRESH TOKEN';
 # The account the refresh token was issued for:
 $oauth_user = 'website@example.org';
 
+# ---- Captcha ---------------------------------------------------------------
+
+# '' (disabled) or 'altcha' (self-hosted ALTCHA proof-of-work captcha):
+$captcha_service = '';
+# Secrets shared with altcha_challenge.php. MUST be long random strings,
+# set in the external config file (see $config_file below):
+$altcha_hmac_secret = '';
+$altcha_key_secret = '';
+# Replay-guard strictness. The single-use store is a small JSON file in the
+# system temp directory. If it is unwritable:
+#   false (default) - log loudly and accept the payload (the challenge
+#                     signature and expiry are still enforced); keeps the
+#                     form working on misconfigured hosts.
+#   true            - reject the payload (fail closed).
+$altcha_replay_strict = false;
+
 # Path to Composer's autoloader (adjust to your server layout; keeping the
 # vendor directory outside the web root is recommended):
 $autoload_path = __DIR__ . '/vendor/autoload.php';
@@ -115,6 +136,11 @@ if ($name === '' || mb_strlen($name) > 200 ||
     fail($error_page);
 }
 
+# Honeypot: the hidden "website" field must stay empty (bots fill it in).
+if (!empty($_POST['website'])) {
+    fail($error_page);
+}
+
 $body = "Name: " . $name . "\n\n"
       . "Email: " . $email . "\n\n"
       . "Message:\n" . $message . "\n";
@@ -127,6 +153,12 @@ try {
             . ' - run: composer require phpmailer/phpmailer');
     }
     require $autoload_path;
+
+    # ALTCHA captcha: verify the solved proof-of-work challenge before sending.
+    if ($captcha_service === 'altcha') {
+        require __DIR__ . '/altcha_verify.php';
+        altcha_verify_payload($_POST['altcha'] ?? '');
+    }
 
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
     $mail->isSMTP();
