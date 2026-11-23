@@ -2,13 +2,9 @@
 {{ $service := site.Params.Map.service }}
 {{ $zoom := site.Params.Map.zoom }}
 
-{{ if not .id }}
-  {{ $id := printf "map-%d" ( now.Unix ) }}
-{{ else }}
-  {{ $id := .id }}
-{{ end }}
+{{ $id := .id | default (printf "map-%d" now.Unix) }}
 
-<div id="{{ .id }}" class="map"></div>
+<div id="{{ $id }}" class="map"></div>
 
 
   {{ if eq $service "osm" }}
@@ -20,7 +16,7 @@
 		var bounds = new L.LatLngBounds(points.map(p=>{
 			return [p.latitude,p.longitude];
 		}));
-		var mymap = L.map("{{- .id -}}").fitBounds(bounds);
+		var mymap = L.map("{{- $id -}}").fitBounds(bounds);
 		if ( initialZoom == 0 ){
 			// If it's not set on the map shortcode, 13 is a reasonable MAXIUMUM based on my testing
 			// If it has multiple pins, we'll zoom out as much as possible to fit them all
@@ -56,10 +52,13 @@
 
     {{ "<!-- Google Map -->" | safeHTML }}
     <script>
+        // Each map registers its own initialiser; the single global initMap
+        // callback (see map-resources.html) runs them all, so repeated maps work.
+        (function () {
         let map;
         var points = {{ .points | jsonify | safeJS }};
 
-        async function initMap() {
+        async function init() {
           const { Map } = await google.maps.importLibrary("maps");
 
           if (points.length == 1) {
@@ -67,7 +66,7 @@
             var title = {{- string (index ( index .points 0) "title") -}};
             var link = {{- string (index ( index .points 0) "link") -}};
 
-            map = new Map(document.getElementById('{{- .id -}}'), {
+            map = new Map(document.getElementById('{{- $id -}}'), {
               center: centre,
               zoom: {{- int $zoom -}}
             });
@@ -91,7 +90,7 @@
             
             var bounds = new google.maps.LatLngBounds();
 
-            map = new Map(document.getElementById('{{- .id -}}'))
+            map = new Map(document.getElementById('{{- $id -}}'))
 
             points.forEach(loc=>{
               bounds.extend(new google.maps.LatLng(loc.latitude, loc.longitude));
@@ -117,7 +116,12 @@
           }
 			    
         }
-        //initMap();
+        window.__mapInits = window.__mapInits || [];
+        window.__mapInits.push(init);
+        window.initMap = function () {
+          window.__mapInits.forEach(function (f) { f(); });
+        };
+        })();
       </script> 
   {{ else if eq $service "mapbox" }}
     {{ printf "<meta name=\"viewport\" content=\"initial-scale=1,maximum-scale=1,user-scalable=no\" />" | safeHTML }}
