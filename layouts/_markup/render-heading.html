@@ -1,0 +1,5 @@
+{{ $level := math.Add .Level 1}}
+
+<h{{ $level }} id="{{ .Anchor }}" {{- with .Attributes.class }} class="{{ . }}" {{- end }}>
+  {{- .Text -}}
+</h{{ $level }}>

@@ -198,7 +198,7 @@ You can have a contact form using a [netlify form](https://www.netlify.com/docs/
   confirm_page = "/contact_thanks"
   formspree_email=""
 ```
-With these setting, set *service* to `service = "netlify"`, `service = "formspree"` or `service = "php"`.
+Set *service* to `service = "netlify"`, `service = "formspree"` or `service = "php"`.
 
 If you're using formspree, you'll also need to set `formspree_email` to your email address.
 
@@ -271,7 +271,6 @@ At the very bottom of each page is a bunch of icons (from FontAwesome) which can
 ```
 
 ### 8. Bible Popups
-*Changed on Tuesday, 9 April 2019..*
 Configuration in [params]. Set `bible_popups = "faithlife"` to include Bible reference popups from [Faithlife](https://faithlife.com/products/reftagger), or `bible_popups = "blb"` to use the [Blue Letter Bible](https://www.blueletterbible.org/webtools/BLB_ScriptTagger.cfm) popups.
 
 You may also set the bible translation by defining `bible_version = "ESV"` (or NLT, KJV, CSB, etc.). If you don't define a translation, the default *ESV* will be used.

@@ -14,6 +14,12 @@ $subject = "Feedback from example.org";
 
 
 if (isset($_POST['send'])) {
+    # Honeypot: the hidden "website" field must stay empty (bots fill it in).
+    if (!empty($_POST['website'])) {
+        header("Location: ".$error_page);
+        exit;
+    }
+
     $name = trim($_POST['name'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $message = trim($_POST['message'] ?? '');
