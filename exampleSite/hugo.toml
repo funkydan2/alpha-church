@@ -161,8 +161,15 @@ enableEmoji = true
     #If you use formspree, you'll need to set your formspree form_id.
     #
     #If you use php, you need to host this site on a Server capable of running php.
-    # Please edit the /static/contact_mail.php file from the exampleSite.
+    # Two interchangeable mail scripts are provided in the exampleSite's static/
+    # folder; copy your chosen one to your site's static/ folder and edit its
+    # settings:
+    #   contact_mail.php      - simple, uses PHP's mail(), no dependencies
+    #   contact_mail_smtp.php - PHPMailer over SMTP (any provider; presets for
+    #                           Google Workspace documented in SETUP.md).
+    #                           Needs Composer: composer require phpmailer/phpmailer
     service = "netlify" #or "formspree" or "php"
+    # php_script = "/contact_mail.php" #only used by php; or "/contact_mail_smtp.php"
     confirm_page = "/contact_thanks" #only used by netlify
     # formspree_formid="" #only used by formspree
 

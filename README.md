@@ -42,3 +42,4 @@ If you need some help setting up your website, instructions are available [here]
 * [Respond.js](//j.mp/respondjs)
 * [Skel](//skel.io)
 * [Plyr](//plyr.io)
+* [PHPMailer](//github.com/PHPMailer/PHPMailer) (LGPL) — used by the optional SMTP PHP contact form script (installed via Composer, not bundled)

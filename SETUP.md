@@ -191,18 +191,54 @@ You can also use Mapbox. To do this you'll need an [API Key from Mapbox](https:/
 > If `marker_title` and `marker_address` are not set, the popup will not be rendered in the map.
 
 ### 7. Contact Form
-You can have a contact form using either a [netlify form](https://www.netlify.com/docs/form-handling/) (if you're deploying with netlify) or [formspree](https://formspree.io)
+You can have a contact form using a [netlify form](https://www.netlify.com/docs/form-handling/) (if you're deploying with netlify), [formspree](https://formspree.io), or a PHP mail script on your own server.
 ```
 [params.contact]
   service = ""
   confirm_page = "/contact_thanks"
   formspree_email=""
 ```
-Set *service* to either `service = "netlify"` or `service = "formspree"`.
+Set *service* to `service = "netlify"`, `service = "formspree"` or `service = "php"`.
 
 If you're using formspree, you'll also need to set `formspree_email` to your email address.
 
 If you're using netlify, you'll also want to set the `confirm_page = "url"` to a page on your site. That way after a user submits the form they'll be sent to a page with your customised thank you message, rather than a generic netlify page.
+
+#### PHP mail scripts
+If your site is hosted on a server that runs PHP, set `service = "php"` and copy one of the two interchangeable scripts from the `exampleSite`'s `static/` folder to your site's `static/` folder:
+
+* **`contact_mail.php`** — the simple option: sends with PHP's built-in `mail()` function, no dependencies. Edit the settings at the top (recipient, sender, subject, redirect pages). It works wherever the server's mail setup can deliver to the recipient — many shared hosts can; cloud VMs often need authenticated SMTP instead.
+* **`contact_mail_smtp.php`** — sends through an SMTP server using [PHPMailer](https://github.com/PHPMailer/PHPMailer): any provider, with documented presets for Google Workspace. Install the dependency with [Composer](https://getcomposer.org), ideally outside the web root:
+
+  ```
+  composer require phpmailer/phpmailer
+  ```
+
+Select which script the form posts to with `php_script` (defaults to `/contact_mail.php`):
+
+```
+[params.contact]
+  service = "php"
+  php_script = "/contact_mail_smtp.php"
+```
+
+The SMTP script optionally loads settings from `contact_mail_config.php` one directory above itself — outside the web root when the script lives in your published `static/` folder. Any variables set there override the defaults in the script.
+
+**SMTP settings.** Edit the settings at the top of `contact_mail_smtp.php`: recipient, sender, subject, redirect pages, the SMTP server (`$smtp_host`, `$smtp_port`, `$smtp_secure` — the defaults are Gmail's), and the path to Composer's `vendor/autoload.php`. Choose an authentication mode via `$smtp_mode`:
+
+* **`relay`** — no SMTP authentication; the server is trusted by IP or network. For Google's [SMTP relay service](https://support.google.com/a/answer/176600), set `$smtp_host = 'smtp-relay.gmail.com'`; a Workspace admin must allow the server's IP under *Admin console > Apps > Google Workspace > Gmail > Routing > SMTP relay service* (restrict allowed senders to your domains). The server needs a static IP. This is Google's recommended option for websites.
+* **`password`** — username/password SMTP auth, works with any provider. For Gmail/Workspace use a [Google app password](https://support.google.com/accounts/answer/185833): the sending account needs 2-Step Verification, and your Workspace admin must allow app passwords (they can be disabled org-wide, e.g. by security-key-only 2SV). Note that app passwords are revoked whenever the account password changes. Google no longer accepts plain account passwords.
+* **`oauth2`** — XOAUTH2 with auto-refreshed tokens via the Google provider (`league/oauth2-google`, install it alongside PHPMailer). Most robust long-term for Gmail. Setup:
+  1. In the [Google Cloud console](https://console.cloud.google.com), create a project, enable the **Gmail API**, and configure the OAuth consent screen as **Internal** (so refresh tokens don't expire after 7 days).
+  2. Create an OAuth client ID of type **Desktop app**.
+  3. Run the one-time helper `contact_oauth_setup.php` (in `exampleSite`, next to `hugo.toml`) on any machine with PHP: `php contact_oauth_setup.php`. It prints a URL; sign in with the sending account, consent, and paste back the redirect URL. It outputs the refresh token.
+  4. Set `$smtp_mode = 'oauth2'` and fill in `$oauth_client_id`, `$oauth_client_secret` and `$oauth_refresh_token`.
+
+  For other providers, swap the `League\OAuth2\Client\Provider\Google` class in the script for the matching `league/oauth2-*` provider.
+
+With Gmail, the sender (`$from`) must be the authenticated account or a verified "send as" alias of it, otherwise Gmail rewrites or rejects it.
+
+**Keep credentials secret.** Rather than editing credentials into `contact_mail_smtp.php` (which lives in your web root), put them in the separate config file *outside* the web root described above. Never commit credentials to git. Sending failures are logged to the PHP error log.
 
 If you'd like a contact form on another page, use an inline shortcode `{{< contact.inline >}}{{ partial "contact" . }}{{< /contact.inline >}}` **N.B. inline shortcodes must be [enabled in your config file](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes).**
 
