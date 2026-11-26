@@ -71,8 +71,11 @@
 	{{/* Catch captcha misconfigurations at build time, not in production. */}}
 	{{ with .Site.Params.Contact.captcha }}
 		{{ if eq .service "altcha" }}
+			{{/* The context may be a page or a shortcode; normalise like the script block below. */}}
+			{{ $page := $ }}
+			{{ with $.Page }}{{ $page = . }}{{ end }}
 			{{ if eq ($.Site.Params.Contact.php_script | default "/contact_mail.php") "/contact_mail.php" }}
-				{{ warnf "ALTCHA captcha with the classic mail() script requires the ALTCHA PHP library (Composer) and altcha_verify.php on the server; without them submissions fail closed. See SETUP.md (Captcha). (contact form at %s)" $.RelPermalink }}
+				{{ warnf "ALTCHA captcha with the classic mail() script requires the ALTCHA PHP library (Composer) and altcha_verify.php on the server; without them submissions fail closed. See SETUP.md (Captcha). (contact form at %s)" $page.RelPermalink }}
 			{{ end }}
 			{{ if strings.HasPrefix site.BaseURL "http://" }}
 				{{ warnf "ALTCHA captcha requires HTTPS (the widget uses Web Crypto, which needs a secure context); baseURL is %s" site.BaseURL }}
