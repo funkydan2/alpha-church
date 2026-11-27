@@ -1,0 +1,19 @@
+{{/* Services feature: information about services, with a map.
+    Context: dict with "params" (settings block) and "suffix" (anchor/ID suffix). */}}
+{{ if .params.title }}
+<section class="box special">
+	<header class="major">
+		<h2>{{ .params.title }}</h2><a name="services{{ .suffix }}"></a>
+		<p>{{ .params.text | markdownify }}</p>
+	</header>
+	{{ $mapdetails := dict
+		"points" ( slice ( dict
+		"longitude" site.Params.Map.longitude
+		"latitude" site.Params.Map.latitude
+		) )
+		"id" (printf "map_main%s" .suffix)
+		"zoom" site.Params.Map.zoom
+	}}
+	{{ partial "map" $mapdetails }}
+</section>
+{{ end }}

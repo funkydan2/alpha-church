@@ -94,6 +94,26 @@ The landing page is quite customisable. It consists of six blocks: a banner, an 
 
 Settings for the landing page are configured in the frontmatter of `/content/_index.md`. There is an example configuration in the `exampleSite` folder.
 
+The order of the feature blocks (service information, recent posts, feature icons, feature images) is configurable with a `features` list:
+
+```
+features = ["recent_posts", "services", "feature_icons", "feature_images"]
+```
+
+Only the features named in the list are rendered, in the order given (each still needs to be enabled in its own settings block). If the list is omitted, all four features are rendered in the default order: services, recent posts, feature icons, feature images. The banner always stays at the top of the page and the contact form (CTA) at the bottom.
+
+A feature can appear more than once with different content. Instead of a plain name, use an inline table with `feature` (the block to render) and `key` (the settings block to read it from):
+
+```
+features = ["services", "feature_icons", { feature = "feature_icons", key = "feature_icons_youth" }]
+```
+
+Then add a `[feature_icons_youth]` settings block in the same format as `[feature_icons]`. Any feature can be repeated this way, including services and recent posts. This works with both TOML and YAML frontmatter (in YAML, a repeat entry is a list item with `feature:` and `key:` fields). The plain instance keeps its usual anchor (`#feature-icons`); an instance with a different key gets an anchor suffixed with the key (`#feature-icons-feature_icons_youth`), and a repeated services block gets its own map container ID, so links and maps stay unique.
+
+Entries are not deduplicated: a plain name listed twice still renders the same content twice with duplicate anchors — use a different `key` for each instance instead. A `key` with no matching settings block logs a warning and is skipped.
+
+Each feature block is a partial in `layouts/_partials/home/`, so new features can be added by creating a partial there and naming it in the `features` list.
+
 #### a. Banner
 The banner section requires a background image to be set. This image should be 1800*1200 px, and a relatively simple image will probably look best. The filename of this banner is set in `hugo.toml`
 ```
@@ -138,6 +158,16 @@ These feature icons are pulled from [fontawesome](https://fontawesome.com). The 
   text = "Meeting together to hear."
 ```
 The value of the `icon` and `icon_pack` setting is found on the FontAwesome site. `Accent` is a colour scheme set in the css (there are 5 accent colours).
+
+An optional `title` directly under `[feature_icons]` (not under a tile) adds a heading above the tiles:
+
+```
+[feature_icons]
+  enable = true
+  title = "Our Ministries"
+```
+
+This is especially useful when the block is repeated with different content, so each group of tiles can be labelled.
 
 #### e. Feature Images
 Like the *Feature Icons* this section looks best with an even number of entries.

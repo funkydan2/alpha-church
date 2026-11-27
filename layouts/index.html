@@ -11,100 +11,38 @@
 			{{ "<!-- Main -->" | safeHTML }}
 				<section id="main" class="container">
 
-					{{ if .Params.Services.title }}
-					<section class="box special">
-						<header class="major">
-							<h2>{{ .Params.Services.title }}</h2><a name="services"></a>
-							<p>{{ .Params.Services.text | markdownify }}</p>
-						</header>
-                        {{ $mapdetails := dict
-                            "points" ( slice ( dict
-                            "longitude" .Site.Params.Map.longitude
-                            "latitude" .Site.Params.Map.latitude
-                            ) )
-                            "id" "map_main"
-                            "zoom" .Site.Params.Map.zoom
-                        }}
-						{{ partial "map" $mapdetails }}
-					</section>
-					{{ end }}
-
-					{{ if .Params.Recent_posts.enable }}
-						{{ $section := .Params.Recent_posts.section | default "posts" }}
-						{{ $count := .Params.Recent_posts.count | default 5 }}
-						{{ $pages := first $count (where site.RegularPages "Type" $section) }}
-						{{ if $pages }}
-							<a name="recent-posts"></a>
-							<section class="box special">
-								<header class="major">
-									<h2>{{ .Params.Recent_posts.title | default (i18n "recentPosts") }}</h2>
-								</header>
-								<hr />
-								<ul class="recent-posts">
-									{{ range $pages }}
-										<li>
-											<a href="{{ .Permalink }}">{{ if .Draft }}DRAFT: {{ end }}{{ .Title | markdownify }}</a>
-											<time class="date-meta">({{ .Date | time.Format ":date_long" }})</time>
-										</li>
-									{{ end }} {{/* end range $pages */}}
-								</ul>
-								{{ with .Params.Recent_posts.button_text }}
-									<ul class="actions special">
-										<li><a href="{{ $section | absURL }}" class="button alt">{{ . }}</a></li>
-									</ul>
-								{{ end }}
-							</section>
-						{{ end }} {{/* end if $pages */}}
-					{{ end }} {{/* end if Recent_posts*/}}
-
-					{{ if .Params.Feature_icons.enable }}
-						{{ $tiles := .Params.Feature_icons.tile }}
-						{{ $len := (len $tiles) }}
-						<a name="feature-icons"></a>
-						<section class="box special features">
-							<div class="features-row">
-								{{ range $index, $key := $tiles}}
-									<section>
-										{{ if $key.url }}<a href="{{ $key.url | absURL }}"><div>{{ end }}
-											<span class="icon major {{ $key.icon_pack }} {{ $key.icon }} accent{{- $key.accent -}}"></span>
-											<h3>{{ $key.title }}</h3>
-											<p>{{ $key.text | markdownify }}</p>
-										{{ if $key.url }}</div></a>{{ end }}
-									</section>
-									{{ if and (mod $index 2) (lt (add $index 1) $len) }}
-											</div>
-											<div class="features-row">
-									{{ end }}
-								{{ end }}
-							</div>
-						</section>
-					{{ end }}
-
-					{{ if .Params.Feature_images.enable }}
-						{{ $tiles := .Params.Feature_images.tile }}
-						{{ $len := (len $tiles) }}
-						<a name="feature-images"></a>
-						<div class="row">
-							{{ range $index, $key := $tiles }}
-								<div class="col-6 col-12-narrower">
-									<section class="box special">
-										<span class="image featured"><img src="{{ $key.image | absURL}}" alt="" /></span>
-										<h3>{{ $key.title }}</h3>
-										<p>{{ $key.text | markdownify }}</p>
-										{{ if $key.button_text }}
-											<ul class="actions special">
-												<li><a href="{{ $key.url | absURL }}" class="button alt">{{ $key.button_text }}</a></li>
-											</ul>
-											{{ end }}
-										</section>
-									</div>
-									{{ if and (mod $index 2) (lt (add $index 1) $len) }}
-										</div>
-										<div class="row">
-									{{ end }}
-							{{ end }} {{/* end range $tiles*/}}
-					</div>
-					{{ end }} {{/* end if Feature_images*/}}
+					{{/* Feature blocks are rendered in the order given by the
+					    "features" list in _index.md frontmatter. Each feature
+					    is a partial in _partials/home/ and decides for itself
+					    whether it is enabled. Defaults to the order below.
+					    An entry is either a feature name, or a table
+					    { feature = "name", key = "settings_block" } to render
+					    the same feature again from a different settings block. */}}
+					{{ $features := .Params.features | default (slice "services" "recent_posts" "feature_icons" "feature_images") }}
+					{{ range $features }}
+						{{ $name := . }}
+						{{ $key := . }}
+						{{ if reflect.IsMap . }}
+							{{ $name = .feature }}
+							{{ $key = .key | default $name }}
+						{{ end }}
+						{{ $key = ($key | default "") | lower }}
+						{{ $partial := printf "home/%s" $name }}
+						{{ if not (templates.Exists (printf "_partials/%s.html" $partial)) }}
+							{{ warnf "Unknown home page feature %q in %s" $name $.File.Path }}
+						{{ else }}
+							{{/* Extra instances get an anchor/ID suffix so links and map containers stay unique. */}}
+							{{ $suffix := "" }}
+							{{ if ne $key $name }}{{ $suffix = printf "-%s" ($key | urlize) }}{{ end }}
+							{{ $params := index $.Params $key }}
+							{{ if $params }}
+								{{ partial $partial (dict "params" $params "suffix" $suffix) }}
+							{{ else if $suffix }}
+								{{/* A missing default block is a normal opt-out; only an explicit key is likely a typo. */}}
+								{{ warnf "No settings block %q for home page feature %q in %s" $key $name $.File.Path }}
+							{{ end }}
+						{{ end }}
+					{{ end }} {{/* end range $features */}}
 
 				</section>
 
