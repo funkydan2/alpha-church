@@ -173,6 +173,15 @@ enableEmoji = true
     confirm_page = "/contact_thanks" #only used by netlify
     # formspree_formid="" #only used by formspree
 
+    #Optional captcha for the php contact form: ALTCHA, a self-hosted,
+    #privacy-friendly proof-of-work captcha (no external service).
+    #Works with either mail script; requires PHP + Composer
+    #(altcha-org/altcha) and altcha_verify.php on the server.
+    #See SETUP.md ("Captcha").
+    #[params.contact.captcha]
+    #  service = "altcha"
+    #  challenge_url = "/altcha_challenge.php" #default
+
 
     [params.footer]
       copyright = ["[CC0 (public domain)](//creativecommons.org/publicdomain/zero/1.0/)",

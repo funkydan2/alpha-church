@@ -43,3 +43,4 @@ If you need some help setting up your website, instructions are available [here]
 * [Skel](//skel.io)
 * [Plyr](//plyr.io)
 * [PHPMailer](//github.com/PHPMailer/PHPMailer) (LGPL) — used by the optional SMTP PHP contact form script (installed via Composer, not bundled)
+* [ALTCHA](//altcha.org) (MIT) — self-hosted captcha widget for the PHP contact form; license text in `assets/js/altcha-LICENSE.txt`

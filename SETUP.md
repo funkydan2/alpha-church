@@ -237,8 +237,8 @@ If you're using netlify, you'll also want to set the `confirm_page = "url"` to a
 #### PHP mail scripts
 If your site is hosted on a server that runs PHP, set `service = "php"` and copy one of the two interchangeable scripts from the `exampleSite`'s `static/` folder to your site's `static/` folder:
 
-* **`contact_mail.php`** — the simple option: sends with PHP's built-in `mail()` function, no dependencies. Edit the settings at the top (recipient, sender, subject, redirect pages). It works wherever the server's mail setup can deliver to the recipient — many shared hosts can; cloud VMs often need authenticated SMTP instead.
-* **`contact_mail_smtp.php`** — sends through an SMTP server using [PHPMailer](https://github.com/PHPMailer/PHPMailer): any provider, with documented presets for Google Workspace. Install the dependency with [Composer](https://getcomposer.org), ideally outside the web root:
+* **`contact_mail.php`** — the simple option: sends with PHP's built-in `mail()` function, no dependencies. Edit the settings at the top (recipient, sender, subject, redirect pages). It works wherever the server's mail setup can deliver to the recipient — many shared hosts can; cloud VMs often need authenticated SMTP instead. It validates input and checks the form's hidden honeypot field. It also supports the ALTCHA captcha when the Composer library is installed (see below); without the library, captcha submissions fail closed.
+* **`contact_mail_smtp.php`** — sends through an SMTP server using [PHPMailer](https://github.com/PHPMailer/PHPMailer): any provider, with documented presets for Google Workspace. Also supports the ALTCHA captcha and the honeypot check. Install the dependency with [Composer](https://getcomposer.org), ideally outside the web root:
 
   ```
   composer require phpmailer/phpmailer
@@ -269,6 +269,37 @@ The SMTP script optionally loads settings from `contact_mail_config.php` one dir
 With Gmail, the sender (`$from`) must be the authenticated account or a verified "send as" alias of it, otherwise Gmail rewrites or rejects it.
 
 **Keep credentials secret.** Rather than editing credentials into `contact_mail_smtp.php` (which lives in your web root), put them in the separate config file *outside* the web root described above. Never commit credentials to git. Sending failures are logged to the PHP error log.
+
+#### Captcha (ALTCHA)
+The PHP contact form can be protected with [ALTCHA](https://altcha.org), a self-hosted, MIT-licensed captcha. Instead of puzzles or tracking, the visitor's browser silently solves a small cryptographic proof-of-work challenge; your server verifies it before sending the mail. No cookies, no external service, no data leaves your server, and it is screen-reader accessible (WCAG 2.2 AA). A hidden honeypot field is also checked as a baseline. (The netlify and formspree backends include their own spam filtering, so this option applies to `service = "php"` only.)
+
+**The captcha works with either mail script.** Verifying the proof-of-work needs the ALTCHA PHP library (Composer) and the shared `altcha_verify.php` include next to the mail script. This suits hosts where `mail()` works but outbound SMTP is blocked. If the captcha is enabled while the library is missing, submissions fail closed (rejected, with the reason logged) — install the library or disable the captcha.
+
+Setup:
+
+1. Install the PHP library (alongside PHPMailer if using the SMTP script): `composer require altcha-org/altcha`
+2. Copy `static/altcha_challenge.php` and `static/altcha_verify.php` from the `exampleSite` to your site's `static/` folder, next to your chosen mail script. The challenge endpoint issues fresh challenges to the widget; the verify include is shared by both mail scripts.
+3. Generate two random secrets and put them — with your mail credentials — in the config file outside the web root (both scripts load the same file):
+   ```php
+   <?php // contact_mail_config.php
+   $altcha_hmac_secret = '...'; # php -r "echo bin2hex(random_bytes(32));"
+   $altcha_key_secret  = '...'; # another random string (optional, recommended)
+   $captcha_service = 'altcha';
+   ```
+4. Enable the widget in `hugo.toml`:
+   ```
+   [params.contact.captcha]
+     service = "altcha"
+     #challenge_url = "/altcha_challenge.php" #default
+   ```
+
+The widget script (with translations) is bundled with the theme and self-hosted — no CDN. It loads only on pages that show the contact form (once per page, even if the form appears twice), and localises itself to the page language. Verification enforces the challenge signature, expiry (5 minutes by default) and single use (solved payloads cannot be replayed). The site must be served over **HTTPS** (the widget uses the Web Crypto API, which requires a secure context; `localhost` works for development). Hugo warns at build time if the captcha is enabled with the classic `mail()` script (a reminder that the server then needs the Composer library and `altcha_verify.php`) or the `baseURL` is plain HTTP.
+
+**Bundled widget provenance:** `assets/js/altcha.i18n.min.js` is the official ALTCHA **v3.7.0** i18n UMD build from [altcha-org/altcha](https://github.com/altcha-org/altcha) (MIT; license text alongside it in `assets/js/altcha-LICENSE.txt`, not published with your site). To update: download the newer `altcha.i18n.min.js` from the [ALTCHA releases](https://github.com/altcha-org/altcha/releases) (or the `altcha` npm package's `dist/`), replace the file, and refresh the license text if it changed. The asset is fingerprinted with SRI at build time, so no manual hash maintenance is needed.
+
+Difficulty and lifetime can be tuned in `altcha_challenge.php` (`$altcha_cost`, `$altcha_counter_min/max`, `$altcha_ttl`). Keep the library up to date (`composer update altcha-org/altcha`) — like any security component, it receives occasional security fixes.
+
+The single-use (replay) guard keeps a small JSON file in the system temp directory. If that file is unwritable, the default behaviour is to log loudly and accept the payload — the challenge signature and expiry are still enforced, so the form keeps working on misconfigured hosts. Set `$altcha_replay_strict = true;` in the config file to reject payloads instead (fail closed).
 
 If you'd like a contact form on another page, use an inline shortcode `{{< contact.inline >}}{{ partial "contact" . }}{{< /contact.inline >}}` **N.B. inline shortcodes must be [enabled in your config file](https://gohugo.io/templates/shortcode-templates/#inline-shortcodes).**
 
